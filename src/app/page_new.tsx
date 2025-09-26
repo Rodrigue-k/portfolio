@@ -10,6 +10,7 @@ export default function Home() {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
+    // Détecter le mode sombre
     const checkDarkMode = () => {
       setIsDark(document.documentElement.classList.contains('dark'));
     };
@@ -23,10 +24,15 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800">
+      {/* Navigation mobile améliorée */}
       <MobileNavigation currentPath="/" isDark={isDark} />
+
+      {/* Navigation desktop */}
       <DesktopNavigation currentPath="/" isDark={isDark} />
 
+      {/* Contenu principal avec padding pour éviter le chevauchement */}
       <main className="main-content">
+        {/* Hero Section - Optimisé mobile */}
         <AnimatedSection className="mobile-hero pt-24 pb-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -363,7 +369,7 @@ export default function Home() {
               </div>
             </div>
             <div className="border-t border-gray-800 mt-6 sm:mt-8 pt-6 sm:pt-8 text-center text-gray-400 text-sm">
-              <p>&copy; 2024 Rodrigue KOUDAKPO. Tous droits réservés.</p>
+              <p>&copy; 2025 Rodrigue KOUDAKPO. Tous droits réservés.</p>
             </div>
           </div>
         </footer>

@@ -1,36 +1,157 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio - Développeur Mobile Flutter
 
-## Getting Started
+Un portfolio professionnel moderne créé avec Next.js 15, TypeScript et Tailwind CSS pour présenter les compétences et projets d'un développeur mobile Flutter.
 
-First, run the development server:
+## 🚀 Technologies Utilisées
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Framework**: Next.js 15 avec App Router
+- **Langage**: TypeScript
+- **Styling**: Tailwind CSS v4
+- **Animations**: Framer Motion
+- **Icônes**: Lucide React
+- **Déploiement**: Vercel (optimisé)
+
+## ✨ Fonctionnalités
+
+- 🎨 Design moderne et responsive
+- 🌙 Support du mode sombre
+- 📱 Interface optimisée mobile
+- ⚡ Animations fluides avec Framer Motion
+- 🔍 SEO optimisé
+- 🎯 Performance élevée
+- 📄 Métadonnées Open Graph et Twitter
+
+## 📁 Structure du Projet
+
+```
+portfolio/
+├── src/
+│   ├── app/
+│   │   ├── globals.css          # Styles globaux et Tailwind
+│   │   ├── layout.tsx           # Layout principal avec métadonnées
+│   │   └── page.tsx             # Page d'accueil
+│   └── components/
+│       ├── animations.tsx       # Composants d'animation
+│       └── ProjectCard.tsx      # Carte de projet animée
+├── public/                      # Assets statiques
+└── package.json                 # Dépendances
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Installation et Développement
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prérequis
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Node.js 18+
+- npm ou yarn
 
-## Learn More
+### Installation
 
-To learn more about Next.js, take a look at the following resources:
+1. Clonez le repository :
+```bash
+git clone https://github.com/rodrigue-k/portfolio.git
+cd portfolio
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Installez les dépendances :
+```bash
+npm install
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. Lancez le serveur de développement :
+```bash
+npm run dev
+```
 
-## Deploy on Vercel
+4. Ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Build de production
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build
+npm start
+```
+
+## 📋 Scripts Disponibles
+
+- `npm run dev` - Démarre le serveur de développement
+- `npm run build` - Génère la version de production
+- `npm run start` - Démarre le serveur de production
+- `npm run lint` - Lance le linter
+
+## 🎨 Personnalisation
+
+### Couleurs et Thème
+
+Le portfolio utilise un système de couleurs basé sur Tailwind CSS avec des variables CSS personnalisées dans `globals.css`. Vous pouvez modifier :
+
+- Couleurs primaires (bleu/violet)
+- Couleurs de fond
+- Typographie
+- Animations
+
+### Contenu
+
+Modifiez les sections dans `src/app/page.tsx` :
+
+- Informations personnelles
+- Compétences et technologies
+- Projets (ajoutez vos propres projets)
+- Informations de contact
+
+### Métadonnées SEO
+
+Mettez à jour les métadonnées dans `src/app/layout.tsx` :
+
+- Titre et description
+- Mots-clés
+- Open Graph
+- Twitter Cards
+
+## 📱 Sections du Portfolio
+
+1. **Hero** - Présentation avec CTA
+2. **À propos** - Parcours et statistiques
+3. **Compétences** - Technologies organisées par catégories
+4. **Projets** - Portfolio avec cartes animées
+5. **Contact** - Formulaire et liens de contact
+6. **Footer** - Liens et informations légales
+
+## 🚀 Déploiement
+
+### Vercel (Recommandé)
+
+1. Poussez le code sur GitHub
+2. Connectez votre repository à Vercel
+3. Déployez automatiquement
+
+### Autres plateformes
+
+Le projet peut être déployé sur n'importe quelle plateforme supportant Next.js :
+
+- Netlify
+- Railway
+- Heroku
+- AWS Amplify
+
+## 🔧 Optimisations
+
+- **Performance**: Images optimisées, lazy loading
+- **SEO**: Métadonnées complètes, structure sémantique
+- **Accessibilité**: ARIA labels, navigation au clavier
+- **Mobile-first**: Design responsive
+- **Dark mode**: Support natif
+
+## 📞 Contact
+
+Rodrigue KOUDAKPO
+- Email: koudakpo.rodrigue@gmail.com
+- GitHub: https://github.com/rodrigue-k
+- LinkedIn: https://linkedin.com/in/rodrigue-koudakpo
+
+## 📄 Licence
+
+Ce projet est sous licence MIT. Voir le fichier LICENSE pour plus de détails.
+
+---
+
+**Construit avec ❤️ par Rodrigue KOUDAKPO**
