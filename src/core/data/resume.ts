@@ -9,8 +9,8 @@ export const resumeData: PortfolioData = {
         contact: {
             phone: "+228 97385173",
             email: "koudakporodrigue03@gmail.com",
-            linkedin: "rodrigue Koudakpo",
-            github: "@Rodrigue-k"
+            linkedin: "https://www.linkedin.com/in/rodrigue-koudakpo",
+            github: "https://github.com/Rodrigue-k"
         }
     },
     skills: {
