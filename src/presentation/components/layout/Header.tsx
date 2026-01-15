@@ -3,20 +3,14 @@
 import { useState, useEffect } from "react";
 import { Container } from "../ui/Layout";
 import { ThemeToggle } from "../ui/ThemeToggle";
+import { LanguageSwitcher } from "../ui/LanguageSwitcher";
+import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const navItems = [
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Projects", href: "#projects" },
-    { name: "Experience", href: "#experience" },
-    { name: "Contact", href: "#contact" },
-];
-
-
 export function Header() {
+    const t = useTranslations('Header');
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -28,6 +22,14 @@ export function Header() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    const navLinks = [
+        { name: t('nav.about'), href: "#about" },
+        { name: t('nav.skills'), href: "#skills" },
+        { name: t('nav.projects'), href: "#projects" },
+        { name: t('nav.experience'), href: "#experience" },
+        { name: t('nav.contact'), href: "#contact" },
+    ];
+
     return (
         <header
             className={cn(
@@ -36,13 +38,13 @@ export function Header() {
             )}
         >
             <Container className="flex items-center justify-between">
-                <a href="#" className="text-2xl font-bold tracking-tighter text-foreground">
-                    RK<span className="text-muted-foreground">.</span>
+                <a href="#" className="flex items-center gap-2">
+                    <img src="/logo.png" alt="RK Logo" className="w-10 h-10 rounded-lg object-cover" />
                 </a>
 
                 {/* Desktop Nav */}
-                <nav className="hidden md:flex items-center gap-8">
-                    {navItems.map((item) => (
+                <nav className="hidden md:flex items-center gap-6">
+                    {navLinks.map((item) => (
                         <a
                             key={item.name}
                             href={item.href}
@@ -51,18 +53,22 @@ export function Header() {
                             {item.name}
                         </a>
                     ))}
-                    <ThemeToggle />
+                    <div className="flex items-center gap-2 border-l border-white/10 pl-6 ml-2">
+                        <ThemeToggle />
+                        <LanguageSwitcher />
+                    </div>
                     <a
                         href="mailto:koudakpo.rodrigue@gmail.com"
-                        className="text-sm font-medium bg-foreground text-background px-4 py-2 rounded-full hover:bg-opacity-90 transition-colors"
+                        className="text-sm font-medium bg-foreground text-background px-4 py-2 rounded-full hover:bg-opacity-90 transition-colors ml-2"
                     >
-                        Hire Me
+                        {t('nav.hireMe')}
                     </a>
                 </nav>
 
                 {/* Mobile Menu Toggle */}
                 <div className="flex items-center gap-4 md:hidden">
                     <ThemeToggle />
+                    <LanguageSwitcher />
                     <button
                         className="text-foreground p-2"
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -82,7 +88,7 @@ export function Header() {
                         className="md:hidden glass border-t border-card-border overflow-hidden"
                     >
                         <Container className="py-8 flex flex-col gap-6">
-                            {navItems.map((item) => (
+                            {navLinks.map((item) => (
                                 <a
                                     key={item.name}
                                     href={item.href}

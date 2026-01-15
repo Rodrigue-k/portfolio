@@ -1,0 +1,108 @@
+{
+    "Header": {
+        "nav": {
+            "about": "About",
+            "skills": "Skills",
+            "projects": "Projects",
+            "experience": "Experience",
+            "contact": "Contact",
+            "hireMe": "Hire Me"
+        }
+    },
+    "Hero": {
+        "greeting": "Hello, I'm",
+        "role": "Senior Application Developer",
+        "description": "Self-taught since 2019 and passionate about video games, specializing in mobile development with Flutter since 2022. Experienced in complex environments (gaming and mobile), capable of leading projects of all sizes.",
+        "location": "Agoe Cacaveli, Lome, Togo",
+        "actions": {
+            "contact": "Contact Me",
+            "downloadCV": "Download CV",
+            "viewProjects": "View Projects"
+        }
+    },
+    "Skills": {
+        "title": "Technical Expertise",
+        "subtitle": "A versatile tech stack focused on high-performance mobile and web solutions.",
+        "categories": {
+            "mobile": "Mobile Development",
+            "languages": "Languages",
+            "other": "Other Skills"
+        }
+    },
+    "Experience": {
+        "title": "Professional Experience",
+        "subtitle": "My journey through different roles and companies.",
+        "present": "Present",
+        "items": {
+            "item0": {
+                "role": "Application Developer",
+                "company": "Darollo Technologies Corporation (DTC)",
+                "location": "Togo",
+                "type": "Remote",
+                "period": "Dec 2024 - Present",
+                "description": "Participating in the design and development of mobile solutions with Flutter within a team."
+            },
+            "item1": {
+                "role": "Data Processing Operator",
+                "company": "CAGECFI SA",
+                "location": "Lome, Togo",
+                "type": "On-site",
+                "period": "Mar 2025 - Jun 2025",
+                "description": "Land registry digitization project."
+            },
+            "item2": {
+                "role": "Freelance Mobile Developer",
+                "company": "Evee Engineering",
+                "location": "Cote d'Ivoire",
+                "type": "Freelance",
+                "period": "Deployed Projects",
+                "description": "Development and publication of iOS and Android applications (Grand Voyageur, Ticketto)."
+            }
+        }
+    },
+    "Projects": {
+        "title": "Featured Projects",
+        "subtitle": "A selection of my recent work in mobile and web development.",
+        "viewCode": "View Code",
+        "viewProject": "View Project",
+        "items": {
+            "item0": {
+                "title": "Woez (ex-ToRent)",
+                "description": "Suite of applications for accommodation and car rental management. Includes a mobile app and multiple management sites.",
+                "period": "Oct. 2024 – Jan. 2025"
+            },
+            "item1": {
+                "title": "DukoaVote",
+                "description": "Digital polling and voting platform.",
+                "status": "In Progress"
+            },
+            "item2": {
+                "title": "H-Time",
+                "description": "Weekly schedule management application."
+            },
+            "item3": {
+                "title": "I Fashion Wear",
+                "description": "Showcase site and management system for an eyewear shop."
+            },
+            "item4": {
+                "title": "Secteur BTP",
+                "description": "Website creation for a construction company."
+            }
+        }
+    },
+    "Contact": {
+        "title": "Get in Touch",
+        "subtitle": "Have a project in mind or just want to chat? Feel free to reach out.",
+        "email": "Email me",
+        "linkedin": "Connect on LinkedIn",
+        "github": "Follow on GitHub"
+    },
+    "Footer": {
+        "rights": "All rights reserved.",
+        "links": {
+            "privacy": "Privacy",
+            "terms": "Terms",
+            "sitemap": "Sitemap"
+        }
+    }
+}

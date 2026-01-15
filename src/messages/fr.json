@@ -1,0 +1,108 @@
+{
+    "Header": {
+        "nav": {
+            "about": "À propos",
+            "skills": "Compétences",
+            "projects": "Projets",
+            "experience": "Expérience",
+            "contact": "Contact",
+            "hireMe": "M'engager"
+        }
+    },
+    "Hero": {
+        "greeting": "Bonjour, je suis",
+        "role": "Développeur d'Applications Senior",
+        "description": "Autodidacte depuis 2019 et passionné par l'univers des jeux vidéo, spécialisé dans le développement mobile avec Flutter depuis 2022. Fort d'une expérience acquise dans des environnements complexes (gaming et mobile), capable de mener à bien des projets de toutes tailles.",
+        "location": "Agoe Cacaveli, Lomé, Togo",
+        "actions": {
+            "contact": "Me Contacter",
+            "downloadCV": "Télécharger CV",
+            "viewProjects": "Voir Projets"
+        }
+    },
+    "Skills": {
+        "title": "Expertise Technique",
+        "subtitle": "Une stack technique polyvalente axée sur des solutions mobiles et web performantes.",
+        "categories": {
+            "mobile": "Développement Mobile",
+            "languages": "Langages",
+            "other": "Autres Compétences"
+        }
+    },
+    "Experience": {
+        "title": "Expérience Professionnelle",
+        "subtitle": "Mon parcours à travers différents rôles et entreprises.",
+        "present": "Présent",
+        "items": {
+            "item0": {
+                "role": "Développeur d'Applications",
+                "company": "Darollo Technologies Corporation (DTC)",
+                "location": "Togo",
+                "type": "Remote",
+                "period": "Déc 2024 - Présent",
+                "description": "Participation à la conception et au développement de solutions mobiles avec Flutter au sein d'une équipe."
+            },
+            "item1": {
+                "role": "Opérateur de Traitement de Données",
+                "company": "CAGECFI SA",
+                "location": "Lomé, Togo",
+                "type": "On-site",
+                "period": "Mars 2025 - Juin 2025",
+                "description": "Projet de numérisation des livres fonciers."
+            },
+            "item2": {
+                "role": "Développeur Mobile Freelance",
+                "company": "Evee Engineering",
+                "location": "Côte d'Ivoire",
+                "type": "Freelance",
+                "period": "Projets déployés",
+                "description": "Développement et publication d'applications iOS et Android (Grand Voyageur, Ticketto)."
+            }
+        }
+    },
+    "Projects": {
+        "title": "Projets En Vedette",
+        "subtitle": "Une sélection de mes travaux récents en développement mobile et web.",
+        "viewCode": "Voir Code",
+        "viewProject": "Voir Projet",
+        "items": {
+            "item0": {
+                "title": "Woez (ex-ToRent)",
+                "description": "Ensemble d'applications pour la gestion et la location d'hébergements et de voitures. Comprend une application mobile et plusieurs sites de gestion.",
+                "period": "Oct. 2024 – Janv. 2025"
+            },
+            "item1": {
+                "title": "DukoaVote",
+                "description": "Plateforme de sondages et votes numériques.",
+                "status": "En cours"
+            },
+            "item2": {
+                "title": "H-Time",
+                "description": "Application de gestion d'emplois du temps hebdomadaire."
+            },
+            "item3": {
+                "title": "I Fashion Wear",
+                "description": "Site vitrine et site de gestion pour une boutique de vente de lunettes."
+            },
+            "item4": {
+                "title": "Secteur BTP",
+                "description": "Création d'un site web pour une entreprise de bâtiment et travaux publics."
+            }
+        }
+    },
+    "Contact": {
+        "title": "Restons en Contact",
+        "subtitle": "Vous avez un projet en tête ou voulez simplement discuter ? N'hésitez pas à me contacter.",
+        "email": "M'envoyer un email",
+        "linkedin": "Me suivre sur LinkedIn",
+        "github": "Me suivre sur GitHub"
+    },
+    "Footer": {
+        "rights": "Tous droits réservés.",
+        "links": {
+            "privacy": "Confidentialité",
+            "terms": "Conditions",
+            "sitemap": "Plan du site"
+        }
+    }
+}

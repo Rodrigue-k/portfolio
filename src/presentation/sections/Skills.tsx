@@ -3,12 +3,15 @@
 import { resumeData } from "@/core/data/resume";
 import { Container, Section } from "@/presentation/components/ui/Layout";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export function Skills() {
+    const t = useTranslations('Skills');
+
     const categories = [
-        { title: "Mobile Development", skills: resumeData.skills.mobile },
-        { title: "Programming Languages", skills: resumeData.skills.languages },
-        { title: "Other Skills", skills: resumeData.skills.other },
+        { title: t('categories.mobile'), skills: resumeData.skills.mobile },
+        { title: t('categories.languages'), skills: resumeData.skills.languages },
+        { title: t('categories.other'), skills: resumeData.skills.other },
     ];
 
     return (
@@ -16,9 +19,9 @@ export function Skills() {
             <Container>
                 <div className="space-y-12">
                     <div className="text-center space-y-4">
-                        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">Technical Expertise</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">{t('title')}</h2>
                         <p className="text-muted-foreground max-w-2xl mx-auto">
-                            Specialized in high-performance mobile applications and interactive digital experiences.
+                            {t('subtitle')}
                         </p>
                     </div>
 
