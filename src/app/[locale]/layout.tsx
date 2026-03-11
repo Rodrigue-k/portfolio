@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import "@fontsource/syne";
+import "@fontsource/jetbrains-mono";
 import "../globals.css";
-import { ThemeProvider } from "@/presentation/theme/ThemeProvider";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 
@@ -31,17 +32,10 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} suppressHydrationWarning>
-      <body className={`${inter.variable} antialiased bg-background text-foreground transition-colors duration-300`}>
+    <html lang={locale} suppressHydrationWarning className="dark">
+      <body className={`${inter.variable} antialiased transition-colors duration-300`}>
         <NextIntlClientProvider messages={messages}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            enableSystem
-            disableTransitionOnChange
-          >
-            {children}
-          </ThemeProvider>
+          {children}
         </NextIntlClientProvider>
       </body>
     </html>

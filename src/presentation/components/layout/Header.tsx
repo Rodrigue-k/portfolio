@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { Container } from "../ui/Layout";
-import { ThemeToggle } from "../ui/ThemeToggle";
 import { LanguageSwitcher } from "../ui/LanguageSwitcher";
 import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
@@ -34,7 +33,7 @@ export function Header() {
         <header
             className={cn(
                 "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-                scrolled ? "glass border-b border-card-border py-4" : "bg-transparent py-6"
+                scrolled ? "glass border-b border-[var(--border)] py-4" : "bg-transparent py-6"
             )}
         >
             <Container className="flex items-center justify-between">
@@ -48,18 +47,17 @@ export function Header() {
                         <a
                             key={item.name}
                             href={item.href}
-                            className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                            className="text-sm font-medium text-[var(--text-muted)] hover:text-white transition-colors"
                         >
                             {item.name}
                         </a>
                     ))}
                     <div className="flex items-center gap-2 border-l border-white/10 pl-6 ml-2">
-                        <ThemeToggle />
                         <LanguageSwitcher />
                     </div>
                     <a
                         href="mailto:koudakpo.rodrigue@gmail.com"
-                        className="text-sm font-medium bg-foreground text-background px-4 py-2 rounded-full hover:bg-opacity-90 transition-colors ml-2"
+                        className="text-sm font-medium bg-white text-black px-4 py-2 rounded-full hover:bg-opacity-90 transition-colors ml-2"
                     >
                         {t('nav.hireMe')}
                     </a>
@@ -67,10 +65,9 @@ export function Header() {
 
                 {/* Mobile Menu Toggle */}
                 <div className="flex items-center gap-4 md:hidden">
-                    <ThemeToggle />
                     <LanguageSwitcher />
                     <button
-                        className="text-foreground p-2"
+                        className="text-[var(--text)] p-2"
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                     >
                         {mobileMenuOpen ? <X /> : <Menu />}
@@ -85,7 +82,7 @@ export function Header() {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden glass border-t border-card-border overflow-hidden"
+                        className="md:hidden glass border-t border-[var(--border)] overflow-hidden"
                     >
                         <Container className="py-8 flex flex-col gap-6">
                             {navLinks.map((item) => (
@@ -93,7 +90,7 @@ export function Header() {
                                     key={item.name}
                                     href={item.href}
                                     onClick={() => setMobileMenuOpen(false)}
-                                    className="text-lg font-medium text-muted-foreground hover:text-foreground transition-colors"
+                                    className="text-lg font-medium text-[var(--text-muted)] hover:text-white transition-colors"
                                 >
                                     {item.name}
                                 </a>
