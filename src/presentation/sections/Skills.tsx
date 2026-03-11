@@ -4,6 +4,7 @@ import { resumeData } from "@/core/data/resume";
 import { Container, Section } from "@/presentation/components/ui/Layout";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
+import { SectionHeader } from "@/presentation/components/ui/SectionHeader";
 
 export function Skills() {
     const t = useTranslations('Skills');
@@ -18,12 +19,7 @@ export function Skills() {
         <Section id="skills" className="bg-card-bg/20">
             <Container>
                 <div className="space-y-12">
-                    <div className="text-center space-y-4">
-                        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">{t('title')}</h2>
-                        <p className="text-muted-foreground max-w-2xl mx-auto">
-                            {t('subtitle')}
-                        </p>
-                    </div>
+                    <SectionHeader number="01" title={t('title')} />
 
                     <div className="grid md:grid-cols-3 gap-8">
                         {categories.map((category, idx) => (

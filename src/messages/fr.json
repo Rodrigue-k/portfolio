@@ -101,6 +101,7 @@
     },
     "Footer": {
         "rights": "Tous droits réservés.",
+        "builtBy": "Conçu & développé par moi",
         "links": {
             "privacy": "Confidentialité",
             "terms": "Conditions",

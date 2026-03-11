@@ -5,6 +5,7 @@ import { Container, Section } from "@/presentation/components/ui/Layout";
 import { motion } from "framer-motion";
 import { Mail, Briefcase, UserPlus } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { SectionHeader } from "@/presentation/components/ui/SectionHeader";
 
 export function Contact() {
     const t = useTranslations('Contact');
@@ -13,20 +14,7 @@ export function Contact() {
         <Section id="contact" className="bg-gradient-to-t from-black to-card-bg/20">
             <Container>
                 <div className="max-w-3xl mx-auto text-center space-y-8">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
-                        viewport={{ once: true }}
-                        className="space-y-4"
-                    >
-                        <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
-                            {t('title')}
-                        </h2>
-                        <p className="text-xl text-muted-foreground text-balance">
-                            {t('subtitle')}
-                        </p>
-                    </motion.div>
+                    <SectionHeader number="04" title={t('title')} />
 
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}

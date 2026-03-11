@@ -101,6 +101,7 @@
     },
     "Footer": {
         "rights": "All rights reserved.",
+        "builtBy": "Designed & built by me",
         "links": {
             "privacy": "Privacy",
             "terms": "Terms",
