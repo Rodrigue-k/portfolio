@@ -4,12 +4,16 @@ import "@fontsource/syne";
 import "@fontsource/jetbrains-mono";
 import "../globals.css";
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, setRequestLocale } from 'next-intl/server';
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
 });
+
+export function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'fr' }];
+}
 
 export const metadata: Metadata = {
   title: "Komi Rodrigue Koudakpo - Flutter Developer · Mobile & Web",
@@ -31,6 +35,7 @@ export default async function RootLayout({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  setRequestLocale(locale);
   const messages = await getMessages();
 
   return (

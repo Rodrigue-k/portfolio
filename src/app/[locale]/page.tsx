@@ -5,8 +5,20 @@ import { Skills } from "@/presentation/sections/Skills";
 import { Experience } from "@/presentation/sections/Experience";
 import { Projects } from "@/presentation/sections/Projects";
 import { Contact } from "@/presentation/sections/Contact";
+import { setRequestLocale } from 'next-intl/server';
 
-export default function Home() {
+export function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'fr' }];
+}
+
+export default async function Home({
+  params
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   return (
     <main className="min-h-screen text-foreground selection:bg-white selection:text-black">
       {/* Animated Fixed Background */}
