@@ -12,7 +12,7 @@
     "Hero": {
         "greeting": "Bonjour, je suis",
         "role": "Développeur Flutter · Mobile & Web",
-        "description": "Développeur autodidacte depuis 2019, spécialisé Flutter pour le mobile et Next.js pour le web. Parti du développement de jeux vidéo avec Java et Unity, je me suis orienté vers les applications mobiles cross-platform. J'ai publié plusieurs applications sur le Play Store et l'App Store, développé des solutions pour des clients au Togo et en Côte d'Ivoire, et conduit des projets de bout en bout — de l'architecture à la publication.",
+        "description": "Autodidacte depuis 2019, spécialisé Flutter mobile et Next.js web. Apps publiées sur Play Store & App Store. Du code à la production.",
         "location": "Agoe Cacaveli, Lomé, Togo",
         "actions": {
             "contact": "Me Contacter",

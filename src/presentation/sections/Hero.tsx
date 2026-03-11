@@ -28,27 +28,26 @@ export function Hero() {
     }, [fullName]);
 
     return (
-        <Section className="min-h-screen flex items-center justify-center pt-32 pb-16">
+        <Section className="min-h-[80vh] flex items-center justify-start pt-32 pb-8">
             <Container>
-                <div className="max-w-4xl mx-auto space-y-8 flex flex-col items-center">
+                <div className="max-w-4xl space-y-6 flex flex-col items-start text-left">
                     {/* Prefix and typed name */}
-                    <div className="text-center">
+                    <div>
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
-                            className="font-mono text-sm md:text-base text-[var(--accent)] mb-4"
+                            className="font-mono text-sm md:text-base text-[var(--accent)] mb-2"
                         >
                             &gt;_ {t('greeting')}
                         </motion.div>
-                        <h1 className="text-[clamp(2.5rem,6vw,5rem)] font-bold tracking-tight text-foreground font-display flex items-center justify-center">
+                        <h1 className="text-[clamp(2.5rem,6vw,5rem)] font-bold tracking-tight text-foreground font-display flex items-center">
                             {typedName}
                             <motion.span
                                 animate={{ opacity: [1, 0] }}
                                 transition={{ repeat: Infinity, duration: 0.8 }}
-                                className="text-[var(--accent)] ml-1"
-                            >
-                                |
-                            </motion.span>
+                                className="w-[2px] h-[0.8em] bg-[var(--accent)] ml-1 inline-block align-middle"
+                                style={{ marginLeft: '4px' }}
+                            />
                         </h1>
                     </div>
 
@@ -58,7 +57,7 @@ export function Hero() {
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.8, ease: "easeOut" }}
-                                className="text-center space-y-8 w-full"
+                                className="space-y-6 w-full"
                             >
                                 <p className="text-2xl md:text-3xl font-light text-[var(--text-muted)]">
                                     {t('role')}
@@ -68,7 +67,7 @@ export function Hero() {
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                     transition={{ delay: 0.2, duration: 0.8 }}
-                                    className="text-lg md:text-xl text-[var(--text-muted)] max-w-2xl mx-auto leading-relaxed"
+                                    className="text-lg md:text-xl text-[var(--text-muted)] max-w-[520px] leading-relaxed"
                                 >
                                     {t('description')}
                                 </motion.p>
@@ -77,17 +76,17 @@ export function Hero() {
                                     initial={{ opacity: 0, scale: 0.9 }}
                                     animate={{ opacity: 1, scale: 1 }}
                                     transition={{ delay: 0.4, duration: 0.5 }}
-                                    className="flex flex-wrap items-center justify-center gap-6 pt-4"
+                                    className="flex flex-wrap items-center gap-6 pt-4"
                                 >
                                     <a
                                         href="#projects"
-                                        className="flex items-center gap-2 bg-[var(--accent)] text-white px-8 py-4 rounded-full font-medium hover:bg-opacity-90 transition-colors"
+                                        className="flex items-center gap-2 bg-[var(--accent)] text-white px-8 py-4 rounded-[4px] font-medium hover:bg-opacity-90 transition-colors"
                                     >
                                         {t('actions.viewProjects')} <ArrowRight className="w-4 h-4" />
                                     </a>
                                     <a
                                         href={`mailto:${resumeData.profile.contact.email}`}
-                                        className="px-8 py-4 rounded-full border border-[var(--border)] hover:bg-[var(--bg-2)] transition-colors flex items-center gap-2 text-white"
+                                        className="px-8 py-4 rounded-[4px] border border-[var(--border)] hover:bg-[var(--bg-2)] transition-colors flex items-center gap-2 text-white"
                                     >
                                         {t('actions.contact')}
                                     </a>

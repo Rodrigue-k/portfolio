@@ -57,7 +57,7 @@ export function Header() {
                     </div>
                     <a
                         href="mailto:koudakpo.rodrigue@gmail.com"
-                        className="text-sm font-medium bg-white text-black px-4 py-2 rounded-full hover:bg-opacity-90 transition-colors ml-2"
+                        className="text-sm font-mono border border-[var(--accent)] text-[var(--accent)] px-4 py-2 rounded-[2px] hover:bg-[var(--accent)] hover:text-white transition-all ml-2"
                     >
                         {t('nav.hireMe')}
                     </a>
