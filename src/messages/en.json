@@ -11,8 +11,8 @@
     },
     "Hero": {
         "greeting": "Hello, I'm",
-        "role": "Senior Application Developer",
-        "description": "Self-taught since 2019 and passionate about video games, specializing in mobile development with Flutter since 2022. Experienced in complex environments (gaming and mobile), capable of leading projects of all sizes.",
+        "role": "Flutter Developer · Mobile & Web",
+        "description": "Self-taught developer since 2019, specializing in Flutter for mobile and Next.js for web. Starting from video game development with Java and Unity, I moved towards cross-platform mobile applications. I have published several apps on the Play Store and App Store, developed solutions for clients in Togo and Ivory Coast, and led projects from end to end — from architecture to publication.",
         "location": "Agoe Cacaveli, Lome, Togo",
         "actions": {
             "contact": "Contact Me",
@@ -35,28 +35,28 @@
         "present": "Present",
         "items": {
             "item0": {
-                "role": "Application Developer",
+                "role": "Mobile & Web Application Developer",
                 "company": "Darollo Technologies Corporation (DTC)",
                 "location": "Togo",
-                "type": "Remote",
-                "period": "Dec 2024 - Present",
-                "description": "Participating in the design and development of mobile solutions with Flutter within a team."
+                "type": "Freelance",
+                "period": "Jan. 2025 - Present",
+                "description": "Development and maintenance of Flutter mobile applications. Autonomous management of a complex client project — Flutter mobile architecture + C# backend integration. Delivered projects: Application & Miabé Hackathon Website."
             },
             "item1": {
-                "role": "Data Processing Operator",
-                "company": "CAGECFI SA",
-                "location": "Lome, Togo",
-                "type": "On-site",
-                "period": "Mar 2025 - Jun 2025",
-                "description": "Land registry digitization project."
+                "role": "Mobile Application Developer",
+                "company": "Evee Engineering",
+                "location": "Ivory Coast",
+                "type": "Freelance",
+                "period": "Oct. 2025 - Present",
+                "description": "Taking over and finalizing an existing codebase until publication on App Store & Play Store. Complete redesign of an application after UX analysis — delivered in one week. 2 apps published on stores."
             },
             "item2": {
-                "role": "Freelance Mobile Developer",
-                "company": "Evee Engineering",
-                "location": "Cote d'Ivoire",
-                "type": "Freelance",
-                "period": "Deployed Projects",
-                "description": "Development and publication of iOS and Android applications (Grand Voyageur, Ticketto)."
+                "role": "Data Processing Operator",
+                "company": "CAGECFI SA — National Land Registry",
+                "location": "Lome, Togo",
+                "type": "On-site",
+                "period": "March 2025 - June 2025",
+                "description": "State project for digitizing land titles of the national land registry in Lome. Quality control and analysis of entered data."
             }
         }
     },
@@ -67,26 +67,28 @@
         "viewProject": "View Project",
         "items": {
             "item0": {
-                "title": "Woez (ex-ToRent)",
-                "description": "Suite of applications for accommodation and car rental management. Includes a mobile app and multiple management sites.",
-                "period": "Oct. 2024 – Jan. 2025"
+                "title": "Cherish",
+                "description": "Personalized greeting cards application for all occasions. Reminder notifications before each event. Micro-payment model €0.99 per card."
             },
             "item1": {
-                "title": "DukoaVote",
-                "description": "Digital polling and voting platform.",
-                "status": "In Progress"
+                "title": "S Contact",
+                "description": "Instant contact sharing via QR code. Info entry, QR generation and direct saving to phone's contacts."
             },
             "item2": {
-                "title": "H-Time",
-                "description": "Weekly schedule management application."
+                "title": "Woez",
+                "description": "Rental platform — Flutter mobile app + admin site + billing site + Supabase backend documentation."
             },
             "item3": {
-                "title": "I Fashion Wear",
-                "description": "Showcase site and management system for an eyewear shop."
+                "title": "EcoMap",
+                "description": "Collaborative mapping of dumpsites in Heat Map. Citizen reporting and tool for local environmental organizations."
             },
             "item4": {
-                "title": "Secteur BTP",
-                "description": "Website creation for a construction company."
+                "title": "I Fashion Wear",
+                "description": "Showcase site and management tool for an eyewear shop."
+            },
+            "item5": {
+                "title": "Make 10!",
+                "description": "Mathematical puzzle mobile game developed with Unity. Published on Play Store in 2023."
             }
         }
     },
