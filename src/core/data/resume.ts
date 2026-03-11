@@ -38,7 +38,7 @@ export const resumeData: PortfolioData = {
         },
         {
             role: "Opérateur de Traitement de Données",
-            company: "CAGECFI SA — Cadastre",
+            company: "CAGECFI SA — Cadastre de Lomé",
             location: "Lomé, Togo",
             type: "On-site",
             period: "Mars 2025 - Juin 2025",
