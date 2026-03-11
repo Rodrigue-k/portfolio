@@ -99,8 +99,8 @@
       display: grid;
       grid-template-columns: 1fr auto;
       align-items: end;
-      padding: 30px 40px 20px 40px;
-      /* Restored more padding */
+      padding: 26px 40px 14px 40px;
+      /* Reduced padding */
       border-bottom: 2.5px solid var(--accent);
       position: relative;
     }
@@ -206,8 +206,8 @@
     /* ── SIDEBAR ── */
     .sidebar {
       background: var(--sidebar);
-      padding: 24px 20px;
-      /* Restored more padding */
+      padding: 18px 20px 0 20px;
+      /* Reduced top and bottom */
       border-right: 1px solid var(--line);
       position: relative;
     }
@@ -224,8 +224,8 @@
 
     /* ── MAIN ── */
     .main {
-      padding: 24px 40px;
-      /* Restored more padding */
+      padding: 18px 40px 15px 40px;
+      /* Reduced top and bottom buffer */
     }
 
     /* ── SECTION TITLES ── */
@@ -235,8 +235,8 @@
       letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--accent);
-      margin-bottom: 12px;
-      /* Restored gap */
+      margin-bottom: 8px;
+      /* Tightened gap */
       display: flex;
       align-items: center;
       gap: 10px;
@@ -254,7 +254,8 @@
     }
 
     .sidebar .section-title {
-      margin-bottom: 12px;
+      margin-bottom: 8px;
+      /* Tightened */
       border-bottom: 1.5px solid var(--accent);
       padding-bottom: 4px;
       border-bottom-width: fit-content;
@@ -347,8 +348,8 @@
 
     /* ── EXPERIENCE ENTRIES ── */
     .exp-entry {
-      margin-bottom: 12px;
-      /* Restored gap */
+      margin-bottom: 10px;
+      /* Tightened */
     }
 
     .exp-header {
@@ -486,8 +487,8 @@
     .divider {
       height: 1px;
       background: var(--line);
-      margin: 18px 0;
-      /* Restored breathing room */
+      margin: 12px 0;
+      /* Reduced to fix overflow */
     }
 
     .lang-item {
@@ -513,7 +514,8 @@
       height: 3px;
       background: var(--line);
       border-radius: 3px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
+      /* Reduced from 12px */
       overflow: hidden;
     }
 
@@ -631,6 +633,7 @@
             <span class="tag">Firebase</span>
           </div>
         </div>
+
 
         <div class="divider"></div>
 
