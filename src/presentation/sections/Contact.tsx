@@ -13,19 +13,29 @@ export function Contact() {
     return (
         <Section id="contact" className="bg-gradient-to-t from-black to-card-bg/20">
             <Container>
-                <div className="max-w-3xl mx-auto text-center space-y-8">
+                <div className="max-w-3xl space-y-8">
                     <SectionHeader number="04" title={t('title')} />
 
+                    <motion.p
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.1, duration: 0.5 }}
+                        viewport={{ once: true }}
+                        className="font-display text-2xl md:text-3xl font-bold text-foreground"
+                    >
+                        Un projet en tête ? Parlons-en.
+                    </motion.p>
+
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2, duration: 0.5 }}
                         viewport={{ once: true }}
-                        className="flex flex-col sm:flex-row items-center justify-center gap-4"
+                        className="flex flex-col sm:flex-row items-start gap-4"
                     >
                         <a
                             href={`mailto:${resumeData.profile.contact.email}`}
-                            className="px-8 py-4 rounded-full bg-foreground text-background font-bold text-lg hover:bg-white/90 transition-colors flex items-center gap-3"
+                            className="px-8 py-4 rounded-[2px] bg-[var(--accent)] text-white font-bold hover:opacity-90 transition-all flex items-center gap-3"
                         >
                             {t('email')} <Mail className="w-5 h-5" />
                         </a>
@@ -33,7 +43,7 @@ export function Contact() {
                             href={resumeData.profile.contact.linkedin}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="px-8 py-4 rounded-full border border-card-border hover:bg-card-bg transition-colors flex items-center gap-3 text-foreground"
+                            className="px-8 py-4 rounded-[2px] border border-[var(--border)] hover:bg-white/5 transition-colors flex items-center gap-3 text-foreground"
                         >
                             {t('linkedin')} <Briefcase className="w-5 h-5" />
                         </a>

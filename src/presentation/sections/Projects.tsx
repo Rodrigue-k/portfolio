@@ -46,7 +46,7 @@ export function Projects() {
                                         {project.tags?.map((tag, tIdx) => (
                                             <span
                                                 key={tIdx}
-                                                className="font-mono text-[10px] bg-[rgba(193,68,14,0.1)] text-[var(--accent)] px-[8px] py-[3px] rounded-[2px]"
+                                                className="font-mono text-[11px] font-medium bg-[rgba(193,68,14,0.1)] text-[var(--accent)] px-[10px] py-[4px] rounded-[2px]"
                                             >
                                                 {tag}
                                             </span>

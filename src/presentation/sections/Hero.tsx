@@ -28,7 +28,7 @@ export function Hero() {
     }, [fullName]);
 
     return (
-        <Section className="min-h-[80vh] flex items-center justify-start pt-32 pb-8">
+        <Section className="min-h-[70vh] flex items-center justify-start pt-16 pb-8">
             <Container>
                 <div className="max-w-4xl space-y-6 flex flex-col items-start text-left">
                     {/* Prefix and typed name */}
