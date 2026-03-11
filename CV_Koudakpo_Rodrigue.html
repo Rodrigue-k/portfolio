@@ -98,10 +98,10 @@
     .header {
       display: grid;
       grid-template-columns: 1fr auto;
-      align-items: center;
-      padding: 25px 40px 12px 40px;
-      /* Further reduced vertical padding */
-      border-bottom: 3px solid var(--accent);
+      align-items: end;
+      padding: 30px 40px 20px 40px;
+      /* Restored more padding */
+      border-bottom: 2.5px solid var(--accent);
       position: relative;
     }
 
@@ -110,7 +110,8 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 6px;
+      width: 5px;
+      /* Restored to 5px */
       height: 100%;
       background: var(--accent);
     }
@@ -128,7 +129,8 @@
 
     .name-first {
       font-family: Georgia, 'Times New Roman', serif;
-      font-size: 36px;
+      font-size: 34px;
+      /* Restored to 34px */
       font-weight: 700;
       color: var(--ink);
       letter-spacing: -0.5px;
@@ -137,7 +139,8 @@
 
     .name-last {
       font-family: Georgia, 'Times New Roman', serif;
-      font-size: 36px;
+      font-size: 34px;
+      /* Restored to 34px */
       font-weight: 400;
       color: var(--accent);
       letter-spacing: -0.5px;
@@ -182,12 +185,13 @@
     .availability {
       background: var(--accent);
       color: white;
-      font-size: 10px;
-      font-weight: 700;
+      font-size: 9px;
+      /* Restored to 9px */
+      font-weight: 600;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      padding: 6px 14px;
-      border-radius: 4px;
+      padding: 5px 12px;
+      border-radius: 2px;
       display: inline-block;
     }
 
@@ -202,15 +206,26 @@
     /* ── SIDEBAR ── */
     .sidebar {
       background: var(--sidebar);
-      padding: 15px 20px;
-      /* Reduced top/bottom padding */
+      padding: 24px 20px;
+      /* Restored more padding */
       border-right: 1px solid var(--line);
+      position: relative;
+    }
+
+    .sidebar::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -1px;
+      width: 1px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--accent) 0%, var(--line) 40%);
     }
 
     /* ── MAIN ── */
     .main {
-      padding: 15px 40px 30px 40px;
-      /* Reduced top, kept bottom buffer */
+      padding: 24px 40px;
+      /* Restored more padding */
     }
 
     /* ── SECTION TITLES ── */
@@ -220,8 +235,8 @@
       letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--accent);
-      margin-bottom: 8px;
-      /* Further reduced gap */
+      margin-bottom: 12px;
+      /* Restored gap */
       display: flex;
       align-items: center;
       gap: 10px;
@@ -312,11 +327,9 @@
       background: white;
       border: 1px solid var(--line);
       border-left: 4px solid var(--accent);
-      padding: 6px 10px;
-      /* Thinner badges */
+      padding: 8px 10px;
       border-radius: 4px;
-      margin-bottom: 8px;
-      /* Reduced gap */
+      margin-bottom: 10px;
       transition: all 0.2s;
     }
 
@@ -334,8 +347,8 @@
 
     /* ── EXPERIENCE ENTRIES ── */
     .exp-entry {
-      margin-bottom: 18px;
-      /* Reduced from 24px */
+      margin-bottom: 12px;
+      /* Restored gap */
     }
 
     .exp-header {
@@ -346,8 +359,9 @@
     }
 
     .exp-title {
-      font-size: 13px;
-      font-weight: 700;
+      font-size: 11.5px;
+      /* Restored to 11.5px */
+      font-weight: 600;
       color: var(--ink);
     }
 
@@ -389,14 +403,12 @@
     }
 
     .bullets li::before {
-      content: '';
+      content: '▸';
       position: absolute;
-      left: 4px;
-      top: 7px;
-      width: 5px;
-      height: 5px;
-      background: var(--accent);
-      border-radius: 50%;
+      left: 0;
+      color: var(--accent);
+      font-size: 9px;
+      top: 1px;
     }
 
     /* ── HIGHLIGHT PILL ── */
@@ -448,11 +460,11 @@
     }
 
     .store-badge {
-      font-size: 8px;
-      font-weight: 800;
-      padding: 2px 6px;
-      border-radius: 3px;
-      text-transform: uppercase;
+      font-size: 7.5px;
+      font-weight: 700;
+      padding: 1px 4px;
+      border-radius: 2px;
+      letter-spacing: 0.5px;
     }
 
     .store-badge.ios {
@@ -474,8 +486,8 @@
     .divider {
       height: 1px;
       background: var(--line);
-      margin: 15px 0;
-      /* Reduced from 20px */
+      margin: 18px 0;
+      /* Restored breathing room */
     }
 
     .lang-item {
@@ -545,6 +557,8 @@
             </svg>
             Agoe Cacaveli, Lomé — Togo
           </div>
+        </div>
+        <div class="contact-row" style="margin-top: 5px;">
           <div class="contact-item">
             <svg viewBox="0 0 24 24">
               <path
@@ -581,6 +595,7 @@
             <span class="tag dark">Dart</span>
             <span class="tag">Firebase</span>
             <span class="tag">Supabase</span>
+            <span class="tag">Appwrite</span>
           </div>
         </div>
 
@@ -607,10 +622,13 @@
         </div>
 
         <div class="skill-group">
-          <div class="skill-label">Publication</div>
+          <div class="skill-label">Déploiement</div>
           <div class="skill-tags">
             <span class="tag dark">App Store</span>
             <span class="tag dark">Play Store</span>
+            <span class="tag">Vercel</span>
+            <span class="tag">Netlify</span>
+            <span class="tag">Firebase</span>
           </div>
         </div>
 
