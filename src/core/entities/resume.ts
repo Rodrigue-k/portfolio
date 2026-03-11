@@ -31,6 +31,10 @@ export interface Project {
     status?: string;
     description: string;
     tags: string[];
+    website?: string;
+    github?: string;
+    playStore?: string;
+    hideLink?: boolean;
 }
 
 export interface PortfolioData {

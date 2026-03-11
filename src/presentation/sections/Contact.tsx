@@ -13,8 +13,8 @@ export function Contact() {
     return (
         <Section id="contact" className="bg-gradient-to-t from-black to-card-bg/20">
             <Container>
-                <div className="max-w-3xl space-y-8">
-                    <SectionHeader number="04" title={t('title')} />
+                <div className="max-w-3xl space-y-8 flex flex-col items-center md:items-start text-center md:text-left mx-auto md:mx-0">
+                    <SectionHeader number="04" title={t('title')} centeredMobile />
 
                     <motion.p
                         initial={{ opacity: 0, y: 10 }}
@@ -31,7 +31,7 @@ export function Contact() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2, duration: 0.5 }}
                         viewport={{ once: true }}
-                        className="flex flex-col sm:flex-row items-start gap-4"
+                        className="flex flex-col sm:flex-row items-center md:items-start gap-4"
                     >
                         <a
                             href={`mailto:${resumeData.profile.contact.email}`}

@@ -28,7 +28,7 @@ export function Hero() {
     }, [fullName]);
 
     return (
-        <Section className="min-h-screen h-screen flex flex-col justify-center items-center pt-20 pb-8">
+        <Section className="min-h-[100dvh] flex flex-col justify-center items-center pt-20 pb-8">
             <Container>
                 <div className="max-w-4xl space-y-6 flex flex-col items-start text-left mt-[60px]">
                     {/* Prefix and typed name */}
@@ -40,7 +40,7 @@ export function Hero() {
                         >
                             &gt;_ {t('greeting')}
                         </motion.div>
-                        <h1 className="text-[clamp(2.5rem,6vw,5rem)] font-bold tracking-tight text-foreground font-display flex items-center">
+                        <h1 className="text-[clamp(2rem,8vw,3rem)] md:text-[clamp(2.5rem,6vw,5rem)] font-bold tracking-tight text-foreground font-display flex items-center">
                             {typedName}
                             <motion.span
                                 animate={{ opacity: [1, 0] }}
@@ -76,19 +76,28 @@ export function Hero() {
                                     initial={{ opacity: 0, scale: 0.9 }}
                                     animate={{ opacity: 1, scale: 1 }}
                                     transition={{ delay: 0.4, duration: 0.5 }}
-                                    className="flex flex-wrap items-center gap-6 pt-4"
+                                    className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-6 pt-4 w-full sm:w-auto"
                                 >
+                                    <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">
                                     <a
                                         href="#projects"
-                                        className="flex items-center gap-2 bg-[var(--accent)] text-white px-8 py-4 rounded-[4px] font-medium hover:bg-opacity-90 transition-colors"
+                                        className="flex items-center justify-center gap-2 bg-[var(--accent)] text-white w-full sm:w-auto px-8 py-4 rounded-[4px] font-medium hover:bg-opacity-90 transition-colors"
                                     >
                                         {t('actions.viewProjects')} <ArrowRight className="w-4 h-4" />
                                     </a>
                                     <a
                                         href={`mailto:${resumeData.profile.contact.email}`}
-                                        className="px-8 py-4 rounded-[4px] border border-[var(--border)] hover:bg-[var(--bg-2)] transition-colors flex items-center gap-2 text-white"
+                                        className="px-8 py-4 w-full sm:w-auto text-center rounded-[4px] border border-[var(--border)] hover:bg-[var(--bg-2)] transition-colors flex items-center justify-center gap-2 text-white"
                                     >
                                         {t('actions.contact')}
+                                    </a>
+                                    </div>
+                                    <a 
+                                        href="/CV_Koudakpo_Rodrigue.pdf" 
+                                        download 
+                                        className="font-mono text-[12px] hover:text-[var(--accent)] transition-colors mt-2 sm:mt-0 px-2 py-4 animate-shimmer-cv"
+                                    >
+                                        Télécharger CV ↓
                                     </a>
                                 </motion.div>
                             </motion.div>

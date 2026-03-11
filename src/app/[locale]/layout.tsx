@@ -12,12 +12,14 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Rodrigue KOUDAKPO - Senior Application Developer",
-  description: "Senior Developer Portfolio. Specialized in Flutter and Mobile Solutions.",
-  keywords: "Flutter, Dart, Mobile Development, iOS, Android, Senior Developer",
+  title: "Komi Rodrigue Koudakpo - Flutter Developer · Mobile & Web",
+  description: "Portfolio de Komi Rodrigue Koudakpo, Développeur d'applications autodidacte spécialisé en Flutter pour le mobile et Next.js pour le web.",
+  keywords: "Flutter, Dart, Next.js, TypeScript, Mobile Development, Web Development, iOS, Android",
   icons: {
-    icon: "/logo.png",
-    apple: "/logo.png",
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" }
+    ],
+    apple: "/favicon.svg",
   },
 };
 
@@ -33,7 +35,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning className="dark">
-      <body className={`${inter.variable} antialiased transition-colors duration-300`}>
+      <body className={`${inter.variable} antialiased transition-colors duration-300 overflow-x-hidden`}>
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>

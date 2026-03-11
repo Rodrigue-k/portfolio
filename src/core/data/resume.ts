@@ -16,7 +16,7 @@ export const resumeData: PortfolioData = {
     skills: {
         mobile: ["Flutter", "Dart", "Firebase", "Supabase", "Android", "iOS"],
         languages: ["Python", "C#", "Java", "JavaScript", "TypeScript"],
-        other: ["Next.js", "Git", "Figma", "Unity", "Clean Architecture", "System Design"],
+        other: ["Next.js", "Git", "Figma", "Unity", "Blender", "Clean Architecture", "System Design"],
         languagesSpoken: ["Français", "Anglais", "Ewe"]
     },
     experience: [
@@ -42,39 +42,46 @@ export const resumeData: PortfolioData = {
             location: "Lomé, Togo",
             type: "On-site",
             period: "Mars 2025 - Juin 2025",
-            description: "Projet étatique de numérisation des titres fonciers du cadastre national de Lomé. Contrôle qualité et analyse des données saisies."
+            description: "Projet étatique de numérisation des titres fonciers du cadastre de Lomé. Contrôle qualité et analyse des données saisies."
         }
     ],
     projects: [
         {
             title: "Cherish",
             description: "Application de cartes de vœux personnalisées pour toutes les occasions. Notifications de rappel avant chaque événement. Modèle micro-paiement 0,99€ par carte.",
-            tags: ["Flutter", "Android", "iOS"]
+            tags: ["Flutter", "Android", "iOS"],
+            website: "https://cherish-app.web.app/" 
         },
         {
             title: "S Contact",
             description: "Partage de contacts instantané par QR code. Saisie des infos, génération QR et enregistrement direct dans les contacts du téléphone.",
-            tags: ["Flutter", "Android"]
+            tags: ["Flutter", "Android"],
+            github: "https://github.com/Rodrigue-k/s_contact",
+            playStore: "https://play.google.com/store/apps/details?id=com.koudatek.s_contact&pcampaignid=web_share"
         },
         {
             title: "Woez",
-            description: "Plateforme de location — app mobile Flutter + site admin + site de facturation + documentation backend Supabase.",
-            tags: ["Flutter", "Next.js", "Supabase", "TypeScript"]
+            description: "Écosystème complet de location — app mobile Flutter, site de gestion pour agents immobiliers et location de voiture, site de facturation, documentation backend. Stack : Flutter, Next.js, TypeScript, Supabase.",
+            tags: ["Flutter", "Next.js", "Supabase", "TypeScript"],
+            website: "https://pro.woez-app.com/"
         },
         {
             title: "EcoMap",
             description: "Cartographie collaborative des dépotoirs en Heat Map. Signalement citoyen et outil pour organisations environnementales locales.",
-            tags: ["Flutter", "Android", "Maps"]
+            tags: ["Flutter", "Android", "Maps"],
+            github: "https://github.com/Rodrigue-k/ecomap"
         },
         {
             title: "I Fashion Wear",
             description: "Site vitrine et outil de gestion pour une boutique de lunettes.",
-            tags: ["Next.js", "TypeScript", "Supabase"]
+            tags: ["Next.js", "TypeScript", "AppWrite"],
+            hideLink: true
         },
         {
             title: "Make 10!",
             description: "Jeu mobile de puzzle mathématique développé avec Unity. Publié sur Play Store en 2023.",
-            tags: ["Unity", "Android"]
+            tags: ["Unity", "Android"],
+            playStore: "https://play.google.com/store/apps/details?id=com.latex.make&pcampaignid=web_share"
         }
     ],
     education: [

@@ -63,32 +63,39 @@
     "Projects": {
         "title": "Featured Projects",
         "subtitle": "A selection of my recent work in mobile and web development.",
-        "viewCode": "View Code",
-        "viewProject": "View Project",
+        "viewCode": "GitHub",
+        "viewProject": "View Website",
+        "playStore": "Play Store",
         "items": {
             "item0": {
                 "title": "Cherish",
-                "description": "Personalized greeting cards application for all occasions. Reminder notifications before each event. Micro-payment model €0.99 per card."
+                "description": "Personalized greeting cards application for all occasions...",
+                "fullDescription": "Personalized greeting cards application for all occasions. Users can add events and receive reminder notifications before each important event (birthdays, holidays, etc.). Business model based on a €0.99 micro-payment per high-resolution card download."
             },
             "item1": {
                 "title": "S Contact",
-                "description": "Instant contact sharing via QR code. Info entry, QR generation and direct saving to phone's contacts."
+                "description": "Instant contact sharing via QR code...",
+                "fullDescription": "Instant and contactless contact sharing. The application allows you to enter your own information, generate a QR code, and when scanned by a third party, directly and automatically save it to the phone's address book."
             },
             "item2": {
                 "title": "Woez",
-                "description": "Rental platform — Flutter mobile app + admin site + billing site + Supabase backend documentation."
+                "description": "Complete rental ecosystem — Flutter mobile app, management site for real estate agents and car rentals, billing site, backend documentation.",
+                "fullDescription": "Complete rental ecosystem — Flutter mobile app, management site for real estate agents and car rentals, billing site, backend documentation. Stack: Flutter, Next.js, TypeScript, Supabase."
             },
             "item3": {
                 "title": "EcoMap",
-                "description": "Collaborative mapping of dumpsites in Heat Map. Citizen reporting and tool for local environmental organizations."
+                "description": "Collaborative mapping of dumpsites in Heat Map...",
+                "fullDescription": "A citizen ecological initiative for mapping wild dumpsites as a Heat Map. The application allows the population to easily report polluted areas via geolocation to assist local environmental organizations in waste management."
             },
             "item4": {
                 "title": "I Fashion Wear",
-                "description": "Showcase site and management tool for an eyewear shop."
+                "description": "Showcase site and management tool for an eyewear shop.",
+                "fullDescription": "Design of a modern and high-performance showcase site and management dashboard for an online sunglasses and eyewear shop, including inventory, product catalog, order management, and customer support."
             },
             "item5": {
                 "title": "Make 10!",
-                "description": "Mathematical puzzle mobile game developed with Unity. Published on Play Store in 2023."
+                "description": "Mathematical puzzle mobile game developed with Unity...",
+                "fullDescription": "A mathematical puzzle game developed solo in the Unity engine from scratch. The goal is to combine number blocks to reach the sum of 10. Includes over 300 levels with progressive difficulty. Successfully published on the Google Play Store."
             }
         }
     },
