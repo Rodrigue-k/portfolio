@@ -28,9 +28,9 @@ export function Hero() {
     }, [fullName]);
 
     return (
-        <Section className="min-h-[70vh] flex items-center justify-start pt-28 pb-8">
+        <Section className="min-h-screen h-screen flex flex-col justify-center items-center pt-20 pb-8">
             <Container>
-                <div className="max-w-4xl space-y-6 flex flex-col items-start text-left">
+                <div className="max-w-4xl space-y-6 flex flex-col items-start text-left mt-[60px]">
                     {/* Prefix and typed name */}
                     <div>
                         <motion.div

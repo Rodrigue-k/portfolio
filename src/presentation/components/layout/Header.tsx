@@ -44,11 +44,11 @@ export function Header() {
         <>
             <header
                 className={cn(
-                    "fixed top-0 left-0 right-0 z-40 transition-all duration-300 py-4 bg-[#0A0A0F]/95 backdrop-blur-md",
+                    "fixed top-0 left-0 right-0 z-40 transition-all duration-300 py-5 bg-[#0A0A0F]/95 backdrop-blur-md",
                     scrolled ? "border-b border-[var(--accent)]" : "border-b border-transparent"
                 )}
             >
-                <Container className="flex items-center justify-between">
+                <Container className="flex items-center justify-between px-8">
                     <a href="#" className="flex items-center gap-4">
                         <span className="font-mono font-bold text-xl leading-none text-foreground">RK</span>
                         <span className="h-5 w-[2px] bg-[var(--accent)]"></span>
