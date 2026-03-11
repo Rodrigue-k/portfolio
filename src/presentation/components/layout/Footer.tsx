@@ -3,7 +3,8 @@
 import { resumeData } from "@/core/data/resume";
 import { Container } from "../../components/ui/Layout";
 import { useTranslations } from "next-intl";
-import { Linkedin, Github, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
+import { GithubIcon, LinkedinIcon } from "../ui/BrandIcons";
 
 export function Footer() {
     const t = useTranslations('Footer');
@@ -22,10 +23,10 @@ export function Footer() {
 
                 <div className="flex items-center gap-4 order-1 md:order-3">
                     <a href={resumeData.profile.contact.linkedin} target="_blank" rel="noopener noreferrer" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">
-                        <Linkedin className="w-4 h-4" />
+                        <LinkedinIcon className="w-4 h-4" />
                     </a>
                     <a href={resumeData.profile.contact.github} target="_blank" rel="noopener noreferrer" className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">
-                        <Github className="w-4 h-4" />
+                        <GithubIcon className="w-4 h-4" />
                     </a>
                     <a href={`mailto:${resumeData.profile.contact.email}`} className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">
                         <Mail className="w-4 h-4" />
