@@ -66,16 +66,17 @@
         "viewCode": "GitHub",
         "viewProject": "View Website",
         "playStore": "Play Store",
+        "associatedWith": "Associated with",
         "items": {
             "item0": {
+                "title": "Grand Voyageur",
+                "description": "Fidelity and companion application for frequent travelers...",
+                "fullDescription": "Fidelity and companion application for frequent travelers. It facilitates access to services, travel tracking, and management of benefits related to traveler status."
+            },
+            "item1": {
                 "title": "Cherish",
                 "description": "Personalized greeting cards application for all occasions...",
                 "fullDescription": "Personalized greeting cards application for all occasions. Users can add events and receive reminder notifications before each important event (birthdays, holidays, etc.). Business model based on a €0.99 micro-payment per high-resolution card download."
-            },
-            "item1": {
-                "title": "S Contact",
-                "description": "Instant contact sharing via QR code...",
-                "fullDescription": "Instant and contactless contact sharing. The application allows you to enter your own information, generate a QR code, and when scanned by a third party, directly and automatically save it to the phone's address book."
             },
             "item2": {
                 "title": "Woez",
@@ -83,16 +84,26 @@
                 "fullDescription": "Complete rental ecosystem — Flutter mobile app, management site for real estate agents and car rentals, billing site, backend documentation. Stack: Flutter, Next.js, TypeScript, Supabase."
             },
             "item3": {
+                "title": "Miabé Hackathon",
+                "description": "Official solution for Miabé Hackathon — Mobile app and web platform.",
+                "fullDescription": "Design and development of the official solution for Miabé Hackathon. Includes a Flutter mobile application for participants and organizers, as well as a dedicated web platform. Robust architecture with integration of a high-performance C# backend."
+            },
+            "item4": {
+                "title": "S Contact",
+                "description": "Instant contact sharing via QR code...",
+                "fullDescription": "Instant and contactless contact sharing. The application allows you to generate a dynamic QR code containing your professional information, allowing a direct and automatic save to the recipient's address book."
+            },
+            "item5": {
                 "title": "EcoMap",
                 "description": "Collaborative mapping of dumpsites in Heat Map...",
                 "fullDescription": "A citizen ecological initiative for mapping wild dumpsites as a Heat Map. The application allows the population to easily report polluted areas via geolocation to assist local environmental organizations in waste management."
             },
-            "item4": {
+            "item6": {
                 "title": "I Fashion Wear",
                 "description": "Showcase site and management tool for an eyewear shop.",
                 "fullDescription": "Design of a modern and high-performance showcase site and management dashboard for an online sunglasses and eyewear shop, including inventory, product catalog, order management, and customer support."
             },
-            "item5": {
+            "item7": {
                 "title": "Make 10!",
                 "description": "Mathematical puzzle mobile game developed with Unity...",
                 "fullDescription": "A mathematical puzzle game developed solo in the Unity engine from scratch. The goal is to combine number blocks to reach the sum of 10. Includes over 300 levels with progressive difficulty. Successfully published on the Google Play Store."

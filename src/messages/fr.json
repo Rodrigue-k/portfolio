@@ -61,38 +61,49 @@
         }
     },
     "Projects": {
-        "title": "Projets En Vedette",
+        "title": "Projets Phares",
         "subtitle": "Une sélection de mes travaux récents en développement mobile et web.",
-        "viewCode": "GitHub",
+        "viewCode": "Code Source",
         "viewProject": "Voir le site",
         "playStore": "Play Store",
+        "associatedWith": "Associé à",
         "items": {
             "item0": {
+                "title": "Grand Voyageur",
+                "description": "Application pour les grands voyageurs, offrant des services de fidélité et d'accompagnement...",
+                "fullDescription": "Application de fidélité et d'accompagnement pour les grands voyageurs. Elle facilite l'accès aux services, le suivi des voyages et la gestion des avantages liés au statut de voyageur."
+            },
+            "item1": {
                 "title": "Cherish",
                 "description": "Application de cartes de vœux personnalisées pour toutes les occasions...",
                 "fullDescription": "Application de cartes de vœux personnalisées pour toutes les occasions. Les utilisateurs peuvent ajouter des événements et recevoir des notifications de rappel avant chaque événement important (anniversaires, fêtes, etc.). Modèle économique basé sur un micro-paiement de 0,99€ par téléchargement de carte haute résolution."
             },
-            "item1": {
-                "title": "S Contact",
-                "description": "Partage de contacts instantané par QR code...",
-                "fullDescription": "Partage de contacts instantané et sans contact physique. L'application permet de saisir ses propres informations, de générer un code QR et, lors du scan par un tiers, de l'enregistrer directement et automatiquement dans le carnet d'adresses du téléphone."
-            },
             "item2": {
                 "title": "Woez",
-                "description": "Écosystème complet de location — app mobile Flutter, site de gestion pour agents immobiliers et location de voiture, site de facturation, documentation backend.",
+                "description": "Écosystème complet de location — app mobile Flutter, site de gestion pour agents immobiliers/loueurs et site de facturation.",
                 "fullDescription": "Écosystème complet de location — app mobile Flutter, site de gestion pour agents immobiliers et location de voiture, site de facturation, documentation backend. Stack : Flutter, Next.js, TypeScript, Supabase."
             },
             "item3": {
-                "title": "EcoMap",
-                "description": "Cartographie collaborative des dépotoirs sauvages en Heat Map...",
-                "fullDescription": "Une initiative écologique citoyenne pour la cartographie des dépotoirs sauvages sous forme de Heat Map. L'application permet à la population de signaler facilement les zones polluées par géolocalisation pour assister les organisations environnementales locales dans la gestion des déchets."
+                "title": "Miabé Hackathon",
+                "description": "Solution officielle pour le Miabé Hackathon — App mobile et plateforme web.",
+                "fullDescription": "Conception et développement de la solution officielle pour le Miabé Hackathon. Comprend une application mobile Flutter pour les participants et les organisateurs, ainsi qu'une plateforme web dédiée. Architecture robuste avec intégration d'un backend performant en C#."
             },
             "item4": {
+                "title": "S Contact",
+                "description": "Solution de partage de contacts par QR Code dynamique avec intégration automatique au répertoire.",
+                "fullDescription": "Solution de partage de contacts instantané et sans contact physique. L'application permet de générer un code QR dynamique contenant vos informations professionnelles, permettant une sauvegarde directe et automatique dans le carnet d'adresses du destinataire."
+            },
+            "item5": {
+                "title": "EcoMap",
+                "description": "Système complet de gestion de ramassage d'ordures — App client avec paiements Stripe et Dashboard logistique.",
+                "fullDescription": "Solution SaaS complète pour la gestion du ramassage d'ordures. Comprend une application client pour le suivi des abonnements et paiements (Stripe), et un dashboard administrateur pour la gestion des zones de collecte, le suivi GPS des camions et l'optimisation des tournées."
+            },
+            "item6": {
                 "title": "I Fashion Wear",
                 "description": "Site vitrine et outil B2B de gestion pour une boutique de lunettes...",
                 "fullDescription": "Conception d'un site vitrine moderne et performant et du tableau de bord de gestion pour une boutique de lunettes de soleil et d'optique en ligne, incluant l'inventaire, le catalogue de produits, la gestion de commandes et du support client."
             },
-            "item5": {
+            "item7": {
                 "title": "Make 10!",
                 "description": "Jeu mobile de puzzle mathématique avec plus de 300 niveaux...",
                 "fullDescription": "Un jeu de réflexion mathématique développé en solo sur le moteur Unity depuis zéro. Le but est de combiner des blocs de chiffres pour obtenir la somme de 10. Comprend plus de 300 niveaux avec une difficulté progressive. Publié en succès sur le Google Play Store."

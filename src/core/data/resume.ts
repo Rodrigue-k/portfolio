@@ -47,29 +47,49 @@ export const resumeData: PortfolioData = {
     ],
     projects: [
         {
+            title: "Grand Voyageur",
+            description: "Application de fidélité et d'accompagnement pour les grands voyageurs.",
+            tags: ["Flutter", "Android", "iOS"],
+            image: "/gv.png",
+            gallery: ["/gv.png", "/gv.png", "/gv.png", "/gv.png", "/gv.png"],
+            associatedCompany: "Evee Engineering"
+        },
+        {
             title: "Cherish",
             description: "Application de cartes de vœux personnalisées pour toutes les occasions. Notifications de rappel avant chaque événement. Modèle micro-paiement 0,99€ par carte.",
             tags: ["Flutter", "Android", "iOS"],
-            website: "https://cherish-app.web.app/" 
-        },
-        {
-            title: "S Contact",
-            description: "Partage de contacts instantané par QR code. Saisie des infos, génération QR et enregistrement direct dans les contacts du téléphone.",
-            tags: ["Flutter", "Android"],
-            github: "https://github.com/Rodrigue-k/s_contact",
-            playStore: "https://play.google.com/store/apps/details?id=com.koudatek.s_contact&pcampaignid=web_share"
+            website: "https://cherish-app.web.app/",
+            image: "/cherish.png"
         },
         {
             title: "Woez",
             description: "Écosystème complet de location — app mobile Flutter, site de gestion pour agents immobiliers et location de voiture, site de facturation, documentation backend. Stack : Flutter, Next.js, TypeScript, Supabase.",
-            tags: ["Flutter", "Next.js", "Supabase", "TypeScript"],
-            website: "https://pro.woez-app.com/"
+            tags: ["Flutter", "Next.js", "Supabase", "TypeScript", "TailwindCSS"],
+            website: "https://pro.woez-app.com/",
+            image: "/woez.png"
+        },
+        {
+            title: "Miabé Hackathon",
+            description: "Solution officielle pour le Miabé Hackathon — application mobile de gestion d'événements et plateforme web dédiée. Architecture Flutter & intégration Backend C#.",
+            tags: ["Flutter", "C#", "ASP.NET Core", "SQL Server", "Web Admin"],
+            website: "https://miabe-hackathon.web.app/",
+            image: "/mbhackathon.png",
+            associatedCompany: "Darollo Technologies Corporation (DTC)"
+        },
+        {
+            title: "S Contact",
+            description: "Solution de partage de contacts instantané via QR Code dynamique — saisie auto, génération de vCard et intégration directe dans le répertoire.",
+            tags: ["Flutter", "Dart", "QR Engine", "Android", "iOS"],
+            github: "https://github.com/Rodrigue-k/s_contact",
+            playStore: "https://play.google.com/store/apps/details?id=com.koudatek.s_contact&pcampaignid=web_share",
+            image: "/s-contact.png"
         },
         {
             title: "EcoMap",
-            description: "Cartographie collaborative des dépotoirs en Heat Map. Signalement citoyen et outil pour organisations environnementales locales.",
-            tags: ["Flutter", "Android", "Maps"],
-            github: "https://github.com/Rodrigue-k/ecomap"
+            description: "Solution complète de gestion du ramassage d'ordures — App client (abonnements/paiements Stripe) et Dashboard Admin pour la logistique des tournées.",
+            tags: ["Flutter", "Firebase", "Google Maps API", "Stripe", "Web Admin"],
+            github: "https://github.com/Rodrigue-k/EcoMap",
+            image: "/ecomap.png"
         },
         {
             title: "I Fashion Wear",

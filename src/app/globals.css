@@ -97,3 +97,15 @@ h1, h2, h3 {
   background-clip: text;
   animation: shimmer-cv 2.5s linear infinite;
 }
+
+/* Robustly hide scrollbars for .scrollbar-hide across all browsers */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none !important;  /* IE and Edge */
+  scrollbar-width: none !important;  /* Firefox */
+}

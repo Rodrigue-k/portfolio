@@ -30,11 +30,15 @@ export interface Project {
     period?: string;
     status?: string;
     description: string;
+    descriptionFr?: string;
     tags: string[];
+    image?: string;
+    gallery?: string[];
     website?: string;
     github?: string;
     playStore?: string;
     hideLink?: boolean;
+    associatedCompany?: string;
 }
 
 export interface PortfolioData {

@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { resumeData } from "@/core/data/resume";
 import { Container, Section } from "@/presentation/components/ui/Layout";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, X, ExternalLink } from "lucide-react";
+import { ArrowUpRight, X, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 import { GithubIcon } from "@/presentation/components/ui/BrandIcons";
 import { useTranslations } from "next-intl";
 import { SectionHeader } from "@/presentation/components/ui/SectionHeader";
@@ -12,6 +12,57 @@ import { SectionHeader } from "@/presentation/components/ui/SectionHeader";
 export function Projects() {
     const t = useTranslations('Projects');
     const [selectedProject, setSelectedProject] = useState<number | null>(null);
+    const galleryRef = useRef<HTMLDivElement>(null);
+    const [canScrollLeft, setCanScrollLeft] = useState(false);
+    const [canScrollRight, setCanScrollRight] = useState(false);
+    const [isScrollable, setIsScrollable] = useState(false);
+
+    const [scrollProgress, setScrollProgress] = useState(0);
+
+    const checkScroll = () => {
+        if (galleryRef.current) {
+            const { scrollLeft, scrollWidth, clientWidth } = galleryRef.current;
+            setCanScrollLeft(scrollLeft > 10);
+            setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 10);
+            
+            // Calculate progress
+            const maxScroll = scrollWidth - clientWidth;
+            setIsScrollable(maxScroll > 40); // Increased threshold to avoid edge cases with negative margins
+            if (maxScroll > 0) {
+                setScrollProgress((scrollLeft / maxScroll) * 100);
+            }
+        }
+    };
+
+    // Check scroll on mount, when selected project changes, and on window resize
+    useEffect(() => {
+        if (selectedProject !== null) {
+            // Initial check
+            setTimeout(checkScroll, 100);
+
+            // Set up ResizeObserver for the gallery
+            const observer = new ResizeObserver(() => {
+                checkScroll();
+            });
+
+            if (galleryRef.current) {
+                observer.observe(galleryRef.current);
+            }
+
+            window.addEventListener('resize', checkScroll);
+            return () => {
+                observer.disconnect();
+                window.removeEventListener('resize', checkScroll);
+            };
+        }
+    }, [selectedProject]);
+
+    const scrollGallery = (direction: 'left' | 'right') => {
+        if (galleryRef.current) {
+            const amount = direction === 'left' ? -galleryRef.current.clientWidth * 0.7 : galleryRef.current.clientWidth * 0.7;
+            galleryRef.current.scrollBy({ left: amount, behavior: 'smooth' });
+        }
+    };
 
     return (
         <Section id="projects" className="bg-card-bg/20">
@@ -19,138 +70,381 @@ export function Projects() {
                 <div className="space-y-12">
                     <SectionHeader number="03" title={t('title')} />
 
-                    <div className="grid md:grid-cols-2 gap-8">
-                        {resumeData.projects.map((project, idx) => (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {resumeData.projects.map((project, idx) => {
+                            const isFeatured = idx === 0;
+                            
+                            return (
                             <motion.div
                                 key={idx}
+                                layoutId={`card-${idx}`}
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: idx * 0.1, duration: 0.5 }}
                                 viewport={{ once: true }}
                                 onClick={() => setSelectedProject(idx)}
-                                className="group relative bg-[var(--bg-2)] border border-[var(--border)] rounded-2xl overflow-hidden transition-all duration-300 hover:border-[var(--accent)] hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(193,68,14,0.15)] h-full flex flex-col cursor-pointer"
+                                className={`group relative transition-all duration-700 hover:-translate-y-2 flex cursor-pointer
+                                    ${isFeatured 
+                                        ? 'col-span-1 md:col-span-2 flex-col md:flex-row md:h-[500px] mt-24 mb-32' 
+                                        : 'col-span-1 flex-col h-full mb-12'
+                                    }
+                                `}
                             >
-                                <div className="p-8 space-y-6 flex-1 flex flex-col relative z-10">
-                                    <div className="flex justify-between items-start">
-                                        <h3 className="font-display text-2xl font-bold text-foreground">
-                                            {t(`items.item${idx}.title`)}
-                                        </h3>
-                                        {project.status && (
-                                            <span className="px-2 py-1 text-xs rounded-full bg-blue-500/20 text-blue-200 border border-blue-500/30">
-                                                {t(`items.item${idx}.status`)}
-                                            </span>
-                                        )}
-                                    </div>
+                                {isFeatured ? (
+                                    <>
+                                        {/* Background Layer with Overflow Hidden (for Blobs and Borders) */}
+                                        <div className="absolute inset-0 z-0 bg-[#080808] rounded-3xl border border-white/5 shadow-2xl overflow-hidden group-hover:border-[var(--accent)]/30 transition-colors duration-700">
+                                            <div className="absolute inset-0 bg-[#050505]" />
+                                            <div className="absolute -top-[20%] -right-[10%] w-[500px] h-[500px] bg-[var(--accent)]/30 rounded-full blur-[120px] mix-blend-screen" />
+                                            <div className="absolute -bottom-[20%] -left-[10%] w-[600px] h-[600px] bg-purple-600/20 rounded-full blur-[130px] mix-blend-screen" />
+                                            
+                                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-[8rem] md:text-[14rem] font-black text-white/[0.02] tracking-tighter whitespace-nowrap select-none pointer-events-none">
+                                                {t(`items.item${idx}.title`).toUpperCase()}
+                                            </div>
+                                        </div>
 
-                                    <p className="text-[var(--text-muted)] leading-relaxed flex-1">
-                                        {t(`items.item${idx}.description`)}
-                                    </p>
+                                        {/* Content Side */}
+                                        <div className="p-8 md:p-14 lg:p-16 flex-1 flex flex-col justify-center relative z-20 w-full md:w-1/2 pointer-events-auto">
+                                            <div className="mb-6 flex items-center gap-3">
+                                                <span className="flex h-3 w-3 relative">
+                                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--accent)] opacity-75"></span>
+                                                    <span className="relative inline-flex rounded-full h-3 w-3 bg-[var(--accent)]"></span>
+                                                </span>
+                                                <span className="text-[var(--accent)] font-mono text-sm uppercase tracking-[0.2em] font-bold">
+                                                    Projet Phare
+                                                </span>
+                                            </div>
 
-                                    <div className="flex flex-wrap gap-2 pt-4 pr-8">
-                                        {project.tags?.map((tag, tIdx) => (
-                                            <span
-                                                key={tIdx}
-                                                className="font-mono text-[11px] font-medium bg-[rgba(193,68,14,0.1)] text-[var(--accent)] px-[10px] py-[4px] rounded-[2px]"
-                                            >
-                                                {tag}
-                                            </span>
-                                        ))}
+                                            <motion.h3 layoutId={`title-${idx}`} className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tighter mb-4 drop-shadow-md">
+                                                {t(`items.item${idx}.title`)}
+                                            </motion.h3>
+
+                                            <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-lg font-light mb-8">
+                                                {t(`items.item${idx}.description`)}
+                                            </p>
+
+                                            <div className="flex flex-wrap gap-2 mt-auto">
+                                                {project.tags?.map((tag, tIdx) => (
+                                                    <span
+                                                        key={tIdx}
+                                                        className="font-mono text-[11px] font-semibold bg-white/5 text-white/90 px-4 py-2 rounded-full border border-white/10 backdrop-blur-md transition-colors hover:bg-white/10"
+                                                    >
+                                                        {tag}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                        </div>
+
+                                        {/* Breakout Image Side (Right) - Image escapes the boundaries */}
+                                        <div className="w-full md:w-1/2 h-[350px] md:h-auto relative z-30 flex items-center justify-center pointer-events-none">
+                                            {project.image ? (
+                                                <motion.div 
+                                                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[45%] flex justify-center items-center"
+                                                    initial={{ opacity: 0, y: 50 }}
+                                                    whileInView={{ opacity: 1, y: 0 }}
+                                                    viewport={{ once: true, margin: "100px" }}
+                                                    transition={{ duration: 1, type: "spring", bounce: 0.3 }}
+                                                >
+                                                    <motion.img 
+                                                        layoutId={`image-${idx}`}
+                                                        src={project.image} 
+                                                        alt={t(`items.item${idx}.title`)} 
+                                                        className="h-[500px] md:h-[650px] lg:h-[800px] w-auto max-w-none object-contain drop-shadow-[0_40px_100px_rgba(0,0,0,0.8)] transition-transform duration-700 ease-out group-hover:scale-[1.03] group-hover:-translate-y-4"
+                                                    />
+                                                </motion.div>
+                                            ) : (
+                                                <div className="absolute inset-8 border-2 border-dashed border-white/10 rounded-2xl flex items-center justify-center text-white/30 font-mono text-sm">
+                                                    Image Container
+                                                </div>
+                                            )}
+                                        </div>
+                                    </>
+                                ) : (
+                                    <div className={`w-full h-[300px] md:h-[340px] bg-[#0a0a0a] rounded-[32px] border border-white/5 overflow-visible group-hover:border-[var(--accent)]/30 transition-all duration-500 shadow-xl relative flex flex-col p-6 md:p-8 mt-24 md:mt-32
+                                        ${idx % 2 === 0 ? 'items-start' : 'items-end'}
+                                    `}>
+                                        
+                                        {/* Subdued background blob inside the card (overflow hidden) */}
+                                        <div className="absolute inset-0 overflow-hidden rounded-[32px] pointer-events-none">
+                                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[120px] bg-[var(--accent)]/15 blur-[50px] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                                            <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
+                                        </div>
+
+                                        {/* Dynamic Floating Title Occupying the Void */}
+                                        <div className={`absolute top-8 md:top-10 z-20 w-[60%]
+                                            ${idx % 2 === 0 ? 'left-6 md:left-8 text-left' : 'right-6 md:right-8 text-right'}
+                                        `}>
+                                            <motion.h3 layoutId={`title-${idx}`} className="font-display text-4xl md:text-5xl font-black text-white/90 group-hover:text-[var(--accent)] transition-colors duration-300 leading-none tracking-tight">
+                                                {t(`items.item${idx}.title`)}
+                                            </motion.h3>
+                                        </div>
+
+                                        {/* Breakout Image - Increased scale, dropped massively, with dynamic original positioning */}
+                                        <div className={`absolute bottom-[20px] md:bottom-[40px] z-30 pointer-events-none
+                                            ${idx % 2 === 0 
+                                                ? 'right-[-20px] md:right-[-50px] origin-bottom-right' 
+                                                : 'left-[-10px] md:left-[10px] origin-bottom-left'}
+                                        `}>
+                                            {project.image && (
+                                                <motion.div className="relative">
+                                                    <motion.img 
+                                                        layoutId={`image-${idx}`}
+                                                        src={project.image} 
+                                                        alt={t(`items.item${idx}.title`)} 
+                                                        className={`h-[320px] sm:h-[400px] md:h-[460px] w-auto max-w-none object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.9)] transition-all duration-700 ease-[cubic-bezier(0.2,0.8,0.2,1)]
+                                                            ${idx % 2 === 0 
+                                                                ? 'group-hover:scale-[1.15] group-hover:-translate-y-4 group-hover:-rotate-3' 
+                                                                : 'group-hover:scale-[1.15] group-hover:-translate-y-4 group-hover:rotate-3'}
+                                                        `}
+                                                    />
+                                                </motion.div>
+                                            )}
+                                        </div>
+                                        
+                                        {/* Text Content - Locked to the bottom, squished to avoid image overlap */}
+                                        <div className={`relative z-20 mt-auto flex flex-col w-full md:w-[65%] 
+                                            ${idx % 2 === 0 ? 'items-start text-left' : 'items-end text-right'}
+                                        `}>
+                                            <p className="text-gray-400 text-sm leading-relaxed mb-4 md:mb-5 font-light line-clamp-3">
+                                                {t(`items.item${idx}.description`)}
+                                            </p>
+
+                                            <div className={`flex flex-wrap gap-2 ${idx % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
+                                                {project.tags?.map((tag, tIdx) => (
+                                                    <span
+                                                        key={tIdx}
+                                                        className="font-mono text-[9px] md:text-[10px] uppercase font-semibold tracking-wider bg-white/5 text-white/70 px-3 py-1.5 rounded-lg border border-white/5"
+                                                    >
+                                                        {tag}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                            
+                                            <ArrowUpRight className={`absolute bottom-0 w-5 h-5 text-white/30 group-hover:text-[var(--accent)] transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1
+                                                ${idx % 2 === 0 ? 'right-0' : 'left-0 scale-x-[-1] group-hover:translate-x-[-4px]'}
+                                            `} />
+                                        </div>
                                     </div>
-                                    
-                                    <ArrowUpRight className="absolute bottom-6 right-6 w-5 h-5 text-[var(--text-muted)] group-hover:text-[var(--accent)] transition-colors" />
-                                </div>
+                                )}
                             </motion.div>
-                        ))}
+                            );
+                        })}
                     </div>
                 </div>
             </Container>
 
             <AnimatePresence>
                 {selectedProject !== null && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-8"
-                    >
-                        <div 
-                            className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+                    <>
+                        {/* Overlay backdrop */}
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            className="fixed inset-0 z-[90] bg-black/80 backdrop-blur-md"
                             onClick={() => setSelectedProject(null)}
                         />
                         
-                        <motion.div
-                            initial={{ scale: 0.95, opacity: 0, y: 20 }}
-                            animate={{ scale: 1, opacity: 1, y: 0 }}
-                            exit={{ scale: 0.95, opacity: 0, y: 20 }}
-                            className="relative w-full max-w-2xl bg-[var(--bg-2)] border border-[var(--border)] rounded-2xl p-6 md:p-10 shadow-2xl z-10 max-h-[90vh] overflow-y-auto"
-                        >
-                            <button
-                                onClick={() => setSelectedProject(null)}
-                                className="absolute top-4 right-4 md:top-6 md:right-6 p-2 rounded-full bg-[var(--bg)] border border-[var(--border)] text-[var(--text-muted)] hover:text-white transition-colors"
+                        <div className="fixed inset-0 z-[100] p-4 md:p-8 lg:p-12 pl-[5vw] pr-[5vw] flex items-center justify-center pointer-events-none">
+                            <motion.div
+                                layoutId={`card-${selectedProject}`}
+                                onClick={(e) => e.stopPropagation()}
+                                className="relative w-full max-w-[1400px] h-[90vh] md:h-[85vh] bg-[#0a0a0a] rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl flex flex-col md:flex-row pointer-events-auto"
                             >
-                                <X className="w-5 h-5" />
-                            </button>
+                                <button
+                                    onClick={() => setSelectedProject(null)}
+                                    className="absolute top-6 right-6 z-[110] p-3 rounded-full bg-black/50 backdrop-blur-md border border-white/10 text-white/70 hover:text-white hover:bg-white/10 hover:rotate-90 transition-all"
+                                >
+                                    <X className="w-6 h-6" />
+                                </button>
 
-                            <div className="space-y-6 mt-2 md:mt-0">
-                                <div className="space-y-4">
-                                    <h3 className="font-display text-3xl font-bold text-foreground">
-                                        {t(`items.item${selectedProject}.title`)}
-                                    </h3>
-                                    <div className="flex flex-wrap gap-2">
-                                        {resumeData.projects[selectedProject].tags?.map((tag, tIdx) => (
-                                            <span
-                                                key={tIdx}
-                                                className="font-mono text-[11px] font-medium bg-[rgba(193,68,14,0.1)] text-[var(--accent)] px-[10px] py-[4px] rounded-[2px]"
+                                {/* Left Side: Sticky Information (40%) */}
+                                <div className="w-full md:w-[40%] bg-[#080808] border-r border-white/5 p-8 md:p-12 lg:p-16 flex flex-col h-full overflow-y-auto z-20 relative scrollbar-hide">
+                                    <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[var(--accent)]/10 rounded-full blur-[100px] mix-blend-screen pointer-events-none" />
+                                    
+                                    <div className="space-y-8 relative z-10 mt-12 md:mt-0">
+                                        <div className="space-y-4">
+                                            <motion.h3 
+                                                layoutId={`title-${selectedProject}`}
+                                                className="font-display text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter"
                                             >
-                                                {tag}
-                                            </span>
-                                        ))}
+                                                {t(`items.item${selectedProject}.title`)}
+                                            </motion.h3>
+
+                                            {resumeData.projects[selectedProject].associatedCompany && (
+                                                <div className="inline-flex items-center gap-2 px-4 py-2 mt-2 rounded-full bg-white/5 border border-white/10">
+                                                    <span className="w-2 h-2 rounded-full bg-[var(--accent)] animate-pulse" />
+                                                    <span className="text-white/70 text-sm font-medium">
+                                                        {t('associatedWith')} <span className="text-white font-bold">{resumeData.projects[selectedProject].associatedCompany}</span>
+                                                    </span>
+                                                </div>
+                                            )}
+                                        </div>
+
+                                        <div className="flex flex-wrap gap-2">
+                                            {resumeData.projects[selectedProject].tags?.map((tag, tIdx) => (
+                                                <span
+                                                    key={tIdx}
+                                                    className="font-mono text-xs font-semibold bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 px-3 py-1.5 rounded-full"
+                                                >
+                                                    {tag}
+                                                </span>
+                                            ))}
+                                        </div>
+
+                                        <p className="text-gray-300 leading-relaxed text-base md:text-lg font-light">
+                                            {t(`items.item${selectedProject}.fullDescription`)}
+                                        </p>
+
+                                        <div className="pt-8 flex flex-col gap-4">
+                                            {!resumeData.projects[selectedProject].hideLink && (
+                                                <>
+                                                    {resumeData.projects[selectedProject].playStore && (
+                                                        <a 
+                                                            href={resumeData.projects[selectedProject].playStore}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="w-full px-6 py-4 rounded-xl bg-[var(--accent)] text-white font-bold hover:shadow-[0_0_30px_rgba(var(--accent-rgb),0.3)] hover:-translate-y-1 transition-all flex items-center justify-between group"
+                                                        >
+                                                            {t('playStore')}
+                                                            <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                                                        </a>
+                                                    )}
+                                                    {resumeData.projects[selectedProject].website && (
+                                                        <a 
+                                                            href={resumeData.projects[selectedProject].website}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="w-full px-6 py-4 rounded-xl bg-[var(--accent)] text-white font-bold hover:shadow-[0_0_30px_rgba(var(--accent-rgb),0.3)] hover:-translate-y-1 transition-all flex items-center justify-between group"
+                                                        >
+                                                            {t('viewProject')}
+                                                            <ExternalLink className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                                                        </a>
+                                                    )}
+                                                    {resumeData.projects[selectedProject].github && (
+                                                        <a 
+                                                            href={resumeData.projects[selectedProject].github}
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                            className="w-full px-6 py-4 rounded-xl bg-white/5 border border-white/10 text-white font-semibold hover:bg-white/10 hover:-translate-y-1 transition-all flex items-center justify-between group"
+                                                        >
+                                                            {t('viewCode')}
+                                                            <GithubIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                                                        </a>
+                                                    )}
+                                                </>
+                                            )}
+                                        </div>
                                     </div>
                                 </div>
 
-                                <p className="text-[var(--text-muted)] leading-relaxed text-base md:text-lg">
-                                    {t(`items.item${selectedProject}.fullDescription`)}
-                                </p>
+                                {/* Right Side: Gallery (60%) */}
+                                <div className="w-full md:w-[60%] bg-[#030303] overflow-hidden h-full relative flex items-center justify-center">
+                                    <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.02] mix-blend-overlay pointer-events-none" />
+                                    
+                                    <div className="absolute top-1/2 right-0 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[120px] mix-blend-screen pointer-events-none -translate-y-1/2" />
+                                    <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[var(--accent)]/10 rounded-full blur-[120px] mix-blend-screen pointer-events-none" />
 
-                                <div className="pt-6 flex flex-wrap gap-4 border-t border-[var(--border)]">
-                                    {!resumeData.projects[selectedProject].hideLink && (
-                                        <>
-                                            {resumeData.projects[selectedProject].playStore && (
-                                                <a 
-                                                    href={resumeData.projects[selectedProject].playStore}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="px-6 py-3 rounded-[2px] bg-[var(--accent)] text-white font-bold hover:opacity-90 transition-all flex items-center gap-3 text-sm"
+                                    {((resumeData.projects[selectedProject].gallery && resumeData.projects[selectedProject].gallery.length > 0) || resumeData.projects[selectedProject].image) && (() => {
+                                        const project = resumeData.projects[selectedProject];
+                                        const images = project.gallery && project.gallery.length > 0 
+                                            ? project.gallery 
+                                            : (project.image ? [project.image] : []);
+                                        
+                                        return (
+                                            <div className="relative w-full h-[90%] flex items-center group/gallery">
+                                                {/* Navigation buttons - Smart visibility */}
+                                                {images.length > 1 && isScrollable && (
+                                                    <>
+                                                        <AnimatePresence>
+                                                            {canScrollLeft && (
+                                                                <motion.button 
+                                                                    initial={{ opacity: 0, x: -10 }}
+                                                                    animate={{ opacity: 1, x: 0 }}
+                                                                    exit={{ opacity: 0, x: -10 }}
+                                                                    onClick={(e) => {
+                                                                        e.stopPropagation();
+                                                                        scrollGallery('left');
+                                                                    }}
+                                                                    className="absolute left-4 top-1/2 -translate-y-1/2 z-40 p-3 md:p-4 rounded-full bg-black/60 backdrop-blur-xl border border-white/10 text-white hover:bg-[var(--accent)] hover:border-[var(--accent)] hover:scale-110 transition-all shadow-[0_0_30px_rgba(0,0,0,0.5)]"
+                                                                >
+                                                                    <ChevronLeft className="w-6 h-6 md:w-8 md:h-8" />
+                                                                </motion.button>
+                                                            )}
+                                                        </AnimatePresence>
+                                                        
+                                                        <AnimatePresence>
+                                                            {canScrollRight && (
+                                                                <motion.button 
+                                                                    initial={{ opacity: 0, x: 10 }}
+                                                                    animate={{ opacity: 1, x: 0 }}
+                                                                    exit={{ opacity: 0, x: 10 }}
+                                                                    onClick={(e) => {
+                                                                        e.stopPropagation();
+                                                                        scrollGallery('right');
+                                                                    }}
+                                                                    className="absolute right-4 top-1/2 -translate-y-1/2 z-40 p-3 md:p-4 rounded-full bg-black/60 backdrop-blur-xl border border-white/10 text-white hover:bg-[var(--accent)] hover:border-[var(--accent)] hover:scale-110 transition-all shadow-[0_0_30px_rgba(0,0,0,0.5)]"
+                                                                >
+                                                                    <ChevronRight className="w-6 h-6 md:w-8 md:h-8" />
+                                                                </motion.button>
+                                                            )}
+                                                        </AnimatePresence>
+                                                    </>
+                                                )}
+
+
+                                                {/* Scrollable track */}
+                                                <div 
+                                                    ref={galleryRef}
+                                                    onScroll={checkScroll}
+                                                    className={`w-full h-full ${isScrollable ? 'overflow-x-auto' : 'overflow-x-hidden'} scrollbar-hide flex items-center pt-8 pb-12`}
                                                 >
-                                                    {t('playStore')} <ArrowUpRight className="w-4 h-4" />
-                                                </a>
-                                            )}
-                                            {resumeData.projects[selectedProject].website && (
-                                                <a 
-                                                    href={resumeData.projects[selectedProject].website}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="px-6 py-3 rounded-[2px] bg-[var(--accent)] text-white font-bold hover:opacity-90 transition-all flex items-center gap-3 text-sm"
-                                                >
-                                                    {t('viewProject')} <ExternalLink className="w-4 h-4" />
-                                                </a>
-                                            )}
-                                            {resumeData.projects[selectedProject].github && (
-                                                <a 
-                                                    href={resumeData.projects[selectedProject].github}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="px-6 py-3 rounded-[2px] border border-[var(--border)] hover:bg-white/5 transition-colors flex items-center gap-3 text-foreground text-sm"
-                                                >
-                                                    {t('viewCode')} <GithubIcon className="w-4 h-4" />
-                                                </a>
-                                            )}
-                                        </>
-                                    )}
+                                                    <div className="flex flex-row items-center justify-start gap-0 px-12 min-w-max h-full">
+                                                        {images.map((img, idx) => (
+                                                            <motion.div 
+                                                                key={idx}
+                                                                initial={{ opacity: 0, scale: 0.95 }}
+                                                                animate={{ opacity: 1, scale: 1 }}
+                                                                transition={{ duration: 0.4, delay: idx * 0.1 }}
+                                                                className="h-full shrink-0 relative group mx-[-30px] md:mx-[-60px] hover:z-50 transition-all duration-300"
+                                                            >
+                                                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[60%] bg-[var(--accent)]/15 blur-[80px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                                                
+                                                                {idx === 0 ? (
+                                                                    <motion.img
+                                                                        layoutId={`image-${selectedProject}`}
+                                                                        src={img}
+                                                                        alt={`${t(`items.item${selectedProject}.title`)} - Screenshot ${idx + 1}`}
+                                                                        className="h-full w-auto max-w-none object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.8)] rounded-3xl md:rounded-[3rem] transition-all duration-500 relative z-10 scale-[1.1] group-hover:scale-[1.25]"
+                                                                    />
+                                                                ) : (
+                                                                    <img
+                                                                        src={img}
+                                                                        alt={`${t(`items.item${selectedProject}.title`)} - Screenshot ${idx + 1}`}
+                                                                        className="h-full w-auto max-w-none object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.8)] rounded-3xl md:rounded-[3rem] transition-all duration-500 relative z-10 scale-[1.1] group-hover:scale-[1.25]"
+                                                                    />
+                                                                )}
+                                                            </motion.div>
+                                                        ))}
+                                                    </div>
+                                                </div>
+                                                {/* Custom Progress Bar at the bottom */}
+                                                {images.length > 1 && isScrollable && (
+                                                    <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-32 md:w-48 h-[3px] bg-white/5 rounded-full overflow-hidden z-40">
+                                                        <motion.div 
+                                                            className="h-full bg-[var(--accent)]"
+                                                            animate={{ width: `${scrollProgress}%` }}
+                                                            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                                                        />
+                                                    </div>
+                                                )}
+                                            </div>
+                                        );
+                                    })()}
                                 </div>
-                            </div>
-                        </motion.div>
-                    </motion.div>
+                            </motion.div>
+                        </div>
+                    </>
                 )}
             </AnimatePresence>
         </Section>
