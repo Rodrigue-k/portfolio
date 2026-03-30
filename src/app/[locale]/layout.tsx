@@ -11,8 +11,10 @@ const inter = Inter({
   variable: "--font-sans",
 });
 
+import { routing } from '@/i18n/routing';
+
 export function generateStaticParams() {
-  return [{ locale: 'en' }, { locale: 'fr' }];
+  return routing.locales.map((locale) => ({ locale }));
 }
 
 export const metadata: Metadata = {

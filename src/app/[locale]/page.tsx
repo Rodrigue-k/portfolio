@@ -6,9 +6,10 @@ import { Experience } from "@/presentation/sections/Experience";
 import { Projects } from "@/presentation/sections/Projects";
 import { Contact } from "@/presentation/sections/Contact";
 import { setRequestLocale } from 'next-intl/server';
+import { routing } from '@/i18n/routing';
 
 export function generateStaticParams() {
-  return [{ locale: 'en' }, { locale: 'fr' }];
+  return routing.locales.map((locale) => ({ locale }));
 }
 
 export default async function Home({
