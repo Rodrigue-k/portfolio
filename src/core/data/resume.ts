@@ -57,6 +57,8 @@ export const resumeData: PortfolioData = {
                 "/assets/projects/gv-2.png",
                 "/assets/projects/gv-3.png"
             ],
+            playStore: "https://play.google.com/store/apps/details?id=com.grandvoyageur.grand_voyageur&pcampaignid=web_share",
+            appStore: "https://apps.apple.com/in/app/grand-voyageur-covoiturage/id6755688855",
             associatedCompany: "Evee Engineering",
             category: "professional"
         },
@@ -65,6 +67,7 @@ export const resumeData: PortfolioData = {
             description: "Créez et envoyez des cartes de vœux personnalisées pour chaque occasion. Des templates soignés, un envoi en quelques secondes.",
             tags: ["Flutter", "Dart", "Firebase", "Micro-paiement", "Android", "iOS", "Solo"],
             website: "https://cherish-app.web.app/",
+            playStore: "https://play.google.com/store/apps/details?id=com.koudatek.cherish&pcampaignid=web_share",
             image: "/assets/projects/cherish-main.png",
             category: "personal"
         },
@@ -72,6 +75,7 @@ export const resumeData: PortfolioData = {
             title: "Ticketto",
             description: "Découvrez concerts, festivals et matchs près de chez vous. Réservez vos places et recevez vos billets directement sur votre téléphone.",
             tags: ["Flutter", "Dart", "Firebase", "Paiement", "Android", "Freelance"],
+            playStore: "https://play.google.com/store/apps/details?id=com.eveeengineering.ticketto&pcampaignid=web_share",
             associatedCompany: "Evee Engineering",
             category: "professional",
             image: "/assets/projects/ticketto-main.png"
@@ -89,6 +93,7 @@ export const resumeData: PortfolioData = {
             description: "L'app officielle de la plus grande compétition tech panafricaine pour étudiants. Toutes les infos sur la compétition 2026, sans inscription, dans 15 pays.",
             tags: ["Flutter", "Firebase", "Supabase"],
             website: "https://miabe-hackathon.web.app/",
+            playStore: "https://play.google.com/store/apps/details?id=com.dtc.miabehackathon.public&pcampaignid=web_share",
             image: "/assets/projects/mbhackathon-main.png",
             associatedCompany: "Darollo Technologies Corporation (DTC)",
             category: "professional"
