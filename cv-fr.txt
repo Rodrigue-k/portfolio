@@ -1,0 +1,136 @@
+================================================================================
+KOMI RODRIGUE KOUDAKPO
+Flutter Developer · Mobile Specialist
+================================================================================
+Agoe Cacaveli, Lomé, Togo
+Tél.     : +228 97385173
+Email    : koudakporodrigue03@gmail.com
+LinkedIn : linkedin.com/in/rodrigue-koudakpo
+GitHub   : github.com/Rodrigue-k
+Portfolio: rodrigue-koudakpo.web.app
+================================================================================
+
+
+PROFIL
+------
+Développeur autodidacte depuis 2019, spécialisé Flutter mobile. Parti du
+développement de jeux vidéo avec Java et Unity, je me suis orienté vers les
+applications mobiles cross-platform. J'ai publié plusieurs applications sur
+le Play Store et l'App Store, développé des solutions pour des clients au
+Togo et en Côte d'Ivoire, et conduit des projets de bout en bout — de
+l'architecture à la publication.
+
+
+COMPÉTENCES TECHNIQUES
+-----------------------
+Mobile       : Flutter, Dart, Firebase, Supabase, Android, iOS
+Langages     : Python, C#, Java, JavaScript, TypeScript
+Autres       : Next.js, Git, Figma, Unity, Blender,
+               Clean Architecture, System Design
+Langues      : Français (natif), Anglais (professionnel), Ewe (natif)
+
+
+EXPÉRIENCES PROFESSIONNELLES
+-----------------------------
+
+Développeur d'Applications Mobiles & Web                   Jan. 2025 — Présent
+Darollo Technologies Corporation (DTC) · Freelance · Togo
+  - Développement et maintenance d'applications mobiles Flutter.
+  - Prise en charge autonome d'un projet client complexe — architecture
+    Flutter mobile + intégration backend C#.
+  - Projets livrés : Application & Site Web Miabé Hackathon.
+
+Développeur d'Applications Mobiles                         Oct. 2024 — Présent
+Evee Engineering · Freelance · Côte d'Ivoire
+  - Reprise et finalisation d'une codebase existante jusqu'à la publication
+    sur App Store & Play Store.
+  - Refonte complète d'une application après analyse UX — livrée en une
+    semaine.
+  - 2 apps publiées sur les stores.
+
+Opérateur de Traitement de Données                         Mars 2025 — Juin 2025
+CAGECFI SA — Cadastre de Lomé · On-site · Lomé, Togo
+  - Projet étatique de numérisation des titres fonciers du cadastre de Lomé.
+  - Contrôle qualité et analyse des données saisies.
+
+
+PROJETS
+-------
+
+Grand Voyageur                                             [Professionnel · Evee Engineering]
+  Application de covoiturage pensée pour l'Afrique de l'Ouest. Trouvez un
+  trajet ou proposez le vôtre, simplement.
+  Stack     : Flutter, Dart, Clean Architecture, REST API, Android, iOS
+  Play Store: play.google.com/store/apps/details?id=com.grandvoyageur.grand_voyageur
+  App Store : apps.apple.com/in/app/grand-voyageur-covoiturage/id6755688855
+
+Cherish                                                    [Personnel]
+  Créez et envoyez des cartes de vœux personnalisées pour chaque occasion.
+  Des templates soignés, un envoi en quelques secondes.
+  Stack     : Flutter, Dart, Firebase, Micro-paiement, Android, iOS
+  Site Web  : cherish-app.web.app
+  Play Store: play.google.com/store/apps/details?id=com.koudatek.cherish
+
+Ticketto                                                   [Professionnel · Evee Engineering]
+  Découvrez concerts, festivals et matchs près de chez vous. Réservez vos
+  places et recevez vos billets directement sur votre téléphone.
+  Stack     : Flutter, Dart, Firebase, Paiement, Android
+  Play Store: play.google.com/store/apps/details?id=com.eveeengineering.ticketto
+
+Miabé Hackathon                                            [Professionnel · DTC]
+  L'app officielle de la plus grande compétition tech panafricaine pour
+  étudiants. 15 pays, sans inscription.
+  Stack     : Flutter, Firebase, Supabase
+  Site Web  : miabe-hackathon.web.app
+  Play Store: play.google.com/store/apps/details?id=com.dtc.miabehackathon.public
+
+EcoMap                                                     [Personnel · Hackathon]
+  Plateforme cartographique pour visualiser la santé environnementale des
+  villes africaines — signalement de dépotoirs et qualité de l'air en temps réel.
+  Stack     : Flutter, Dart, Géolocalisation, Cartographie, Web
+  GitHub    : github.com/Rodrigue-k/EcoMap
+
+Woez                                                       [Personnel]
+  Réservez des hébergements locaux avec des paiements adaptés à l'Afrique
+  de l'Ouest. Une alternative à Booking.com pensée pour le terrain.
+  Stack     : Flutter, Dart, Supabase, Géolocalisation
+  Site Web  : pro.woez-app.com
+
+S Contact                                                  [Personnel]
+  Votre carte de visite numérique instantanée. Créez votre profil, générez
+  un QR code et partagez vos coordonnées en 3 secondes.
+  Stack     : Flutter, Dart, QR Code, vCard
+  Play Store: play.google.com/store/apps/details?id=com.koudatek.s_contact
+  GitHub    : github.com/Rodrigue-k/s_contact
+
+Make 10!                                                   [Jeu Vidéo]
+  Un jeu de puzzle arithmétique — combinez des tuiles colorées pour obtenir
+  exactement 10. Simple, addictif, fait maison.
+  Stack     : Unity, C#, Android
+  Play Store: play.google.com/store/apps/details?id=com.latex.make
+
+
+FORMATION
+---------
+Management de Projet Numérique
+  ESCEN, Lomé
+
+Études de Mathématiques                                    2021 — 2025
+  Université de Lomé
+
+Baccalauréat Série C                                       2021
+  Lycée de Kpodzi
+
+
+CERTIFICATIONS
+--------------
+  - CS50P — Python (Harvard University, Oct. 2024)
+  - Programmeur Junior Unity (Unity Technologies, 2024)
+
+
+CENTRES D'INTÉRÊT
+-----------------
+Développement de jeux vidéo · IA & systèmes embarqués · Open source
+Lecture (Mangas/Webtoons) · Basketball
+
+================================================================================

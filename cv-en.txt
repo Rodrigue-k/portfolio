@@ -1,0 +1,134 @@
+================================================================================
+KOMI RODRIGUE KOUDAKPO
+Flutter Developer · Mobile Specialist
+================================================================================
+Agoe Cacaveli, Lomé, Togo
+Phone    : +228 97385173
+Email    : koudakporodrigue03@gmail.com
+LinkedIn : linkedin.com/in/rodrigue-koudakpo
+GitHub   : github.com/Rodrigue-k
+Portfolio: rodrigue-koudakpo.web.app
+================================================================================
+
+
+PROFILE
+-------
+Self-taught developer since 2019, specialized in Flutter mobile. Starting
+from game development with Java and Unity, I transitioned to cross-platform
+mobile applications. I have published multiple apps on the Play Store and
+App Store, delivered solutions for clients in Togo and Côte d'Ivoire, and
+led projects end-to-end — from architecture to release.
+
+
+TECHNICAL SKILLS
+----------------
+Mobile       : Flutter, Dart, Firebase, Supabase, Android, iOS
+Languages    : Python, C#, Java, JavaScript, TypeScript
+Other        : Next.js, Git, Figma, Unity, Blender,
+               Clean Architecture, System Design
+Languages    : French (native), English (professional), Ewe (native)
+
+
+WORK EXPERIENCE
+---------------
+
+Mobile & Web Application Developer                         Jan. 2025 — Present
+Darollo Technologies Corporation (DTC) · Freelance · Togo
+  - Development and maintenance of Flutter mobile applications.
+  - Independent ownership of a complex client project — Flutter mobile
+    architecture + C# backend integration.
+  - Delivered: Miabé Hackathon App & Website.
+
+Mobile Application Developer                               Oct. 2024 — Present
+Evee Engineering · Freelance · Côte d'Ivoire
+  - Took over and completed an existing codebase through App Store &
+    Play Store publication.
+  - Full redesign of an application after UX analysis — delivered in one week.
+  - 2 apps published on both stores.
+
+Data Processing Operator                                   Mar. 2025 — Jun. 2025
+CAGECFI SA — Lomé Land Registry · On-site · Lomé, Togo
+  - Government project to digitize land title records for Lomé's cadastre.
+  - Data quality control and analysis.
+
+
+PROJECTS
+--------
+
+Grand Voyageur                                             [Professional · Evee Engineering]
+  A ride-sharing app built for West Africa. Find a ride or offer yours,
+  simply.
+  Stack     : Flutter, Dart, Clean Architecture, REST API, Android, iOS
+  Play Store: play.google.com/store/apps/details?id=com.grandvoyageur.grand_voyageur
+  App Store : apps.apple.com/in/app/grand-voyageur-covoiturage/id6755688855
+
+Cherish                                                    [Personal]
+  Create and send personalized greeting cards for any occasion. Curated
+  templates, delivered in seconds.
+  Stack     : Flutter, Dart, Firebase, Micro-payments, Android, iOS
+  Website   : cherish-app.web.app
+  Play Store: play.google.com/store/apps/details?id=com.koudatek.cherish
+
+Ticketto                                                   [Professional · Evee Engineering]
+  Discover concerts, festivals and matches near you. Book your tickets and
+  receive them directly on your phone.
+  Stack     : Flutter, Dart, Firebase, Payments, Android
+  Play Store: play.google.com/store/apps/details?id=com.eveeengineering.ticketto
+
+Miabé Hackathon                                            [Professional · DTC]
+  The official app of the largest pan-African tech competition for students.
+  15 countries, no registration required.
+  Stack     : Flutter, Firebase, Supabase
+  Website   : miabe-hackathon.web.app
+  Play Store: play.google.com/store/apps/details?id=com.dtc.miabehackathon.public
+
+EcoMap                                                     [Personal · Hackathon]
+  A mapping platform to visualize the environmental health of African cities —
+  real-time landfill reporting and air quality monitoring.
+  Stack     : Flutter, Dart, Geolocation, Mapping, Web
+  GitHub    : github.com/Rodrigue-k/EcoMap
+
+Woez                                                       [Personal]
+  Book local accommodations with payment methods suited for West Africa.
+  A Booking.com alternative built for the ground reality.
+  Stack     : Flutter, Dart, Supabase, Geolocation
+  Website   : pro.woez-app.com
+
+S Contact                                                  [Personal]
+  Your instant digital business card. Create your profile, generate a QR
+  code and share your contact details in 3 seconds.
+  Stack     : Flutter, Dart, QR Code, vCard
+  Play Store: play.google.com/store/apps/details?id=com.koudatek.s_contact
+  GitHub    : github.com/Rodrigue-k/s_contact
+
+Make 10!                                                   [Game]
+  An arithmetic puzzle game — combine colored tiles to reach exactly 10.
+  Simple, addictive, handcrafted.
+  Stack     : Unity, C#, Android
+  Play Store: play.google.com/store/apps/details?id=com.latex.make
+
+
+EDUCATION
+---------
+Digital Project Management
+  ESCEN, Lomé
+
+Mathematics Studies                                        2021 — 2025
+  University of Lomé
+
+Baccalaureate — Science Track (Série C)                    2021
+  Lycée de Kpodzi
+
+
+CERTIFICATIONS
+--------------
+  - CS50P — Python (Harvard University, Oct. 2024)
+  - Unity Junior Programmer (Unity Technologies, 2024)
+
+
+INTERESTS
+---------
+Game development · AI & embedded systems · Open source
+Reading (Manga/Webtoons) · Basketball
+
+================================================================================
