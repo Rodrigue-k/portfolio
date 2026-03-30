@@ -222,11 +222,11 @@ export function Projects() {
                                         </div>
 
                                         {/* Dynamic Floating Title Occupying the Void */}
-                                        <div className={`absolute z-20 w-[60%] transition-all duration-300
-                                            ${displayIdx % 2 === 0 ? 'left-6 md:left-8 text-left' : 'right-6 md:right-8 text-right'}
-                                            ${project.category === 'professional' ? 'top-[60px] md:top-[72px]' : 'top-8 md:top-10'}
+                                        <div className={`relative z-20 w-[80%] md:w-[60%] transition-all duration-300 mb-2
+                                            ${displayIdx % 2 === 0 ? 'text-left' : 'text-right ml-auto'}
+                                            ${project.category === 'professional' ? 'mt-10 md:mt-12' : ''}
                                         `}>
-                                            <motion.h3 layoutId={`title-${originalIndex}`} className="font-display text-4xl md:text-5xl font-black text-white/90 group-hover:text-[var(--accent)] transition-colors duration-300 leading-none tracking-tight">
+                                            <motion.h3 layoutId={`title-${originalIndex}`} className="font-display text-3xl sm:text-4xl md:text-5xl font-black text-white/90 group-hover:text-[var(--accent)] transition-colors duration-300 leading-[1.1] tracking-tight">
                                                 {t(`items.item${originalIndex}.title`)}
                                             </motion.h3>
                                         </div>

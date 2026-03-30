@@ -11,6 +11,7 @@ export function Hero() {
     const t = useTranslations('Hero');
     const [typedName, setTypedName] = useState("");
     const [typingComplete, setTypingComplete] = useState(false);
+    const [showCvMenu, setShowCvMenu] = useState(false);
     const fullName = resumeData.profile.name;
 
     useEffect(() => {
@@ -92,13 +93,44 @@ export function Hero() {
                                         {t('actions.contact')}
                                     </a>
                                     </div>
-                                    <a 
-                                        href="/CV_Koudakpo_Rodrigue.pdf" 
-                                        download 
-                                        className="font-mono text-[12px] hover:text-[var(--accent)] transition-colors mt-2 sm:mt-0 px-2 py-4 animate-shimmer-cv"
-                                    >
-                                        Télécharger CV ↓
-                                    </a>
+                                    <div className="relative mt-2 sm:mt-0 flex justify-center w-full sm:w-auto">
+                                        <button 
+                                            onClick={() => setShowCvMenu(!showCvMenu)}
+                                            className="font-mono text-[12px] hover:text-[var(--accent)] transition-colors px-2 py-4 animate-shimmer-cv"
+                                        >
+                                            {t('actions.downloadCV')} ↓
+                                        </button>
+                                        <AnimatePresence>
+                                            {showCvMenu && (
+                                                <>
+                                                    <div className="fixed inset-0 z-40" onClick={() => setShowCvMenu(false)} />
+                                                    <motion.div 
+                                                        initial={{ opacity: 0, y: -5 }} 
+                                                        animate={{ opacity: 1, y: 0 }} 
+                                                        exit={{ opacity: 0, y: -5 }} 
+                                                        className="absolute top-[80%] sm:top-full left-1/2 -translate-x-1/2 z-50 flex flex-col items-center bg-[var(--sidebar)] border border-[var(--line)] shadow-lg rounded-md overflow-hidden whitespace-nowrap min-w-[220px]"
+                                                    >
+                                                        <a 
+                                                            href="/CV-Koudakpo-Rodrigue-FR.pdf" 
+                                                            download 
+                                                            onClick={() => setShowCvMenu(false)}
+                                                            className="px-4 py-3 text-sm hover:bg-[var(--line)] w-full text-center hover:text-[var(--accent)] transition-colors border-b border-[var(--line)]"
+                                                        >
+                                                            {t('actions.downloadCV_FR')}
+                                                        </a>
+                                                        <a 
+                                                            href="/CV-Koudakpo-Rodrigue-EN.pdf" 
+                                                            download 
+                                                            onClick={() => setShowCvMenu(false)}
+                                                            className="px-4 py-3 text-sm hover:bg-[var(--line)] w-full text-center hover:text-[var(--accent)] transition-colors"
+                                                        >
+                                                            {t('actions.downloadCV_EN')}
+                                                        </a>
+                                                    </motion.div>
+                                                </>
+                                            )}
+                                        </AnimatePresence>
+                                    </div>
                                 </motion.div>
                             </motion.div>
                         )}

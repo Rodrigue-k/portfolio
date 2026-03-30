@@ -17,6 +17,8 @@
         "actions": {
             "contact": "Contact Me",
             "downloadCV": "Download CV",
+            "downloadCV_FR": "Version Française (FR)",
+            "downloadCV_EN": "English Version (EN)",
             "viewProjects": "View Projects"
         }
     },

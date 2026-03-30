@@ -87,7 +87,7 @@ export const resumeData: PortfolioData = {
         {
             title: "Miabé Hackathon",
             description: "L'app officielle de la plus grande compétition tech panafricaine pour étudiants. Toutes les infos sur la compétition 2026, sans inscription, dans 15 pays.",
-            tags: ["Flutter", "Dart", "Firebase", "Android", "iOS", "No auth"],
+            tags: ["Flutter", "Firebase", "Supabase"],
             website: "https://miabe-hackathon.web.app/",
             image: "/assets/projects/mbhackathon-main.png",
             associatedCompany: "Darollo Technologies Corporation (DTC)",

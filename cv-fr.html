@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV — Koudakpo Komi Rodrigue</title>
+  <style>
+    @font-face {
+      font-family: 'DisplayFont';
+      src: local('Georgia'), local('Times New Roman');
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --ink: #111318;
+      --accent: #C1440E;
+      --accent2: #E8896A;
+      --muted: #6B7280;
+      --line: #E5E7EB;
+      --bg: #FFFFFF;
+      --sidebar: #F8F7F5;
+      --tag-bg: #FDEEE8;
+      --tag-color: #C1440E;
+    }
+
+    html {
+      background: #e0e0e0;
+    }
+
+    body {
+      background: #e0e0e0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 20px 0;
+      min-width: 210mm;
+    }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    @media print {
+
+      html,
+      body {
+        background: white !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 210mm;
+        height: 297mm;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .page {
+        box-shadow: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        width: 210mm;
+        height: 297mm;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      background: var(--bg);
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      color: var(--ink);
+      position: relative;
+      margin: 0 auto;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* ── HEADER ── */
+    header.header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      padding: 20px 40px 10px 40px;
+      border-bottom: 2.5px solid var(--accent);
+      position: relative;
+    }
+
+    header.header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: var(--accent);
+    }
+
+    .header-left {
+      padding-left: 16px;
+    }
+
+    .name-line {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+
+    .name-line h1 {
+      margin: 0;
+      display: flex;
+      gap: 12px;
+      align-items: baseline;
+    }
+
+    .name-first {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 34px;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -0.5px;
+      line-height: 1;
+    }
+
+    .name-last {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 34px;
+      font-weight: 400;
+      color: var(--accent);
+      letter-spacing: -0.5px;
+      line-height: 1;
+    }
+
+    .title {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+    }
+
+    .contact-item {
+      font-size: 11px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      text-decoration: none;
+    }
+
+    .contact-label {
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .header-right {
+      text-align: right;
+    }
+
+    .availability {
+      background: var(--accent);
+      color: white;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 2px;
+      display: inline-block;
+    }
+
+    /* ── BODY ── */
+    main.body {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      grid-template-areas: "sidebar main";
+      flex: 1;
+      background: white;
+    }
+
+    /* ── SIDEBAR ── */
+    aside.sidebar {
+      grid-area: sidebar;
+      background: var(--sidebar);
+      padding: 12px 18px 25px 18px; /* Ajout espace bas */
+      border-right: 1px solid var(--line);
+      position: relative;
+    }
+
+    aside.sidebar::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -1px;
+      width: 1px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--accent) 0%, var(--line) 40%);
+    }
+
+    /* ── MAIN ── */
+    section.main {
+      grid-area: main;
+      padding: 10px 35px 8px 35px; /* Optimisation espace */
+    }
+
+    /* ── SECTION TITLES ── */
+    .section-title {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px; /* Optimisation espace */
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1.5px;
+      background: var(--line);
+    }
+
+    .sidebar .section-title::after {
+      display: none;
+    }
+
+    .sidebar .section-title {
+      margin-bottom: 8px;
+      border-bottom: 1.5px solid var(--accent);
+      padding-bottom: 4px;
+      border-bottom-width: fit-content;
+    }
+
+    /* ── SKILLS ── */
+    .skill-group {
+      margin-bottom: 8px; /* Optimisation espace */
+    }
+
+    .skill-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .tag {
+      background: var(--tag-bg);
+      color: var(--tag-color);
+      font-size: 9.5px;
+      font-weight: 600;
+      padding: 4px 8px;
+      border-radius: 4px;
+      border: 1px solid rgba(193, 68, 14, 0.2);
+    }
+
+    .tag.dark {
+      background: var(--ink);
+      color: white;
+      border-color: var(--ink);
+    }
+
+    /* ── SIDEBAR ITEMS ── */
+    .sidebar-item {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 4px; /* Optimisation espace */
+    }
+
+    .sidebar-item-title {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.3;
+    }
+
+    .sidebar-item-sub {
+      font-size: 9.5px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .sidebar-item-date {
+      font-size: 9px;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .badge {
+      display: block;
+      background: white;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--accent);
+      padding: 8px 10px;
+      border-radius: 4px;
+      margin-bottom: 6px;
+      transition: all 0.2s;
+    }
+
+    .badge-text {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 2px;
+    }
+
+    .badge-sub {
+      font-size: 9px;
+      color: var(--muted);
+    }
+
+    /* ── EXPERIENCE ENTRIES ── */
+    .exp-entry {
+      margin-bottom: 6px; /* Optimisation espace */
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .exp-title {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .exp-date {
+      font-size: 10px;
+      color: var(--accent);
+      font-weight: 600;
+      background: var(--tag-bg);
+      padding: 2px 8px;
+      border-radius: 40px;
+    }
+
+    .exp-company {
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 8px;
+      font-style: italic;
+    }
+
+    .exp-company strong {
+      color: var(--accent);
+      font-weight: 600;
+      font-style: normal;
+    }
+
+    /* ── BULLETS ── */
+    .bullets {
+      list-style: none;
+      padding: 0;
+    }
+
+    .bullets li {
+      font-size: 11px;
+      color: #374151;
+      line-height: 1.5;
+      padding-left: 18px;
+      position: relative;
+      margin-bottom: 2px;
+    }
+
+    .bullets li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 9px;
+      top: 1px;
+    }
+
+    /* ── HIGHLIGHT PILL ── */
+    .highlight-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FFF;
+      border: 1.5px solid var(--accent2);
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 6px; /* Optimisation espace */
+    }
+
+    .highlight-pill span {
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    /* ── PROJECT GRID ── */
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      margin-top: 0px;
+    }
+
+    .project-card {
+      border: 1px solid var(--line);
+      border-top: 3px solid var(--accent);
+      padding: 10px 12px;
+      border-radius: 0 0 6px 6px;
+      background: white;
+    }
+
+    .project-card-title {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .project-card-company {
+      font-size: 8.5px;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .project-card-desc {
+      font-size: 10px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--line);
+      margin: 6px 0; /* Reduced */
+    }
+
+    .lang-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .lang-name {
+      font-size: 10.5px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .lang-level {
+      font-size: 9px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .lang-bar {
+      height: 3px;
+      background: var(--line);
+      border-radius: 3px;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+
+    .lang-bar-fill {
+      height: 100%;
+      background: var(--accent);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-left">
+        <div class="name-line">
+          <h1>
+            <span class="name-first">KOUDAKPO</span>
+            <span class="name-last">Komi Rodrigue</span>
+          </h1>
+        </div>
+        <div class="title">Développeur d'Applications Mobiles Flutter</div>
+        <div class="contact-row">
+          <div class="contact-item">
+            <span class="contact-label">Tél :</span> +228 97385173
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">Email :</span> koudakporodrigue03@gmail.com
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">Localisation :</span> Agoe Cacaveli, Lomé — Togo
+          </div>
+        </div>
+        <div class="contact-row" style="margin-top: 5px;">
+          <div class="contact-item">
+            <span class="contact-label">LinkedIn :</span> https://linkedin.com/in/rodrigue-koudakpo
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">GitHub :</span> https://github.com/Rodrigue-k
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">Portfolio :</span> https://rodrigue-koudakpo.web.app
+          </div>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="availability">Disponible</div>
+      </div>
+    </header>
+
+    <!-- BODY -->
+    <main class="body">
+
+      <!-- MAIN CONTENT -->
+      <section class="main">
+
+        <!-- PROFIL -->
+        <h2 class="section-title">Résumé Professionnel</h2>
+        <p style="font-size:10.5px; color:#374151; line-height:1.6; margin-bottom:12px;">
+          Développeur mobile Flutter avec 4 ans d'expérience, spécialisé dans la conception et la publication d'applications iOS et Android. Deux missions freelance livrées en production, de la reprise de codebase jusqu'au déploiement sur les stores. Habitué à travailler sur des produits à contraintes réelles : paiements mobiles, connectivité variable, utilisateurs non-techniques.
+        </p>
+
+        <!-- EXPÉRIENCES -->
+        <h2 class="section-title">Expériences Professionnelles</h2>
+
+        <article class="exp-entry">
+          <div class="exp-header">
+            <h3 class="exp-title">Développeur d'Applications Mobiles &amp; Web</h3>
+            <div class="exp-date">déc. 2024 — Présent</div>
+          </div>
+          <div class="exp-company"><strong>Darollo Technologies Corporation</strong> · Freelance · Togo</div>
+          <div class="highlight-pill" aria-label="1 app publiée sur Play Store, 1 site web livré"><span></span>1 app publiée Play Store · 1 site web livré</div>
+          <ul class="bullets">
+            <li>Développement et maintenance d'applications mobiles iOS &amp; Android (Flutter)</li>
+            <li>Prise en charge autonome de projet — architecture Flutter mobile + intégration backend C#</li>
+            <li>Diagnostic, correction et tests</li>
+            <li>Projets livrés : Application &amp; Site Web <em>MIABE Hackathon</em></li>
+          </ul>
+        </article>
+
+        <article class="exp-entry">
+          <div class="exp-header">
+            <h3 class="exp-title">Développeur d'Applications</h3>
+            <div class="exp-date">oct. 2025 — mars 2026</div>
+          </div>
+          <div class="exp-company"><strong>Evee Engineering</strong> · Freelance · Côte d'Ivoire</div>
+          <div class="highlight-pill" aria-label="2 apps publiées sur App Store et Play Store"><span></span>2 apps publiées — App Store &amp; Play Store</div>
+          <ul class="bullets" style="margin-top: -4px;">
+            <li>Reprise d'une codebase Flutter existante, correction des bugs critiques et livraison en production</li>
+            <li>Refonte complète d'une application après analyse UX approfondie</li>
+            <li>Mise à jour et suivi post-publication des applications en production</li>
+            <li>Applications livrées : <em>Grand Voyageur</em> (covoiturage) · <em>Ticketto</em> (billetterie événementielle)</li>
+          </ul>
+        </article>
+
+        <article class="exp-entry">
+          <div class="exp-header">
+            <h3 class="exp-title">Opérateur de Traitement de Données</h3>
+            <div class="exp-date">Mars — Juin 2025</div>
+          </div>
+          <div class="exp-company"><strong>CAGECFI SA — Cadastre</strong> · Lomé, Togo</div>
+          <ul class="bullets">
+            <li>Numérisation des livres fonciers, contrôle qualité et analyse des données saisies</li>
+          </ul>
+        </article>
+
+        <!-- PROJETS -->
+        <h2 class="section-title">Projets</h2>
+        <div class="project-grid">
+
+          <article class="project-card">
+            <div class="project-card-title">Grand Voyageur</div>
+            <div class="project-card-company">Evee Engineering</div>
+            <div class="project-card-desc">Application de covoiturage pensée pour l'Afrique de l'Ouest. Trouvez un trajet ou proposez le vôtre, simplement.</div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card-title">Cherish</div>
+            <div class="project-card-desc">Créez et envoyez des cartes de vœux personnalisées pour chaque occasion. Templates soignés, envoi instantané.</div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card-title">Ticketto</div>
+            <div class="project-card-company">Evee Engineering</div>
+            <div class="project-card-desc">Découvrez concerts, festivals et matchs. Réservez vos places et recevez vos billets directement sur mobile.</div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card-title">EcoMap</div>
+            <div class="project-card-desc">Plateforme cartographique pour visualiser la santé environnementale : signalement de dépotoirs et qualité de l'air.</div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card-title">Miabé Hackathon</div>
+            <div class="project-card-company">Darollo Technologies</div>
+            <div class="project-card-desc">L'app officielle de la plus grande compétition tech panafricaine. Présente dans 15 pays pour étudiants.</div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card-title">Woez</div>
+            <div class="project-card-desc">Réservez des hébergements locaux avec des paiements adaptés (Wave, Orange Money). Alternative à Booking.com.</div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card-title">S Contact</div>
+            <div class="project-card-desc">Votre carte de visite numérique instantanée. Créez votre profil, générez un QR code et partagez vos coordonnées.</div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-card-title">Make 10!</div>
+            <div class="project-card-desc">Jeu de puzzle arithmétique — combinez des tuiles colorées pour obtenir exactement 10. Addictif et fait maison.</div>
+          </article>
+
+        </div>
+
+      </section>
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+
+        <h2 class="section-title">Compétences Techniques</h2>
+
+        <div class="skill-group">
+          <div class="skill-label">Mobile & Web</div>
+          <div class="skill-tags">
+            <span class="tag dark">Flutter</span>
+            <span class="tag dark">Dart</span>
+            <span class="tag">Firebase</span>
+            <span class="tag">Supabase</span>
+            <span class="tag">Appwrite</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-label">Langages</div>
+          <div class="skill-tags">
+            <span class="tag dark">Python</span>
+            <span class="tag dark">C#</span>
+            <span class="tag">Java</span>
+            <span class="tag">JS / TS</span>
+            <span class="tag">HTML/CSS</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-label">Architecture & Patterns</div>
+          <div class="skill-tags">
+            <span class="tag">Clean Architecture</span>
+            <span class="tag">REST API</span>
+            <span class="tag">Riverpod / Provider</span>
+            <span class="tag">MVC</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-label">Outils</div>
+          <div class="skill-tags">
+            <span class="tag">Git / GitHub</span>
+            <span class="tag">Figma</span>
+            <span class="tag">VS Code</span>
+            <span class="tag">Unity</span>
+            <span class="tag">Blender</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-label">Déploiement</div>
+          <div class="skill-tags">
+            <span class="tag dark">App Store</span>
+            <span class="tag dark">Play Store</span>
+            <span class="tag">Vercel</span>
+            <span class="tag">Netlify</span>
+            <span class="tag">Firebase</span>
+          </div>
+        </div>
+
+
+        <div class="divider"></div>
+
+        <h2 class="section-title">Certifications</h2>
+
+        <div class="badge">
+          <div>
+            <div class="badge-text" style="line-height: 1.2; margin-bottom: 4px;">CS50P — Introduction to Programming with Python</div>
+            <div class="badge-sub">Harvard University / edX · Oct. 2024</div>
+          </div>
+        </div>
+
+        <div class="badge">
+          <div>
+            <div class="badge-text">Junior Unity Developer</div>
+            <div class="badge-sub">Unity Technologies · 2024</div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <h2 class="section-title">Formation</h2>
+
+        <div class="sidebar-item" style="margin-bottom:8px">
+          <span class="sidebar-item-title">Management Projet Numérique</span>
+          <span class="sidebar-item-sub">ESCEN, Lomé</span>
+          <span class="sidebar-item-date">En cours</span>
+        </div>
+
+        <div class="sidebar-item" style="margin-bottom:8px">
+          <span class="sidebar-item-title">Études de Mathématiques</span>
+          <span class="sidebar-item-sub">Université de Lomé</span>
+          <span class="sidebar-item-date">2021 — 2025</span>
+        </div>
+
+        <div class="sidebar-item">
+          <span class="sidebar-item-title">Baccalauréat Série C</span>
+          <span class="sidebar-item-sub">Lycée de Kpodzi · 2021</span>
+        </div>
+
+        <div class="divider"></div>
+
+        <h2 class="section-title">Langues</h2>
+
+        <div class="lang-item">
+          <span class="lang-name">Français</span>
+          <span class="lang-level">Natif</span>
+        </div>
+        <div class="lang-bar" aria-hidden="true">
+          <div class="lang-bar-fill" style="width:100%"></div>
+        </div>
+
+        <div class="lang-item">
+          <span class="lang-name">Anglais</span>
+          <span class="lang-level">Technique / B2</span>
+        </div>
+        <div class="lang-bar" aria-hidden="true">
+          <div class="lang-bar-fill" style="width:68%"></div>
+        </div>
+
+      </aside>
+
+    </main>
+
+  </div>
+</body>
+
+</html>
