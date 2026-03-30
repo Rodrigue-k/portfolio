@@ -37,6 +37,7 @@ export interface Project {
     website?: string;
     github?: string;
     playStore?: string;
+    appStore?: string;
     hideLink?: boolean;
     associatedCompany?: string;
     category?: 'professional' | 'personal' | 'other';

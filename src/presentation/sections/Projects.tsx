@@ -4,10 +4,12 @@ import { useState, useRef, useEffect } from "react";
 import { resumeData } from "@/core/data/resume";
 import { Container, Section } from "@/presentation/components/ui/Layout";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, X, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowUpRight, X, ExternalLink, ChevronLeft, ChevronRight, Globe, Github, ShoppingBag, Smartphone } from "lucide-react";
 import { GithubIcon } from "@/presentation/components/ui/BrandIcons";
 import { useTranslations } from "next-intl";
 import { SectionHeader } from "@/presentation/components/ui/SectionHeader";
+import { ProjectLinksPanel } from "@/presentation/components/ProjectLinksPanel";
+import type { ReactNode } from "react";
 
 export function Projects() {
     const t = useTranslations('Projects');
@@ -343,49 +345,26 @@ export function Projects() {
                                             ))}
                                         </div>
 
+                                        {/* Links panel */}
+                                        {!resumeData.projects[selectedProject].hideLink && (() => {
+                                            const proj = resumeData.projects[selectedProject];
+                                            const links: { label: string; url: string; icon: ReactNode }[] = [];
+                                            if (proj.website)   links.push({ label: 'Site Web',   url: proj.website,   icon: <Globe /> });
+                                            if (proj.playStore) links.push({ label: 'Play Store',  url: proj.playStore, icon: <ShoppingBag /> });
+                                            if (proj.appStore)  links.push({ label: 'App Store',   url: proj.appStore,  icon: <Smartphone /> });
+                                            if (proj.github)    links.push({ label: 'GitHub',      url: proj.github,    icon: <Github /> });
+                                            if (links.length === 0) return null;
+                                            return (
+                                                <div className="space-y-3">
+                                                    <p className="text-[10px] font-mono font-semibold uppercase tracking-[0.18em] text-white/25">Liens</p>
+                                                    <ProjectLinksPanel links={links} />
+                                                </div>
+                                            );
+                                        })()}
+
                                         <p className="text-gray-300 leading-relaxed text-base md:text-lg font-light">
                                             {t(`items.item${selectedProject}.fullDescription`)}
                                         </p>
-
-                                        <div className="pt-8 flex flex-col gap-4">
-                                            {!resumeData.projects[selectedProject].hideLink && (
-                                                <>
-                                                    {resumeData.projects[selectedProject].playStore && (
-                                                        <a 
-                                                            href={resumeData.projects[selectedProject].playStore}
-                                                            target="_blank"
-                                                            rel="noopener noreferrer"
-                                                            className="w-full px-6 py-4 rounded-xl bg-[var(--accent)] text-white font-bold hover:shadow-[0_0_30px_rgba(var(--accent-rgb),0.3)] hover:-translate-y-1 transition-all flex items-center justify-between group"
-                                                        >
-                                                            {t('playStore')}
-                                                            <ArrowUpRight className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                                                        </a>
-                                                    )}
-                                                    {resumeData.projects[selectedProject].website && (
-                                                        <a 
-                                                            href={resumeData.projects[selectedProject].website}
-                                                            target="_blank"
-                                                            rel="noopener noreferrer"
-                                                            className="w-full px-6 py-4 rounded-xl bg-[var(--accent)] text-white font-bold hover:shadow-[0_0_30px_rgba(var(--accent-rgb),0.3)] hover:-translate-y-1 transition-all flex items-center justify-between group"
-                                                        >
-                                                            {t('viewProject')}
-                                                            <ExternalLink className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                                                        </a>
-                                                    )}
-                                                    {resumeData.projects[selectedProject].github && (
-                                                        <a 
-                                                            href={resumeData.projects[selectedProject].github}
-                                                            target="_blank"
-                                                            rel="noopener noreferrer"
-                                                            className="w-full px-6 py-4 rounded-xl bg-white/5 border border-white/10 text-white font-semibold hover:bg-white/10 hover:-translate-y-1 transition-all flex items-center justify-between group"
-                                                        >
-                                                            {t('viewCode')}
-                                                            <GithubIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                                                        </a>
-                                                    )}
-                                                </>
-                                            )}
-                                        </div>
                                     </div>
                                 </div>
 
