@@ -11,8 +11,8 @@
     },
     "Hero": {
         "greeting": "Bonjour, je suis",
-        "role": "Développeur Flutter · Mobile & Web",
-        "description": "Autodidacte depuis 2019, spécialisé Flutter mobile et Next.js web. Apps publiées sur Play Store & App Store. Du code à la production.",
+        "role": "Développeur Flutter · Spécialiste Mobile",
+        "description": "Développeur autodidacte depuis 2019. 4 ans d'expertise Flutter — apps publiées sur Play Store & App Store.",
         "location": "Agoe Cacaveli, Lomé, Togo",
         "actions": {
             "contact": "Me Contacter",
@@ -67,46 +67,51 @@
         "viewProject": "Voir le site",
         "playStore": "Play Store",
         "associatedWith": "Associé à",
+        "filters": {
+            "professional": "En Entreprise",
+            "personal": "Projets Perso",
+            "other": "Autres"
+        },
         "items": {
             "item0": {
                 "title": "Grand Voyageur",
-                "description": "Application pour les grands voyageurs, offrant des services de fidélité et d'accompagnement...",
-                "fullDescription": "Application de fidélité et d'accompagnement pour les grands voyageurs. Elle facilite l'accès aux services, le suivi des voyages et la gestion des avantages liés au statut de voyageur."
+                "description": "Application de covoiturage pensée pour l'Afrique de l'Ouest. Trouvez un trajet ou proposez le vôtre, simplement.",
+                "fullDescription": "Grand Voyageur repense la mobilité partagée en Afrique de l'Ouest. Développée pour Evee Engineering (Côte d'Ivoire), l'app permet aux conducteurs de publier leurs trajets et aux passagers de réserver en quelques secondes. J'ai pris en charge l'intégralité de la partie Flutter — architecture Clean, gestion d'état, intégration avec le backend Java, et déploiement sur les deux stores. Un projet de six mois en contexte professionnel réel."
             },
             "item1": {
                 "title": "Cherish",
-                "description": "Application de cartes de vœux personnalisées pour toutes les occasions...",
-                "fullDescription": "Application de cartes de vœux personnalisées pour toutes les occasions. Les utilisateurs peuvent ajouter des événements et recevoir des notifications de rappel avant chaque événement important (anniversaires, fêtes, etc.). Modèle économique basé sur un micro-paiement de 0,99€ par téléchargement de carte haute résolution."
+                "description": "Créez et envoyez des cartes de vœux personnalisées pour chaque occasion. Des templates soignés, un envoi en quelques secondes.",
+                "fullDescription": "Cherish est une application mobile de cartes de vœux numériques disponible sur Android et iOS. Elle propose une collection de templates pour anniversaires, fêtes et occasions spéciales, avec un modèle de micro-paiement intégré. J'ai conçu et développé l'app de A à Z — design, développement Flutter, intégration des paiements et publication sur les deux stores. Un projet solo qui m'a permis de maîtriser tout le cycle de vie d'un produit mobile."
             },
             "item2": {
-                "title": "Woez",
-                "description": "Écosystème complet de location — app mobile Flutter, site de gestion pour agents immobiliers/loueurs et site de facturation.",
-                "fullDescription": "Écosystème complet de location — app mobile Flutter, site de gestion pour agents immobiliers et location de voiture, site de facturation, documentation backend. Stack : Flutter, Next.js, TypeScript, Supabase."
+                "title": "Ticketto",
+                "description": "Découvrez concerts, festivals et matchs près de chez vous. Réservez vos places et recevez vos billets directement sur votre téléphone.",
+                "fullDescription": "Ticketto est une application de billetterie événementielle développée pour Evee Engineering. Elle centralise les événements culturels et sportifs locaux — concerts, spectacles, matchs — et permet de réserver et recevoir ses billets en quelques clics. Interface épurée, expérience fluide, paiement sécurisé. Développée en Flutter et publiée sur le Play Store dans le cadre d'une mission freelance."
             },
             "item3": {
-                "title": "Miabé Hackathon",
-                "description": "Solution officielle pour le Miabé Hackathon — App mobile et plateforme web.",
-                "fullDescription": "Conception et développement de la solution officielle pour le Miabé Hackathon. Comprend une application mobile Flutter pour les participants et les organisateurs, ainsi qu'une plateforme web dédiée. Architecture robuste avec intégration d'un backend performant en C#."
+                "title": "EcoMap",
+                "description": "Plateforme cartographique pour visualiser la santé environnementale des villes africaines — signalement de dépotoirs et qualité de l'air en temps réel.",
+                "fullDescription": "EcoMap est une solution mobile et web développée pour le hackathon Make Afrique 2025 au Bénin, où elle a décroché la 3e place. L'application permet aux citoyens de signaler des zones insalubres directement sur une carte interactive, facilitant le travail des organisations de collecte et de nettoyage urbain. Elle intègre également un module de qualité de l'air pour surveiller la santé environnementale de chaque quartier. Un projet d'impact conçu en équipe, en temps limité, pour un vrai problème africain."
             },
             "item4": {
-                "title": "S Contact",
-                "description": "Solution de partage de contacts par QR Code dynamique avec intégration automatique au répertoire.",
-                "fullDescription": "Solution de partage de contacts instantané et sans contact physique. L'application permet de générer un code QR dynamique contenant vos informations professionnelles, permettant une sauvegarde directe et automatique dans le carnet d'adresses du destinataire."
+                "title": "MIABE Hackathon",
+                "description": "L'app officielle de la plus grande compétition tech panafricaine pour étudiants. Toutes les infos sur la compétition 2026, sans inscription, dans 15 pays.",
+                "fullDescription": "MIABE Hackathon est l'application officielle de la compétition panafricaine MIABE — la plus grande compétition technologique pour étudiants et jeunes en informatique sur le continent. Sans inscription requise, l'app donne accès à toutes les informations essentielles sur l'édition 2026 : règlement, calendrier, pays participants, actualités. Disponible pour les 15 pays participants, elle a été conçue pour être simple, rapide et accessible même avec une connexion limitée."
             },
             "item5": {
-                "title": "EcoMap",
-                "description": "Système complet de gestion de ramassage d'ordures — App client avec paiements Stripe et Dashboard logistique.",
-                "fullDescription": "Solution SaaS complète pour la gestion du ramassage d'ordures. Comprend une application client pour le suivi des abonnements et paiements (Stripe), et un dashboard administrateur pour la gestion des zones de collecte, le suivi GPS des camions et l'optimisation des tournées."
+                "title": "Woez",
+                "description": "Réservez des hébergements locaux avec des paiements adaptés à l'Afrique de l'Ouest. Une alternative à Booking.com pensée pour le terrain.",
+                "fullDescription": "Woez est une application de réservation d'hébergements pensée pour le marché local ouest-africain. Là où des plateformes comme Booking.com restent inadaptées aux réalités du terrain — paiements, langue, offres disponibles — Woez propose une expérience calibrée : paiements mobiles locaux (mobile Money), interface en langue locale, et une offre centrée sur les hébergements de proximité. Un projet qui part d'un vrai problème de marché."
             },
             "item6": {
-                "title": "I Fashion Wear",
-                "description": "Site vitrine et outil B2B de gestion pour une boutique de lunettes...",
-                "fullDescription": "Conception d'un site vitrine moderne et performant et du tableau de bord de gestion pour une boutique de lunettes de soleil et d'optique en ligne, incluant l'inventaire, le catalogue de produits, la gestion de commandes et du support client."
+                "title": "S Contact",
+                "description": "Votre carte de visite numérique instantanée. Créez votre profil, générez un QR code et partagez vos coordonnées en 3 secondes.",
+                "fullDescription": "S-Contact remplace la carte de visite papier par une expérience numérique fluide. L'utilisateur crée son profil en quelques clics, génère un QR code intelligent au format vCard, et le partage avec n'importe qui disposant d'un lecteur QR standard. Plus besoin de saisir manuellement un numéro ou d'échanger des cartes qui se perdent. Simple, rapide, universel."
             },
             "item7": {
                 "title": "Make 10!",
-                "description": "Jeu mobile de puzzle mathématique avec plus de 300 niveaux...",
-                "fullDescription": "Un jeu de réflexion mathématique développé en solo sur le moteur Unity depuis zéro. Le but est de combiner des blocs de chiffres pour obtenir la somme de 10. Comprend plus de 300 niveaux avec une difficulté progressive. Publié en succès sur le Google Play Store."
+                "description": "Un jeu de puzzle arithmétique — combinez des tuiles colorées pour obtenir exactement 10. Simple, addictif, fait maison.",
+                "fullDescription": "Make 10 est un jeu de puzzle mobile développé avec Unity — mon tout premier jeu publié. Le principe est simple : combiner une, deux, trois ou quatre tuiles numérotées de 1 à 9 pour atteindre exactement 10. Un projet d'apprentissage qui m'a initié au développement de jeux, à la logique de gameplay et au pipeline de publication sur le Play Store."
             }
         }
     },

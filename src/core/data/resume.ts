@@ -3,8 +3,8 @@ import { PortfolioData } from "../entities/resume";
 export const resumeData: PortfolioData = {
     profile: {
         name: "Komi Rodrigue Koudakpo",
-        title: "Flutter Developer · Mobile & Web",
-        summary: "Développeur autodidacte depuis 2019, spécialisé Flutter pour le mobile et Next.js pour le web. Parti du développement de jeux vidéo avec Java et Unity, je me suis orienté vers les applications mobiles cross-platform. J'ai publié plusieurs applications sur le Play Store et l'App Store, développé des solutions pour des clients au Togo et en Côte d'Ivoire, et conduit des projets de bout en bout — de l'architecture à la publication.",
+        title: "Flutter Developer · Mobile Specialist",
+        summary: "Développeur autodidacte depuis 2019, spécialisé Flutter mobile. Parti du développement de jeux vidéo avec Java et Unity, je me suis orienté vers les applications mobiles cross-platform. J'ai publié plusieurs applications sur le Play Store et l'App Store, développé des solutions pour des clients au Togo et en Côte d'Ivoire, et conduit des projets de bout en bout — de l'architecture à la publication.",
         location: "Agoe Cacaveli, Lomé, Togo",
         contact: {
             phone: "+228 97385173",
@@ -48,60 +48,75 @@ export const resumeData: PortfolioData = {
     projects: [
         {
             title: "Grand Voyageur",
-            description: "Application de fidélité et d'accompagnement pour les grands voyageurs.",
-            tags: ["Flutter", "Android", "iOS"],
-            image: "/gv.png",
-            gallery: ["/gv.png", "/gv.png", "/gv.png", "/gv.png", "/gv.png"],
-            associatedCompany: "Evee Engineering"
+            description: "Application de covoiturage pensée pour l'Afrique de l'Ouest. Trouvez un trajet ou proposez le vôtre, simplement.",
+            tags: ["Flutter", "Dart", "Clean Architecture", "REST API", "Android", "iOS", "Freelance"],
+            image: "/assets/projects/gv-main.png",
+            gallery: [
+                "/assets/projects/gv-main.png",
+                "/assets/projects/gv-1.png",
+                "/assets/projects/gv-2.png",
+                "/assets/projects/gv-3.png"
+            ],
+            associatedCompany: "Evee Engineering",
+            category: "professional"
         },
         {
             title: "Cherish",
-            description: "Application de cartes de vœux personnalisées pour toutes les occasions. Notifications de rappel avant chaque événement. Modèle micro-paiement 0,99€ par carte.",
-            tags: ["Flutter", "Android", "iOS"],
+            description: "Créez et envoyez des cartes de vœux personnalisées pour chaque occasion. Des templates soignés, un envoi en quelques secondes.",
+            tags: ["Flutter", "Dart", "Firebase", "Micro-paiement", "Android", "iOS", "Solo"],
             website: "https://cherish-app.web.app/",
-            image: "/cherish.png"
+            image: "/assets/projects/cherish-main.png",
+            category: "personal"
         },
         {
-            title: "Woez",
-            description: "Écosystème complet de location — app mobile Flutter, site de gestion pour agents immobiliers et location de voiture, site de facturation, documentation backend. Stack : Flutter, Next.js, TypeScript, Supabase.",
-            tags: ["Flutter", "Next.js", "Supabase", "TypeScript", "TailwindCSS"],
-            website: "https://pro.woez-app.com/",
-            image: "/woez.png"
-        },
-        {
-            title: "Miabé Hackathon",
-            description: "Solution officielle pour le Miabé Hackathon — application mobile de gestion d'événements et plateforme web dédiée. Architecture Flutter & intégration Backend C#.",
-            tags: ["Flutter", "C#", "ASP.NET Core", "SQL Server", "Web Admin"],
-            website: "https://miabe-hackathon.web.app/",
-            image: "/mbhackathon.png",
-            associatedCompany: "Darollo Technologies Corporation (DTC)"
-        },
-        {
-            title: "S Contact",
-            description: "Solution de partage de contacts instantané via QR Code dynamique — saisie auto, génération de vCard et intégration directe dans le répertoire.",
-            tags: ["Flutter", "Dart", "QR Engine", "Android", "iOS"],
-            github: "https://github.com/Rodrigue-k/s_contact",
-            playStore: "https://play.google.com/store/apps/details?id=com.koudatek.s_contact&pcampaignid=web_share",
-            image: "/s-contact.png"
+            title: "Ticketto",
+            description: "Découvrez concerts, festivals et matchs près de chez vous. Réservez vos places et recevez vos billets directement sur votre téléphone.",
+            tags: ["Flutter", "Dart", "Firebase", "Paiement", "Android", "Freelance"],
+            associatedCompany: "Evee Engineering",
+            category: "professional",
+            image: "/assets/projects/ticketto-main.png"
         },
         {
             title: "EcoMap",
-            description: "Solution complète de gestion du ramassage d'ordures — App client (abonnements/paiements Stripe) et Dashboard Admin pour la logistique des tournées.",
-            tags: ["Flutter", "Firebase", "Google Maps API", "Stripe", "Web Admin"],
+            description: "Plateforme cartographique pour visualiser la santé environnementale des villes africaines — signalement de dépotoirs et qualité de l'air en temps réel.",
+            tags: ["Flutter", "Dart", "Géolocalisation", "Cartographie", "Web", "Hackathon", "Équipe"],
             github: "https://github.com/Rodrigue-k/EcoMap",
-            image: "/ecomap.png"
+            image: "/assets/projects/ecomap-main.png",
+            category: "personal"
         },
         {
-            title: "I Fashion Wear",
-            description: "Site vitrine et outil de gestion pour une boutique de lunettes.",
-            tags: ["Next.js", "TypeScript", "AppWrite"],
-            hideLink: true
+            title: "Miabé Hackathon",
+            description: "L'app officielle de la plus grande compétition tech panafricaine pour étudiants. Toutes les infos sur la compétition 2026, sans inscription, dans 15 pays.",
+            tags: ["Flutter", "Dart", "Firebase", "Android", "iOS", "No auth"],
+            website: "https://miabe-hackathon.web.app/",
+            image: "/assets/projects/mbhackathon-main.png",
+            associatedCompany: "Darollo Technologies Corporation (DTC)",
+            category: "professional"
+        },
+        {
+            title: "Woez",
+            description: "Réservez des hébergements locaux avec des paiements adaptés à l'Afrique de l'Ouest. Une alternative à Booking.com pensée pour le terrain.",
+            tags: ["Flutter", "Dart", "Supabase", "Géolocalisation"],
+            website: "https://pro.woez-app.com/",
+            image: "/assets/projects/woez-main.png",
+            category: "personal"
+        },
+        {
+            title: "S Contact",
+            description: "Votre carte de visite numérique instantanée. Créez votre profil, générez un QR code et partagez vos coordonnées en 3 secondes.",
+            tags: ["Flutter", "Dart", "QR Code", "vCard"],
+            github: "https://github.com/Rodrigue-k/s_contact",
+            playStore: "https://play.google.com/store/apps/details?id=com.koudatek.s_contact&pcampaignid=web_share",
+            image: "/assets/projects/scontact-main.png",
+            category: "personal"
         },
         {
             title: "Make 10!",
-            description: "Jeu mobile de puzzle mathématique développé avec Unity. Publié sur Play Store en 2023.",
-            tags: ["Unity", "Android"],
-            playStore: "https://play.google.com/store/apps/details?id=com.latex.make&pcampaignid=web_share"
+            description: "Un jeu de puzzle arithmétique — combinez des tuiles colorées pour obtenir exactement 10. Simple, addictif, fait maison.",
+            tags: ["Unity", "C#", "Game Dev", "Android"],
+            playStore: "https://play.google.com/store/apps/details?id=com.latex.make&pcampaignid=web_share",
+            image: "/assets/projects/make10-main.png",
+            category: "other"
         }
     ],
     education: [

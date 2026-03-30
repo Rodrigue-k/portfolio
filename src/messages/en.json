@@ -11,8 +11,8 @@
     },
     "Hero": {
         "greeting": "Hello, I'm",
-        "role": "Flutter Developer · Mobile & Web",
-        "description": "Autodidacte depuis 2019, spécialisé Flutter mobile et Next.js web. Apps publiées sur Play Store & App Store. Du code à la production.",
+        "role": "Flutter Developer · Mobile Specialist",
+        "description": "Self-taught developer since 2019. 4 years of Flutter expertise — apps shipped on Play Store & App Store.",
         "location": "Agoe Cacaveli, Lome, Togo",
         "actions": {
             "contact": "Contact Me",
@@ -67,46 +67,51 @@
         "viewProject": "View Website",
         "playStore": "Play Store",
         "associatedWith": "Associated with",
+        "filters": {
+            "professional": "Company",
+            "personal": "Personal Projects",
+            "other": "Other"
+        },
         "items": {
             "item0": {
                 "title": "Grand Voyageur",
-                "description": "Fidelity and companion application for frequent travelers...",
-                "fullDescription": "Fidelity and companion application for frequent travelers. It facilitates access to services, travel tracking, and management of benefits related to traveler status."
+                "description": "Carpooling app designed for West Africa. Find a ride or offer yours, simply.",
+                "fullDescription": "Grand Voyageur reimagines shared mobility in West Africa. Developed for Evee Engineering (Ivory Coast), the app allows drivers to publish their trips and passengers to book in seconds. I took charge of the entire Flutter part — Clean Architecture, state management, Java backend integration, and deployment on both stores. A six-month project in a real professional context."
             },
             "item1": {
                 "title": "Cherish",
-                "description": "Personalized greeting cards application for all occasions...",
-                "fullDescription": "Personalized greeting cards application for all occasions. Users can add events and receive reminder notifications before each important event (birthdays, holidays, etc.). Business model based on a €0.99 micro-payment per high-resolution card download."
+                "description": "Create and send personalized greeting cards for every occasion. Elegant templates, sent in seconds.",
+                "fullDescription": "Cherish is a digital greeting card mobile application available on Android and iOS. It offers a collection of templates for birthdays, holidays, and special occasions, with an integrated micro-payment model. I designed and developed the app from scratch — design, Flutter development, payment integration, and publication on both stores. A solo project that allowed me to master the entire mobile product lifecycle."
             },
             "item2": {
-                "title": "Woez",
-                "description": "Complete rental ecosystem — Flutter mobile app, management site for real estate agents and car rentals, billing site, backend documentation.",
-                "fullDescription": "Complete rental ecosystem — Flutter mobile app, management site for real estate agents and car rentals, billing site, backend documentation. Stack: Flutter, Next.js, TypeScript, Supabase."
+                "title": "Ticketto",
+                "description": "Discover concerts, festivals, and matches near you. Book your seats and receive your tickets directly on your phone.",
+                "fullDescription": "Ticketto is an event ticketing application developed for Evee Engineering. It centralizes local cultural and sporting events — concerts, shows, matches — and allows users to book and receive their tickets in a few clicks. Clean interface, smooth experience, secure payment. Developed in Flutter and published on the Play Store as part of a freelance mission."
             },
             "item3": {
-                "title": "Miabé Hackathon",
-                "description": "Official solution for Miabé Hackathon — Mobile app and web platform.",
-                "fullDescription": "Design and development of the official solution for Miabé Hackathon. Includes a Flutter mobile application for participants and organizers, as well as a dedicated web platform. Robust architecture with integration of a high-performance C# backend."
+                "title": "EcoMap",
+                "description": "Mapping platform to visualize the environmental health of African cities — reporting dumpsites and real-time air quality.",
+                "fullDescription": "EcoMap is a mobile and web solution developed for the Make Afrique 2025 hackathon in Benin, where it won 3rd place. The application allows citizens to report unsanitary areas directly on an interactive map, facilitating the work of urban collection and cleaning organizations. It also integrates an air quality module to monitor the environmental health of each neighborhood. An impact project designed in a team, in limited time, for a real African problem."
             },
             "item4": {
-                "title": "S Contact",
-                "description": "Instant contact sharing via QR code...",
-                "fullDescription": "Instant and contactless contact sharing. The application allows you to generate a dynamic QR code containing your professional information, allowing a direct and automatic save to the recipient's address book."
+                "title": "MIABE Hackathon",
+                "description": "The official app of the largest pan-African tech competition for students. All info on the 2026 competition, without registration, in 15 countries.",
+                "fullDescription": "MIABE Hackathon is the official application of the MIABE pan-African competition — the largest technology competition for students and young people in IT on the continent. With no registration required, the app provides access to all essential information about the 2026 edition: rules, schedule, participating countries, news. Available for the 15 participating countries, it was designed to be simple, fast, and accessible even with a limited connection."
             },
             "item5": {
-                "title": "EcoMap",
-                "description": "Collaborative mapping of dumpsites in Heat Map...",
-                "fullDescription": "A citizen ecological initiative for mapping wild dumpsites as a Heat Map. The application allows the population to easily report polluted areas via geolocation to assist local environmental organizations in waste management."
+                "title": "Woez",
+                "description": "Book local accommodations with payments adapted to West Africa. A local alternative to Booking.com.",
+                "fullDescription": "Woez is an accommodation booking application designed for the local West African market. Where platforms like Booking.com remain unsuited to local realities — payments, language, available offers — Woez offers a calibrated experience: local mobile payments (Mobile Money), local language interface, and an offer centered on proximity accommodations. A project starting from a real market problem."
             },
             "item6": {
-                "title": "I Fashion Wear",
-                "description": "Showcase site and management tool for an eyewear shop.",
-                "fullDescription": "Design of a modern and high-performance showcase site and management dashboard for an online sunglasses and eyewear shop, including inventory, product catalog, order management, and customer support."
+                "title": "S-Contact",
+                "description": "Your instant digital business card. Create your profile, generate a QR code, and share your contact info in 3 seconds.",
+                "fullDescription": "S-Contact replaces paper business cards with a fluid digital experience. Users create their profile in a few clicks, generate a smart QR code in vCard format, and share it with anyone with a standard QR reader. No more manual entry or exchanging cards that get lost. Simple, fast, universal."
             },
             "item7": {
-                "title": "Make 10!",
-                "description": "Mathematical puzzle mobile game developed with Unity...",
-                "fullDescription": "A mathematical puzzle game developed solo in the Unity engine from scratch. The goal is to combine number blocks to reach the sum of 10. Includes over 300 levels with progressive difficulty. Successfully published on the Google Play Store."
+                "title": "Make 10",
+                "description": "An arithmetic puzzle game — combine colored tiles to get exactly 10. Simple, addictive, home-made.",
+                "fullDescription": "Make 10 is a mobile puzzle game developed with Unity — my very first published game. The principle is simple: combine one, two, three, or four numbered tiles from 1 to 9 to reach exactly 10. A learning project that introduced me to game development, gameplay logic, and the Play Store publication pipeline."
             }
         }
     },

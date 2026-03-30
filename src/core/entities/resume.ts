@@ -39,6 +39,7 @@ export interface Project {
     playStore?: string;
     hideLink?: boolean;
     associatedCompany?: string;
+    category?: 'professional' | 'personal' | 'other';
 }
 
 export interface PortfolioData {

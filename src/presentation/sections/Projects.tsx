@@ -64,25 +64,32 @@ export function Projects() {
         }
     };
 
+    const projectsWithIndices = resumeData.projects.map((project, index) => ({ project, index }));
+    const filteredProjects = projectsWithIndices;
+
     return (
         <Section id="projects" className="bg-card-bg/20">
             <Container>
                 <div className="space-y-12">
                     <SectionHeader number="03" title={t('title')} />
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {resumeData.projects.map((project, idx) => {
-                            const isFeatured = idx === 0;
+
+                    <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <AnimatePresence mode="popLayout">
+                        {filteredProjects.map(({ project, index: originalIndex }, displayIdx) => {
+                            const isFeatured = displayIdx === 0;
                             
                             return (
                             <motion.div
-                                key={idx}
-                                layoutId={`card-${idx}`}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ delay: idx * 0.1, duration: 0.5 }}
+                                key={originalIndex}
+                                layout
+                                layoutId={`card-${originalIndex}`}
+                                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                                animate={{ opacity: 1, scale: 1, y: 0 }}
+                                exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                                transition={{ delay: displayIdx * 0.1, duration: 0.5 }}
                                 viewport={{ once: true }}
-                                onClick={() => setSelectedProject(idx)}
+                                onClick={() => setSelectedProject(originalIndex)}
                                 className={`group relative transition-all duration-700 hover:-translate-y-2 flex cursor-pointer
                                     ${isFeatured 
                                         ? 'col-span-1 md:col-span-2 flex-col md:flex-row md:h-[500px] mt-24 mb-32' 
@@ -90,6 +97,28 @@ export function Projects() {
                                     }
                                 `}
                             >
+                                {/* Ribbon Label for Professional Experience (Featured Only) */}
+                                {project.category === 'professional' && isFeatured && (() => {
+                                    return (
+                                        <div className={`absolute z-[60] drop-shadow-xl pointer-events-none transition-all top-8 md:top-12 -left-2`}>
+                                            <div className="relative">
+                                                {/* Corner Fold */}
+                                                <div className="absolute -bottom-[8px] border-t-[8px] border-t-[var(--accent)] brightness-[0.4] left-0 border-l-[8px] border-l-transparent"></div>
+                                                
+                                                {/* Ribbon Body */}
+                                                <div className="bg-[var(--accent)] text-[#0a0a0a] font-display font-bold uppercase tracking-[0.1em] flex flex-row items-center border-y border-white/20 shadow-2xl text-xs md:text-sm py-2 px-4 md:px-6 gap-2 rounded-r border-r">
+                                                    <span>{t('filters.professional')}</span>
+                                                    {project.associatedCompany && (
+                                                        <span className="opacity-80 font-bold normal-case tracking-normal border-black/20 border-l pl-2 text-[10px] md:text-sm">
+                                                            {project.associatedCompany}
+                                                        </span>
+                                                    )}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    );
+                                })()}
+
                                 {isFeatured ? (
                                     <>
                                         {/* Background Layer with Overflow Hidden (for Blobs and Borders) */}
@@ -99,28 +128,20 @@ export function Projects() {
                                             <div className="absolute -bottom-[20%] -left-[10%] w-[600px] h-[600px] bg-purple-600/20 rounded-full blur-[130px] mix-blend-screen" />
                                             
                                             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-[8rem] md:text-[14rem] font-black text-white/[0.02] tracking-tighter whitespace-nowrap select-none pointer-events-none">
-                                                {t(`items.item${idx}.title`).toUpperCase()}
+                                                {t(`items.item${originalIndex}.title`).toUpperCase()}
                                             </div>
                                         </div>
 
                                         {/* Content Side */}
                                         <div className="p-8 md:p-14 lg:p-16 flex-1 flex flex-col justify-center relative z-20 w-full md:w-1/2 pointer-events-auto">
-                                            <div className="mb-6 flex items-center gap-3">
-                                                <span className="flex h-3 w-3 relative">
-                                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--accent)] opacity-75"></span>
-                                                    <span className="relative inline-flex rounded-full h-3 w-3 bg-[var(--accent)]"></span>
-                                                </span>
-                                                <span className="text-[var(--accent)] font-mono text-sm uppercase tracking-[0.2em] font-bold">
-                                                    Projet Phare
-                                                </span>
-                                            </div>
-
-                                            <motion.h3 layoutId={`title-${idx}`} className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tighter mb-4 drop-shadow-md">
-                                                {t(`items.item${idx}.title`)}
+                                            <motion.h3 layoutId={`title-${originalIndex}`} className={`font-display text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tighter mb-4 drop-shadow-md
+                                                ${project.category === 'professional' ? 'mt-12 md:mt-20' : ''}
+                                            `}>
+                                                {t(`items.item${originalIndex}.title`)}
                                             </motion.h3>
 
                                             <p className="text-gray-400 text-base md:text-lg leading-relaxed max-w-lg font-light mb-8">
-                                                {t(`items.item${idx}.description`)}
+                                                {t(`items.item${originalIndex}.description`)}
                                             </p>
 
                                             <div className="flex flex-wrap gap-2 mt-auto">
@@ -136,20 +157,20 @@ export function Projects() {
                                         </div>
 
                                         {/* Breakout Image Side (Right) - Image escapes the boundaries */}
-                                        <div className="w-full md:w-1/2 h-[350px] md:h-auto relative z-30 flex items-center justify-center pointer-events-none">
+                                        <div className="w-full md:w-1/2 h-[350px] md:h-full relative z-30 flex items-center justify-center pointer-events-none">
                                             {project.image ? (
                                                 <motion.div 
-                                                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[45%] flex justify-center items-center"
+                                                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center items-center"
                                                     initial={{ opacity: 0, y: 50 }}
                                                     whileInView={{ opacity: 1, y: 0 }}
                                                     viewport={{ once: true, margin: "100px" }}
                                                     transition={{ duration: 1, type: "spring", bounce: 0.3 }}
                                                 >
                                                     <motion.img 
-                                                        layoutId={`image-${idx}`}
+                                                        layoutId={`image-${originalIndex}`}
                                                         src={project.image} 
-                                                        alt={t(`items.item${idx}.title`)} 
-                                                        className="h-[500px] md:h-[650px] lg:h-[800px] w-auto max-w-none object-contain drop-shadow-[0_40px_100px_rgba(0,0,0,0.8)] transition-transform duration-700 ease-out group-hover:scale-[1.03] group-hover:-translate-y-4"
+                                                        alt={t(`items.item${originalIndex}.title`)} 
+                                                        className="h-[500px] md:h-[650px] lg:h-[800px] w-auto max-w-none object-contain drop-shadow-[0_40px_100px_rgba(0,0,0,0.8)] rounded-3xl md:rounded-[3rem] transition-transform duration-700 ease-out group-hover:scale-[1.03] group-hover:-translate-y-4"
                                                     />
                                                 </motion.div>
                                             ) : (
@@ -160,9 +181,39 @@ export function Projects() {
                                         </div>
                                     </>
                                 ) : (
-                                    <div className={`w-full h-[300px] md:h-[340px] bg-[#0a0a0a] rounded-[32px] border border-white/5 overflow-visible group-hover:border-[var(--accent)]/30 transition-all duration-500 shadow-xl relative flex flex-col p-6 md:p-8 mt-24 md:mt-32
-                                        ${idx % 2 === 0 ? 'items-start' : 'items-end'}
-                                    `}>
+                                    <div className={`w-full h-[300px] md:h-[340px] bg-[#0a0a0a] rounded-[32px] border border-white/5 shadow-xl p-6 md:p-8 flex flex-col justify-between overflow-visible relative group-hover:border-[var(--accent)]/30 transition-colors duration-500 mt-24 md:mt-32
+                                            ${displayIdx % 2 === 0 ? 'ml-0 md:ml-12' : 'mr-0 md:mr-12'}
+                                        `}>
+                                            {/* Ribbon Label for Professional Experience (Standard Card) */}
+                                            {project.category === 'professional' && (() => {
+                                                const ribbonSide = displayIdx % 2 === 0 ? 'left' : 'right';
+                                                return (
+                                                    <div className={`absolute z-[60] drop-shadow-xl pointer-events-none transition-all top-4 md:top-6
+                                                        ${ribbonSide === 'left' ? '-left-2' : '-right-2'}
+                                                    `}>
+                                                        <div className="relative">
+                                                            {/* Corner Fold */}
+                                                            <div className={`absolute -bottom-[8px] border-t-[8px] border-t-[var(--accent)] brightness-[0.4]
+                                                                ${ribbonSide === 'left' 
+                                                                    ? 'left-0 border-l-[8px] border-l-transparent' 
+                                                                    : 'right-0 border-r-[8px] border-r-transparent'}
+                                                            `}></div>
+                                                            
+                                                            {/* Ribbon Body */}
+                                                            <div className={`bg-[var(--accent)] text-[#0a0a0a] font-display font-bold uppercase tracking-[0.1em] flex flex-row items-center border-y border-white/20 shadow-2xl text-[10px] md:text-xs py-1.5 px-3 md:px-5 gap-1.5
+                                                                ${ribbonSide === 'left' ? 'rounded-r border-r' : 'rounded-l border-l'}
+                                                            `}>
+                                                                <span>{t('filters.professional')}</span>
+                                                                {project.associatedCompany && (
+                                                                    <span className="opacity-80 font-bold normal-case tracking-normal border-black/20 border-l pl-1.5 md:pl-2 text-[9px] md:text-[11px]">
+                                                                        {project.associatedCompany}
+                                                                    </span>
+                                                                )}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                );
+                                            })()}
                                         
                                         {/* Subdued background blob inside the card (overflow hidden) */}
                                         <div className="absolute inset-0 overflow-hidden rounded-[32px] pointer-events-none">
@@ -171,28 +222,29 @@ export function Projects() {
                                         </div>
 
                                         {/* Dynamic Floating Title Occupying the Void */}
-                                        <div className={`absolute top-8 md:top-10 z-20 w-[60%]
-                                            ${idx % 2 === 0 ? 'left-6 md:left-8 text-left' : 'right-6 md:right-8 text-right'}
+                                        <div className={`absolute z-20 w-[60%] transition-all duration-300
+                                            ${displayIdx % 2 === 0 ? 'left-6 md:left-8 text-left' : 'right-6 md:right-8 text-right'}
+                                            ${project.category === 'professional' ? 'top-[60px] md:top-[72px]' : 'top-8 md:top-10'}
                                         `}>
-                                            <motion.h3 layoutId={`title-${idx}`} className="font-display text-4xl md:text-5xl font-black text-white/90 group-hover:text-[var(--accent)] transition-colors duration-300 leading-none tracking-tight">
-                                                {t(`items.item${idx}.title`)}
+                                            <motion.h3 layoutId={`title-${originalIndex}`} className="font-display text-4xl md:text-5xl font-black text-white/90 group-hover:text-[var(--accent)] transition-colors duration-300 leading-none tracking-tight">
+                                                {t(`items.item${originalIndex}.title`)}
                                             </motion.h3>
                                         </div>
 
                                         {/* Breakout Image - Increased scale, dropped massively, with dynamic original positioning */}
                                         <div className={`absolute bottom-[20px] md:bottom-[40px] z-30 pointer-events-none
-                                            ${idx % 2 === 0 
+                                            ${displayIdx % 2 === 0 
                                                 ? 'right-[-20px] md:right-[-50px] origin-bottom-right' 
                                                 : 'left-[-10px] md:left-[10px] origin-bottom-left'}
                                         `}>
                                             {project.image && (
                                                 <motion.div className="relative">
                                                     <motion.img 
-                                                        layoutId={`image-${idx}`}
+                                                        layoutId={`image-${originalIndex}`}
                                                         src={project.image} 
-                                                        alt={t(`items.item${idx}.title`)} 
-                                                        className={`h-[320px] sm:h-[400px] md:h-[460px] w-auto max-w-none object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.9)] transition-all duration-700 ease-[cubic-bezier(0.2,0.8,0.2,1)]
-                                                            ${idx % 2 === 0 
+                                                        alt={t(`items.item${originalIndex}.title`)} 
+                                                        className={`h-[320px] sm:h-[400px] md:h-[460px] w-auto max-w-none object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.9)] rounded-2xl md:rounded-3xl transition-all duration-700 ease-[cubic-bezier(0.2,0.8,0.2,1)]
+                                                            ${displayIdx % 2 === 0 
                                                                 ? 'group-hover:scale-[1.15] group-hover:-translate-y-4 group-hover:-rotate-3' 
                                                                 : 'group-hover:scale-[1.15] group-hover:-translate-y-4 group-hover:rotate-3'}
                                                         `}
@@ -202,14 +254,14 @@ export function Projects() {
                                         </div>
                                         
                                         {/* Text Content - Locked to the bottom, squished to avoid image overlap */}
-                                        <div className={`relative z-20 mt-auto flex flex-col w-full md:w-[65%] 
-                                            ${idx % 2 === 0 ? 'items-start text-left' : 'items-end text-right'}
+                                        <div className={`relative z-20 mt-auto flex flex-col w-full md:w-[45%] lg:w-[50%] 
+                                            ${displayIdx % 2 === 0 ? 'items-start text-left' : 'items-end text-right ml-auto'}
                                         `}>
                                             <p className="text-gray-400 text-sm leading-relaxed mb-4 md:mb-5 font-light line-clamp-3">
-                                                {t(`items.item${idx}.description`)}
+                                                {t(`items.item${originalIndex}.description`)}
                                             </p>
 
-                                            <div className={`flex flex-wrap gap-2 ${idx % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
+                                            <div className={`flex flex-wrap gap-2 ${displayIdx % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
                                                 {project.tags?.map((tag, tIdx) => (
                                                     <span
                                                         key={tIdx}
@@ -220,16 +272,15 @@ export function Projects() {
                                                 ))}
                                             </div>
                                             
-                                            <ArrowUpRight className={`absolute bottom-0 w-5 h-5 text-white/30 group-hover:text-[var(--accent)] transition-all duration-300 transform group-hover:translate-x-1 group-hover:-translate-y-1
-                                                ${idx % 2 === 0 ? 'right-0' : 'left-0 scale-x-[-1] group-hover:translate-x-[-4px]'}
-                                            `} />
+
                                         </div>
                                     </div>
                                 )}
                             </motion.div>
                             );
                         })}
-                    </div>
+                        </AnimatePresence>
+                    </motion.div>
                 </div>
             </Container>
 
