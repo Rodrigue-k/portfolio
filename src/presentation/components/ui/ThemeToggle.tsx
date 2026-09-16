@@ -4,8 +4,10 @@ import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export function ThemeToggle() {
+    const t = useTranslations("Common");
     const { theme, setTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
 
@@ -22,7 +24,7 @@ export function ThemeToggle() {
         <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             className="p-2 rounded-full hover:bg-card-bg transition-colors relative overflow-hidden"
-            aria-label="Toggle Theme"
+            aria-label={t("toggleTheme")}
         >
             <motion.div
                 initial={false}

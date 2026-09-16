@@ -1,6 +1,6 @@
 "use client";
 
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useRouter, usePathname } from "@/i18n/routing";
 import { useTransition } from "react";
 import { cn } from "@/lib/utils";
@@ -8,6 +8,7 @@ import { Globe } from "lucide-react";
 
 export function LanguageSwitcher() {
     const locale = useLocale();
+    const t = useTranslations("Common");
     const router = useRouter();
     const pathname = usePathname();
     const [isPending, startTransition] = useTransition();
@@ -28,7 +29,7 @@ export function LanguageSwitcher() {
                 "bg-transparent text-[var(--text-muted)] hover:text-[var(--accent)]",
                 isPending && "opacity-50 pointer-events-none"
             )}
-            aria-label="Toggle Language"
+            aria-label={t("toggleLanguage")}
         >
             <Globe className="w-4 h-4 transition-colors group-hover:text-[var(--accent)]" />
             <span className="font-mono text-[11px] uppercase tracking-wider">

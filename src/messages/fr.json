@@ -1,4 +1,8 @@
 {
+    "Metadata": {
+        "title": "Komi Rodrigue Koudakpo - Développeur Flutter · Mobile & Web",
+        "description": "Portfolio de Komi Rodrigue Koudakpo, développeur d'applications autodidacte spécialisé en Flutter pour le mobile et Next.js pour le web."
+    },
     "Header": {
         "nav": {
             "about": "À propos",
@@ -95,6 +99,7 @@
         "viewCode": "Code Source",
         "viewProject": "Voir le site",
         "playStore": "Play Store",
+        "appStore": "App Store",
         "associatedWith": "Associé à",
         "links": "Liens",
         "imagePlaceholder": "Emplacement image",
@@ -103,6 +108,49 @@
             "professional": "En Entreprise",
             "personal": "Projets Perso",
             "other": "Autres"
+        },
+        "tags": {
+            "Flutter": "Flutter",
+            "Dart": "Dart",
+            "Clean Architecture": "Clean Architecture",
+            "REST API": "REST API",
+            "Android": "Android",
+            "iOS": "iOS",
+            "Freelance": "Freelance",
+            "Firebase": "Firebase",
+            "Supabase": "Supabase",
+            "Micro-paiement": "Micro-paiement",
+            "Paiement": "Paiement",
+            "Solo": "Solo",
+            "Géolocalisation": "Géolocalisation",
+            "Cartographie": "Cartographie",
+            "Web": "Web",
+            "Hackathon": "Hackathon",
+            "Équipe": "Équipe",
+            "QR Code": "QR Code",
+            "vCard": "vCard",
+            "Unity": "Unity",
+            "C#": "C#",
+            "Game Dev": "Développement de jeu",
+            "Next_js": "Next.js",
+            "IA": "IA",
+            "Voix": "Voix",
+            "Langues africaines": "Langues africaines",
+            "Open data": "Open Data",
+            "Web app": "Application Web",
+            "Site web": "Site Web",
+            "Pan-Africain": "Pan-Africain",
+            "Étudiants": "Étudiants",
+            "Entreprises": "Entreprises",
+            "DTC": "DTC",
+            "Fintech": "Fintech",
+            "Marketplace": "Marketplace",
+            "Investissement": "Investissement",
+            "SaaS": "SaaS",
+            "Site vitrine": "Site Vitrine",
+            "Motion design": "Motion Design",
+            "Communication": "Communication",
+            "Client": "Client"
         },
         "items": {
             "item0": {
@@ -136,7 +184,7 @@
                 "fullDescription": "Woez est une application de réservation d'hébergements pensée pour le marché local ouest-africain. Là où des plateformes comme Booking.com restent inadaptées aux réalités du terrain — paiements, langue, offres disponibles — Woez propose une expérience calibrée : paiements mobiles locaux (mobile Money), interface en langue locale, et une offre centrée sur les hébergements de proximité. Un projet qui part d'un vrai problème de marché."
             },
             "item6": {
-                "title": "S Contact",
+                "title": "S-Contact",
                 "description": "Votre carte de visite numérique instantanée. Créez votre profil, générez un QR code et partagez vos coordonnées en 3 secondes.",
                 "fullDescription": "S-Contact remplace la carte de visite papier par une expérience numérique fluide. L'utilisateur crée son profil en quelques clics, génère un QR code intelligent au format vCard, et le partage avec n'importe qui disposant d'un lecteur QR standard. Plus besoin de saisir manuellement un numéro ou d'échanger des cartes qui se perdent. Simple, rapide, universel."
             },
@@ -144,6 +192,26 @@
                 "title": "Make 10!",
                 "description": "Un jeu de puzzle arithmétique — combinez des tuiles colorées pour obtenir exactement 10. Simple, addictif, fait maison.",
                 "fullDescription": "Make 10 est un jeu de puzzle mobile développé avec Unity — mon tout premier jeu publié. Le principe est simple : combiner une, deux, trois ou quatre tuiles numérotées de 1 à 9 pour atteindre exactement 10. Un projet d'apprentissage qui m'a initié au développement de jeux, à la logique de gameplay et au pipeline de publication sur le Play Store."
+            },
+            "item8": {
+                "title": "Corafric",
+                "description": "Plateforme participative de collecte et de validation de données vocales pour préserver les langues africaines et entraîner les technologies vocales de demain.",
+                "fullDescription": "Corafric est une plateforme open-data de collecte vocale visant à constituer des jeux de données pour les langues africaines peu dotées. Développée avec Next.js, elle permet aux utilisateurs d'enregistrer, valider et accéder à des données vocales pour l'IA."
+            },
+            "item9": {
+                "title": "Miabé Hackathon",
+                "description": "Site officiel d’une plateforme panafricaine qui rapproche les compétences des étudiants des besoins réels des entreprises, avec une présence annoncée dans plusieurs pays.",
+                "fullDescription": "Portail officiel de la compétition MIABE Hackathon, présentant le règlement, le calendrier, les universités participantes, le showcase des sponsors et les actualités dans 15 pays africains."
+            },
+            "item10": {
+                "title": "Tavalo",
+                "description": "Plateforme de private markets qui connecte les entreprises non cotées avec des investisseurs privés qualifiés, dans un cadre clair et vérifiable.",
+                "fullDescription": "Tavalo est une marketplace SaaS web développée avec Next.js qui facilite les opportunités d'investissement, le contrôle préalable et l'allocation de capital entre entreprises privées et investisseurs accrédités."
+            },
+            "item11": {
+                "title": "ISHA Agency",
+                "description": "Site vitrine immersif pour une agence de communication et de production audiovisuelle basée à Lomé, conçu dans le cadre de Darollo Technologies Corporation.",
+                "fullDescription": "Conçu et développé pour ISHA Agency sous Darollo Technologies Corporation (DTC). Propose un motion design fluide, des galeries média et la présentation de l'identité de marque."
             }
         },
         "page": {
@@ -180,6 +248,9 @@
     "Footer": {
         "rights": "Tous droits réservés.",
         "builtBy": "Conçu & développé par moi",
+        "email": "Email",
+        "linkedin": "LinkedIn",
+        "github": "GitHub",
         "links": {
             "privacy": "Confidentialité",
             "terms": "Conditions",
@@ -192,6 +263,10 @@
         "closeMenu": "Fermer le menu",
         "toggleLanguage": "Changer de langue",
         "toggleTheme": "Changer de thème",
-        "redirecting": "Redirection..."
+        "redirecting": "Redirection...",
+        "copyLink": "Copier le lien",
+        "copied": "Copié !",
+        "showQrCode": "Afficher le QR code",
+        "open": "Ouvrir"
     }
 }

@@ -1,4 +1,8 @@
 {
+    "Metadata": {
+        "title": "Komi Rodrigue Koudakpo - Flutter Developer · Mobile & Web",
+        "description": "Portfolio of Komi Rodrigue Koudakpo, self-taught application developer specialized in Flutter for mobile and Next.js for web."
+    },
     "Header": {
         "nav": {
             "about": "About",
@@ -20,7 +24,7 @@
         "actions": {
             "contact": "Contact me",
             "downloadCV": "Download CV",
-            "downloadCV_FR": "Version Française (FR)",
+            "downloadCV_FR": "French Version (FR)",
             "downloadCV_EN": "English Version (EN)",
             "viewProjects": "View Projects"
         }
@@ -95,6 +99,7 @@
         "viewCode": "GitHub",
         "viewProject": "View Website",
         "playStore": "Play Store",
+        "appStore": "App Store",
         "associatedWith": "Associated with",
         "links": "Links",
         "imagePlaceholder": "Image placeholder",
@@ -103,6 +108,49 @@
             "professional": "Company",
             "personal": "Personal Projects",
             "other": "Other"
+        },
+        "tags": {
+            "Flutter": "Flutter",
+            "Dart": "Dart",
+            "Clean Architecture": "Clean Architecture",
+            "REST API": "REST API",
+            "Android": "Android",
+            "iOS": "iOS",
+            "Freelance": "Freelance",
+            "Firebase": "Firebase",
+            "Supabase": "Supabase",
+            "Micro-paiement": "Micro-payment",
+            "Paiement": "Payment",
+            "Solo": "Solo",
+            "Géolocalisation": "Geolocation",
+            "Cartographie": "Mapping",
+            "Web": "Web",
+            "Hackathon": "Hackathon",
+            "Équipe": "Team",
+            "QR Code": "QR Code",
+            "vCard": "vCard",
+            "Unity": "Unity",
+            "C#": "C#",
+            "Game Dev": "Game Dev",
+            "Next_js": "Next.js",
+            "IA": "AI",
+            "Voix": "Voice",
+            "Langues africaines": "African Languages",
+            "Open data": "Open Data",
+            "Web app": "Web App",
+            "Site web": "Website",
+            "Pan-Africain": "Pan-African",
+            "Étudiants": "Students",
+            "Entreprises": "Companies",
+            "DTC": "DTC",
+            "Fintech": "Fintech",
+            "Marketplace": "Marketplace",
+            "Investissement": "Investment",
+            "SaaS": "SaaS",
+            "Site vitrine": "Showcase Website",
+            "Motion design": "Motion Design",
+            "Communication": "Communication",
+            "Client": "Client"
         },
         "items": {
             "item0": {
@@ -126,7 +174,7 @@
                 "fullDescription": "EcoMap is a mobile and web solution developed for the Make Afrique 2025 hackathon in Benin, where it won 3rd place. The application allows citizens to report unsanitary areas directly on an interactive map, facilitating the work of urban collection and cleaning organizations. It also integrates an air quality module to monitor the environmental health of each neighborhood. An impact project designed in a team, in limited time, for a real African problem."
             },
             "item4": {
-                "title": "MIABE Hackathon",
+                "title": "MIABE Hackathon App",
                 "description": "The official app of the largest pan-African tech competition for students. All info on the 2026 competition, without registration, in 15 countries.",
                 "fullDescription": "MIABE Hackathon is the official application of the MIABE pan-African competition — the largest technology competition for students and young people in IT on the continent. With no registration required, the app provides access to all essential information about the 2026 edition: rules, schedule, participating countries, news. Available for the 15 participating countries, it was designed to be simple, fast, and accessible even with a limited connection."
             },
@@ -141,9 +189,29 @@
                 "fullDescription": "S-Contact replaces paper business cards with a fluid digital experience. Users create their profile in a few clicks, generate a smart QR code in vCard format, and share it with anyone with a standard QR reader. No more manual entry or exchanging cards that get lost. Simple, fast, universal."
             },
             "item7": {
-                "title": "Make 10",
+                "title": "Make 10!",
                 "description": "An arithmetic puzzle game — combine colored tiles to get exactly 10. Simple, addictive, home-made.",
                 "fullDescription": "Make 10 is a mobile puzzle game developed with Unity — my very first published game. The principle is simple: combine one, two, three, or four numbered tiles from 1 to 9 to reach exactly 10. A learning project that introduced me to game development, gameplay logic, and the Play Store publication pipeline."
+            },
+            "item8": {
+                "title": "Corafric",
+                "description": "Participatory voice data collection and validation platform to preserve African languages and train tomorrow's speech technologies.",
+                "fullDescription": "Corafric is an open-data voice collection platform aimed at building speech datasets for under-resourced African languages. Built with Next.js, it enables users to record, validate, and access voice data for AI training."
+            },
+            "item9": {
+                "title": "Miabé Hackathon Website",
+                "description": "Official website of a pan-African tech competition connecting student talent with real business needs across multiple countries.",
+                "fullDescription": "Official portal for the MIABE Hackathon event, presenting competition guidelines, schedule, participating universities, sponsor showcases, and news across 15 African nations."
+            },
+            "item10": {
+                "title": "Tavalo",
+                "description": "Private markets platform connecting private enterprises with qualified private investors in a clear, verifiable framework.",
+                "fullDescription": "Tavalo is a SaaS web marketplace built with Next.js that facilitates direct dealmaking, due diligence, and capital allocation between private companies and accredited investors."
+            },
+            "item11": {
+                "title": "ISHA Agency",
+                "description": "Immersive showcase website for a communication and audiovisual production agency based in Lome.",
+                "fullDescription": "Designed and built for ISHA Agency under Darollo Technologies Corporation (DTC). Features smooth motion design, media galleries, and brand identity showcase."
             }
         },
         "page": {
@@ -180,6 +248,9 @@
     "Footer": {
         "rights": "All rights reserved.",
         "builtBy": "Designed & built by me",
+        "email": "Email",
+        "linkedin": "LinkedIn",
+        "github": "GitHub",
         "links": {
             "privacy": "Privacy",
             "terms": "Terms",
@@ -192,6 +263,10 @@
         "closeMenu": "Close menu",
         "toggleLanguage": "Toggle language",
         "toggleTheme": "Toggle theme",
-        "redirecting": "Redirecting..."
+        "redirecting": "Redirecting...",
+        "copyLink": "Copy link",
+        "copied": "Copied!",
+        "showQrCode": "Show QR code",
+        "open": "Open"
     }
 }
