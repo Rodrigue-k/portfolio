@@ -4,6 +4,7 @@ import { Hero } from "@/presentation/sections/Hero";
 import { Skills } from "@/presentation/sections/Skills";
 import { Experience } from "@/presentation/sections/Experience";
 import { Contact } from "@/presentation/sections/Contact";
+import { ScrollAtmosphere } from "@/presentation/components/motion/ScrollAtmosphere";
 import { setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 
@@ -21,6 +22,7 @@ export default async function Home({
 
   return (
     <main className="min-h-screen text-foreground selection:bg-white selection:text-black">
+      <ScrollAtmosphere />
       <div className="relative z-10 w-full h-full">
         <Header />
         <Hero />

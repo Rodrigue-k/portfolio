@@ -3,7 +3,7 @@
 import { resumeData } from "@/core/data/resume";
 import { Container, Section } from "@/presentation/components/ui/Layout";
 import { motion } from "framer-motion";
-import { Mail, Briefcase, UserPlus } from "lucide-react";
+import { Mail, Briefcase } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { SectionHeader } from "@/presentation/components/ui/SectionHeader";
 
@@ -14,7 +14,7 @@ export function Contact() {
     <Section id="contact" className="bg-[#ecece9]">
             <Container>
                 <div className="max-w-3xl space-y-8 flex flex-col items-center md:items-start text-center md:text-left mx-auto md:mx-0">
-                    <SectionHeader number="04" title={t('title')} centeredMobile />
+                    <SectionHeader title={t('title')} centeredMobile />
 
                     <motion.p
                         initial={{ opacity: 0, y: 10 }}
@@ -23,7 +23,7 @@ export function Contact() {
                         viewport={{ once: true }}
                         className="font-display text-2xl md:text-3xl font-bold text-foreground"
                     >
-                        Un projet en tête ? Parlons-en.
+                        {t("headline")}
                     </motion.p>
 
                     <motion.div
@@ -35,7 +35,7 @@ export function Contact() {
                     >
                         <a
                             href={`mailto:${resumeData.profile.contact.email}`}
-                            className="px-8 py-4 rounded-[2px] bg-[var(--accent)] text-white font-bold hover:opacity-90 transition-all flex items-center gap-3"
+                            className="flex items-center gap-3 rounded-[2px] bg-[var(--accent)] px-8 py-4 font-bold !text-white shadow-sm transition-all hover:opacity-90"
                         >
                             {t('email')} <Mail className="w-5 h-5" />
                         </a>
@@ -43,7 +43,7 @@ export function Contact() {
                             href={resumeData.profile.contact.linkedin}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="px-8 py-4 rounded-[2px] border border-[var(--border)] hover:bg-white/5 transition-colors flex items-center gap-3 text-foreground"
+                            className="flex items-center gap-3 rounded-[2px] border border-[var(--border)] px-8 py-4 text-foreground transition-colors hover:bg-white/60"
                         >
                             {t('linkedin')} <Briefcase className="w-5 h-5" />
                         </a>

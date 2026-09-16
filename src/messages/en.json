@@ -10,12 +10,15 @@
         }
     },
     "Hero": {
-        "greeting": "Hello, I'm",
-        "role": "Flutter Developer · Mobile Specialist",
-        "description": "Self-taught developer since 2019. 4 years of Flutter expertise — apps shipped on Play Store & App Store.",
+        "headline": {
+            "line1": "I build.",
+            "line2": "I sell."
+        },
+        "description": "Developer by passion, sales-minded by experience. I build products and carry them all the way to the customer.",
+        "portraitAlt": "Komi presenting a topic",
         "location": "Agoe Cacaveli, Lome, Togo",
         "actions": {
-            "contact": "Contact Me",
+            "contact": "Contact me",
             "downloadCV": "Download CV",
             "downloadCV_FR": "Version Française (FR)",
             "downloadCV_EN": "English Version (EN)",
@@ -23,16 +26,29 @@
         }
     },
     "Skills": {
-        "title": "Technical Expertise",
+        "eyebrow": "About me",
+        "title": "Skills.",
         "subtitle": "A versatile tech stack focused on high-performance mobile and web solutions.",
         "categories": {
-            "mobile": "Mobile Development",
-            "languages": "Languages",
-            "other": "Other Skills"
+            "commercial": {
+                "title": "Sales",
+                "items": ["Field prospecting", "Price negotiation", "Objection handling", "Selling recurring solutions"]
+            },
+            "digital": {
+                "title": "Digital",
+                "items": ["Paid advertising (Meta Ads)", "SEO fundamentals", "Conversion funnels", "Project management"]
+            },
+            "technical": {
+                "title": "Technical",
+                "items": ["Flutter", "Dart", "Next.js", "Firebase", "Supabase", "Python", "C#"]
+            }
         }
     },
     "Experience": {
-        "title": "Professional Experience",
+        "eyebrow": "Experience & education",
+        "title": "My Resume",
+        "experienceTitle": "Experience",
+        "educationTitle": "Education",
         "subtitle": "My journey through different roles and companies.",
         "present": "Present",
         "items": {
@@ -60,7 +76,18 @@
                 "period": "March 2025 - June 2025",
                 "description": "State project for digitizing land titles of the national land registry in Lome. Quality control and analysis of entered data."
             }
-        }
+        },
+        "resumeItems": [
+            ["B Pilot SARL", "Field Sales Representative (Budget Pilot)", "Since June 2026"],
+            ["Darollo Technologies Corporation (DTC)", "Partner & Product Developer", "Since January 2025"],
+            ["Evee Engineering", "Freelance Mobile Developer", "October 2025 – March 2026"],
+            ["CAGECFI SA", "Data Entry and Quality Control Operator", "March – June 2025"]
+        ],
+        "educationItems": [
+            ["Baccalaureate", "", "2021"],
+            ["Bachelor's in Digital Project Management", "ESCEN", "In progress (Year 2)"],
+            ["Bachelor's in Mathematics", "", "Resuming studies"]
+        ]
     },
     "Projects": {
         "title": "Featured Projects",
@@ -69,6 +96,9 @@
         "viewProject": "View Website",
         "playStore": "Play Store",
         "associatedWith": "Associated with",
+        "links": "Links",
+        "imagePlaceholder": "Image placeholder",
+        "screenshotAlt": "{title} screenshot {index}",
         "filters": {
             "professional": "Company",
             "personal": "Personal Projects",
@@ -115,11 +145,34 @@
                 "description": "An arithmetic puzzle game — combine colored tiles to get exactly 10. Simple, addictive, home-made.",
                 "fullDescription": "Make 10 is a mobile puzzle game developed with Unity — my very first published game. The principle is simple: combine one, two, three, or four numbered tiles from 1 to 9 to reach exactly 10. A learning project that introduced me to game development, gameplay logic, and the Play Store publication pipeline."
             }
+        },
+        "page": {
+            "eyebrow": "Project selection",
+            "title": "Projects",
+            "caseStudiesEyebrow": "Case studies",
+            "caseStudiesTitle": "Business solutions for companies",
+            "mobileEyebrow": "Mobile applications",
+            "mobileTitle": "Published apps & mobile products",
+            "webEyebrow": "Websites & web platforms",
+            "webTitle": "Web experiences, platforms & client websites",
+            "need": "Need",
+            "solution": "Solution",
+            "result": "Result",
+            "viewProject": "View project",
+            "projectScreenshotAlt": "{title} screenshot",
+            "dashboardScreenshotAlt": "{title} dashboard screenshot",
+            "businessProjects": [
+                { "name": "Cahier Boulanger", "client": "Bakery", "need": "Track activity and organize the daily management of a bakery.", "solution": "Management software designed around the operational needs of a bakery.", "result": "A solution built to structure the establishment's operations." },
+                { "name": "Cahier Opticien", "client": "Eye Fashion Wear", "need": "Use a tool adapted to the management of an eyewear store.", "solution": "Management software designed for Eye Fashion Wear and its optical retail activity.", "result": "A dedicated business solution for eyewear store management." },
+                { "name": "ciForms", "client": "Field product", "need": "Centralize data collected by sales teams and track prospects, follow-ups, and prospecting areas.", "solution": "A web platform with mobile forms, field data collection, sales tracking, and operational dashboards.", "result": "A solution used in real conditions, with B Pilot as the first client field case." }
+            ],
+            "presentationLabels": ["Carpooling", "Greeting cards", "Ticketing", "Mapping", "Hackathon", "Accommodation", "Digital contact", "Puzzle game"]
         }
     },
     "Contact": {
         "title": "Get in Touch",
         "subtitle": "Have a project in mind or just want to chat? Feel free to reach out.",
+        "headline": "Have a project in mind? Let's talk.",
         "email": "Email me",
         "linkedin": "Connect on LinkedIn",
         "github": "Follow on GitHub"
@@ -132,5 +185,13 @@
             "terms": "Terms",
             "sitemap": "Sitemap"
         }
+    },
+    "Common": {
+        "home": "Home",
+        "openMenu": "Open menu",
+        "closeMenu": "Close menu",
+        "toggleLanguage": "Toggle language",
+        "toggleTheme": "Toggle theme",
+        "redirecting": "Redirecting..."
     }
 }

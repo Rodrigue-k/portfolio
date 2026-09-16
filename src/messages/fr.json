@@ -10,12 +10,15 @@
         }
     },
     "Hero": {
-        "greeting": "Bonjour, je suis",
-        "role": "Développeur Flutter · Spécialiste Mobile",
-        "description": "Développeur autodidacte depuis 2019. 4 ans d'expertise Flutter — apps publiées sur Play Store & App Store.",
+        "headline": {
+            "line1": "Je construis.",
+            "line2": "Je vends."
+        },
+        "description": "Développeur par passion, commercial par expérience. Je construis des produits et je les porte jusqu'au client.",
+        "portraitAlt": "Komi présentant un sujet",
         "location": "Agoe Cacaveli, Lomé, Togo",
         "actions": {
-            "contact": "Me Contacter",
+            "contact": "Me contacter",
             "downloadCV": "Télécharger CV",
             "downloadCV_FR": "Version Française (FR)",
             "downloadCV_EN": "English Version (EN)",
@@ -23,16 +26,29 @@
         }
     },
     "Skills": {
-        "title": "Expertise Technique",
+        "eyebrow": "À mon sujet",
+        "title": "Compétences.",
         "subtitle": "Une stack technique polyvalente axée sur des solutions mobiles et web performantes.",
         "categories": {
-            "mobile": "Développement Mobile",
-            "languages": "Langages",
-            "other": "Autres Compétences"
+            "commercial": {
+                "title": "Commercial",
+                "items": ["Prospection terrain", "Négociation tarifaire", "Gestion des objections", "Vente de solutions récurrentes"]
+            },
+            "digital": {
+                "title": "Digital",
+                "items": ["Publicité payante (Meta Ads)", "Notions SEO", "Tunnels de conversion", "Gestion de projet"]
+            },
+            "technical": {
+                "title": "Technique",
+                "items": ["Flutter", "Dart", "Next.js", "Firebase", "Supabase", "Python", "C#"]
+            }
         }
     },
     "Experience": {
-        "title": "Expérience Professionnelle",
+        "eyebrow": "Expérience & éducation",
+        "title": "Mon parcours",
+        "experienceTitle": "Expérience",
+        "educationTitle": "Éducation",
         "subtitle": "Mon parcours à travers différents rôles et entreprises.",
         "present": "Présent",
         "items": {
@@ -60,7 +76,18 @@
                 "period": "Mars 2025 - Juin 2025",
                 "description": "Projet étatique de numérisation des titres fonciers du cadastre national de Lomé. Contrôle qualité et analyse des données saisies."
             }
-        }
+        },
+        "resumeItems": [
+            ["B Pilot SARL", "Commercial terrain (Budget Pilot)", "Depuis juin 2026"],
+            ["Darollo Technologies Corporation (DTC)", "Associé & Développeur produit", "Depuis janvier 2025"],
+            ["Evee Engineering", "Développeur mobile freelance", "Octobre 2025 – Mars 2026"],
+            ["CAGECFI SA", "Opérateur de saisie et contrôle qualité", "Mars – Juin 2025"]
+        ],
+        "educationItems": [
+            ["Baccalauréat", "", "2021"],
+            ["Licence Gestion de Projet Digital", "ESCEN", "En cours (L2)"],
+            ["Licence Mathématiques", "", "Reprise en cours"]
+        ]
     },
     "Projects": {
         "title": "Projets Phares",
@@ -69,6 +96,9 @@
         "viewProject": "Voir le site",
         "playStore": "Play Store",
         "associatedWith": "Associé à",
+        "links": "Liens",
+        "imagePlaceholder": "Emplacement image",
+        "screenshotAlt": "Capture d'écran {index} de {title}",
         "filters": {
             "professional": "En Entreprise",
             "personal": "Projets Perso",
@@ -115,11 +145,34 @@
                 "description": "Un jeu de puzzle arithmétique — combinez des tuiles colorées pour obtenir exactement 10. Simple, addictif, fait maison.",
                 "fullDescription": "Make 10 est un jeu de puzzle mobile développé avec Unity — mon tout premier jeu publié. Le principe est simple : combiner une, deux, trois ou quatre tuiles numérotées de 1 à 9 pour atteindre exactement 10. Un projet d'apprentissage qui m'a initié au développement de jeux, à la logique de gameplay et au pipeline de publication sur le Play Store."
             }
+        },
+        "page": {
+            "eyebrow": "Sélection de projets",
+            "title": "Projets",
+            "caseStudiesEyebrow": "Études de cas",
+            "caseStudiesTitle": "Solutions métier pour entreprises",
+            "mobileEyebrow": "Applications mobiles",
+            "mobileTitle": "Apps publiées & produits mobiles",
+            "webEyebrow": "Sites & plateformes web",
+            "webTitle": "Expériences web, plateformes & sites clients",
+            "need": "Besoin",
+            "solution": "Solution",
+            "result": "Résultat",
+            "viewProject": "Voir le projet",
+            "projectScreenshotAlt": "Capture d'écran de {title}",
+            "dashboardScreenshotAlt": "Capture du tableau de bord {title}",
+            "businessProjects": [
+                { "name": "Cahier Boulanger", "client": "Boulangerie", "need": "Suivre l'activité et organiser la gestion quotidienne d'une boulangerie.", "solution": "Un logiciel de gestion conçu pour les besoins métier d'une boulangerie.", "result": "Solution développée pour structurer les opérations de l'établissement." },
+                { "name": "Cahier Opticien", "client": "Eye Fashion Wear", "need": "Disposer d'un outil adapté à la gestion d'une lunetterie.", "solution": "Un logiciel de gestion conçu pour Eye Fashion Wear et son activité d'opticien.", "result": "Solution métier dédiée à la gestion de la lunetterie." },
+                { "name": "ciForms", "client": "Produit terrain", "need": "Centraliser les données collectées par les commerciaux et suivre les prospects, relances et zones de prospection.", "solution": "Une plateforme web avec formulaires mobiles, collecte terrain, suivi commercial et tableaux de bord opérationnels.", "result": "Solution utilisée en contexte réel avec B Pilot comme premier terrain client." }
+            ],
+            "presentationLabels": ["Covoiturage", "Cartes de vœux", "Billetterie", "Cartographie", "Hackathon", "Hébergement", "Contact digital", "Jeu de puzzle"]
         }
     },
     "Contact": {
         "title": "Restons en Contact",
         "subtitle": "Vous avez un projet en tête ou voulez simplement discuter ? N'hésitez pas à me contacter.",
+        "headline": "Un projet en tête ? Parlons-en.",
         "email": "M'envoyer un email",
         "linkedin": "Me suivre sur LinkedIn",
         "github": "Me suivre sur GitHub"
@@ -132,5 +185,13 @@
             "terms": "Conditions",
             "sitemap": "Plan du site"
         }
+    },
+    "Common": {
+        "home": "Accueil",
+        "openMenu": "Ouvrir le menu",
+        "closeMenu": "Fermer le menu",
+        "toggleLanguage": "Changer de langue",
+        "toggleTheme": "Changer de thème",
+        "redirecting": "Redirection..."
     }
 }

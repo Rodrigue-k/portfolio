@@ -3,9 +3,8 @@
 import { useState, useRef, useEffect } from "react";
 import { resumeData } from "@/core/data/resume";
 import { Container, Section } from "@/presentation/components/ui/Layout";
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, X, ExternalLink, ChevronLeft, ChevronRight, Globe, Github, ShoppingBag, Smartphone } from "lucide-react";
-import { GithubIcon } from "@/presentation/components/ui/BrandIcons";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { X, ChevronLeft, ChevronRight, Globe, Github, ShoppingBag, Smartphone } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { SectionHeader } from "@/presentation/components/ui/SectionHeader";
 import { ProjectLinksPanel } from "@/presentation/components/ProjectLinksPanel";
@@ -14,6 +13,7 @@ import type { ReactNode } from "react";
 export function Projects() {
     const t = useTranslations('Projects');
     const [selectedProject, setSelectedProject] = useState<number | null>(null);
+    const reduceMotion = useReducedMotion();
     const galleryRef = useRef<HTMLDivElement>(null);
     const [canScrollLeft, setCanScrollLeft] = useState(false);
     const [canScrollRight, setCanScrollRight] = useState(false);
@@ -86,13 +86,14 @@ export function Projects() {
                                 key={originalIndex}
                                 layout
                                 layoutId={`card-${originalIndex}`}
-                                initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                                animate={{ opacity: 1, scale: 1, y: 0 }}
+                                initial={{ opacity: 0, scale: reduceMotion ? 1 : 0.94, y: reduceMotion ? 0 : 28 }}
+                                whileInView={{ opacity: 1, scale: 1, y: 0 }}
                                 exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                                transition={{ delay: displayIdx * 0.1, duration: 0.5 }}
-                                viewport={{ once: true }}
+                                transition={{ delay: reduceMotion ? 0 : displayIdx * 0.06, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                                viewport={{ once: true, margin: "-80px" }}
+                                whileHover={reduceMotion ? undefined : { y: -8 }}
                                 onClick={() => setSelectedProject(originalIndex)}
-                                className={`group relative transition-all duration-700 hover:-translate-y-2 flex cursor-pointer
+                                className={`group relative flex cursor-pointer transition-colors duration-700
                                     ${isFeatured 
                                         ? 'col-span-1 md:col-span-2 flex-col md:flex-row md:h-[500px] mt-24 mb-32' 
                                         : 'col-span-1 flex-col h-full mb-12'
@@ -126,8 +127,8 @@ export function Projects() {
                                         {/* Background Layer with Overflow Hidden (for Blobs and Borders) */}
                                         <div className="absolute inset-0 z-0 bg-[#080808] rounded-3xl border border-white/5 shadow-2xl overflow-hidden group-hover:border-[var(--accent)]/30 transition-colors duration-700">
                                             <div className="absolute inset-0 bg-[#050505]" />
-                                            <div className="absolute -top-[20%] -right-[10%] w-[500px] h-[500px] bg-[var(--accent)]/30 rounded-full blur-[120px] mix-blend-screen" />
-                                            <div className="absolute -bottom-[20%] -left-[10%] w-[600px] h-[600px] bg-purple-600/20 rounded-full blur-[130px] mix-blend-screen" />
+                                            <div className="absolute -top-[20%] -right-[10%] w-[500px] h-[500px] bg-[var(--accent)]/25 rounded-full blur-[120px] mix-blend-screen transition-transform duration-1000 group-hover:scale-105" />
+                                            <div className="absolute -bottom-[20%] -left-[10%] w-[600px] h-[600px] bg-white/5 rounded-full blur-[130px] mix-blend-screen transition-transform duration-1000 group-hover:scale-105" />
                                             
                                             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-[8rem] md:text-[14rem] font-black text-white/[0.02] tracking-tighter whitespace-nowrap select-none pointer-events-none">
                                                 {t(`items.item${originalIndex}.title`).toUpperCase()}
@@ -163,7 +164,7 @@ export function Projects() {
                                             {project.image ? (
                                                 <motion.div 
                                                     className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center items-center"
-                                                    initial={{ opacity: 0, y: 50 }}
+                                                    initial={{ opacity: 0, y: reduceMotion ? 0 : 50 }}
                                                     whileInView={{ opacity: 1, y: 0 }}
                                                     viewport={{ once: true, margin: "100px" }}
                                                     transition={{ duration: 1, type: "spring", bounce: 0.3 }}
@@ -219,7 +220,7 @@ export function Projects() {
                                         
                                         {/* Subdued background blob inside the card (overflow hidden) */}
                                         <div className="absolute inset-0 overflow-hidden rounded-[32px] pointer-events-none">
-                                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[120px] bg-[var(--accent)]/15 blur-[50px] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[120px] bg-[var(--accent)]/12 blur-[50px] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                                             <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
                                         </div>
 

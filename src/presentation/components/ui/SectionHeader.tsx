@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 interface SectionHeaderProps {
-    number: string;
+    number?: string;
     title: string;
     centeredMobile?: boolean;
 }
@@ -16,7 +16,7 @@ export function SectionHeader({ number, title, centeredMobile = false }: Section
                 viewport={{ once: true }}
                 className={`font-mono text-[11px] tracking-[3px] text-[var(--accent)] mb-4 uppercase ${centeredMobile ? 'text-center md:text-left' : ''}`}
             >
-                {number}. {title}
+                {number ? `${number}. ` : ''}{title}
             </motion.div>
             
             <motion.h2 

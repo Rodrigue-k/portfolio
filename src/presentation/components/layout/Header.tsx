@@ -11,6 +11,7 @@ import { LanguageSwitcher } from "../ui/LanguageSwitcher";
 
 export function Header() {
   const t = useTranslations("Header");
+  const common = useTranslations("Common");
   const locale = useLocale();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -24,10 +25,17 @@ export function Header() {
   ];
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 24);
+    const handleScroll = () => {
+      const scrollTop = window.scrollY || document.scrollingElement?.scrollTop || 0;
+      setScrolled(scrollTop > 24);
+    };
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    document.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   useEffect(() => {
@@ -37,16 +45,48 @@ export function Header() {
 
   return (
     <>
-      <header className={cn("fixed inset-x-0 top-0 z-40 py-6 transition-all duration-300 md:py-8", scrolled && "border-b border-card-border bg-[var(--bg)]/90 py-4 backdrop-blur-md md:py-5")}>
-        <Container className="flex items-center justify-between">
-          <a href={`/${locale}`} className="font-display text-xl font-semibold tracking-[-0.06em] md:text-2xl" aria-label="Accueil">RK<span className="text-[var(--accent-gold)]">.</span></a>
+      <header className="pointer-events-none fixed inset-x-0 top-0 z-40">
+        <div className={cn(
+          "mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-6 transition-all duration-700 ease-out sm:px-6 md:py-8 lg:px-8",
+          scrolled && "py-4 md:py-5"
+        )}>
+          <a
+            href={`/${locale}`}
+            className={cn(
+              "pointer-events-auto font-display text-xl font-semibold tracking-[-0.06em] transition-all duration-700 ease-[cubic-bezier(.22,1,.36,1)] hover:scale-105 md:text-2xl",
+              scrolled && "pointer-events-none translate-x-14 scale-90 opacity-0 md:translate-x-24"
+            )}
+            aria-label={common("home")}
+          >
+            RK<span className="text-[var(--accent-gold)]">.</span>
+          </a>
           <div className="flex items-center gap-5">
-            <button type="button" onClick={() => setMenuOpen(true)} aria-label="Ouvrir le menu" aria-expanded={menuOpen} className="group grid size-11 place-items-center rounded-full bg-[var(--text)] text-[var(--bg)] transition-transform hover:scale-105 md:size-12">
-              <span className="flex w-4 flex-col gap-[5px]"><span className="h-px w-full bg-current transition-transform group-hover:translate-x-0.5" /><span className="h-px w-3 bg-current transition-transform group-hover:-translate-x-0.5" /></span>
+            <button
+              type="button"
+              onClick={() => setMenuOpen(true)}
+              aria-label={common("openMenu")}
+              aria-expanded={menuOpen}
+              className={cn(
+                "pointer-events-auto group flex h-11 w-11 items-center justify-center overflow-hidden rounded-full bg-[var(--text)] px-0 text-[var(--bg)] shadow-sm transition-all duration-700 ease-[cubic-bezier(.22,1,.36,1)] hover:scale-105 md:h-12 md:w-12",
+                scrolled && "w-[76px] justify-between px-4 md:w-20"
+              )}
+            >
+              <span
+                aria-hidden="true"
+                className={cn(
+                  "w-0 -translate-x-3 overflow-hidden whitespace-nowrap font-display text-base font-semibold tracking-[-0.06em] opacity-0 transition-all duration-700 ease-[cubic-bezier(.22,1,.36,1)]",
+                  scrolled && "w-7 translate-x-0 opacity-100"
+                )}
+              >
+                RK<span className="text-[var(--accent-gold)]">.</span>
+              </span>
+              <span className={cn(
+                "flex w-4 shrink-0 flex-col gap-[5px] transition-transform duration-700 ease-[cubic-bezier(.22,1,.36,1)]",
+                scrolled && "translate-x-0.5"
+              )}><span className="h-px w-full bg-current transition-transform group-hover:translate-x-0.5" /><span className="h-px w-3 bg-current transition-transform group-hover:-translate-x-0.5" /></span>
             </button>
-            <span aria-hidden="true" className="size-1.5 rounded-full bg-[var(--text)]" />
           </div>
-        </Container>
+        </div>
       </header>
 
       <AnimatePresence>
@@ -54,7 +94,7 @@ export function Header() {
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.25 }} className="fixed inset-0 z-50 flex min-h-svh flex-col bg-[var(--text)] text-[var(--bg)]">
             <Container className="flex w-full items-center justify-between py-6 md:py-8">
               <span className="font-display text-xl font-semibold tracking-[-0.06em] md:text-2xl">RK.</span>
-              <button type="button" onClick={() => setMenuOpen(false)} aria-label="Fermer le menu" className="grid size-11 place-items-center rounded-full border border-white/25 transition-colors hover:bg-white hover:text-black md:size-12"><X className="size-5" /></button>
+              <button type="button" onClick={() => setMenuOpen(false)} aria-label={common("closeMenu")} className="grid size-11 place-items-center rounded-full border border-white/25 transition-colors hover:bg-white hover:text-black md:size-12"><X className="size-5" /></button>
             </Container>
             <Container className="grid w-full flex-1 items-center py-10 md:grid-cols-[1fr_auto] md:gap-20">
               <nav className="flex flex-col items-start">
