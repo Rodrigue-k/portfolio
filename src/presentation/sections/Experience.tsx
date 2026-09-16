@@ -1,58 +1,28 @@
-"use client";
-
-import { resumeData } from "@/core/data/resume";
 import { Container, Section } from "@/presentation/components/ui/Layout";
-import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
-import { SectionHeader } from "@/presentation/components/ui/SectionHeader";
+
+const experience = [
+  ["B Pilot SARL", "Commercial terrain (Budget Pilot)", "Depuis juin 2026"],
+  ["Darollo Technologies Corporation (DTC)", "Associé & Développeur produit", "Depuis janvier 2025"],
+  ["Evee Engineering", "Développeur mobile freelance", "Octobre 2025 – Mars 2026"],
+  ["CAGECFI SA", "Opérateur de saisie et contrôle qualité", "Mars – Juin 2025"],
+];
+const education = [
+  ["Baccalauréat", "", "2021"],
+  ["Licence Gestion de Projet Digital", "ESCEN", "En cours (L2)"],
+  ["Licence Mathématiques", "", "Reprise en cours"],
+];
 
 export function Experience() {
-    const t = useTranslations('Experience');
-
-    return (
-        <Section id="experience">
-            <Container>
-                <div className="space-y-12">
-                    <SectionHeader number="02" title={t('title')} />
-
-                    <div className="relative ml-2 md:ml-6 pb-12">
-                        {/* Timeline Vertical Line Gradient */}
-                        <div className="absolute left-0 top-0 bottom-0 w-[1px] bg-gradient-to-b from-[var(--accent)] to-transparent" />
-
-                        <div className="space-y-12">
-                            {resumeData.experience.map((_, idx) => (
-                                <motion.div
-                                    key={idx}
-                                    initial={{ opacity: 0, x: -30 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    transition={{ delay: idx * 0.15, duration: 0.5 }}
-                                    viewport={{ once: true }}
-                                    className="relative pl-8 md:pl-12 group"
-                                >
-                                    {/* Timeline Dot */}
-                                    <div className="absolute -left-[4px] top-6 w-[9px] h-[9px] rounded-full border border-[var(--accent)] bg-[var(--bg)] group-hover:bg-[var(--accent)] transition-colors duration-300 ring-4 ring-[var(--bg)]" />
-
-                                    <div className="p-6 rounded-xl hover:bg-white/5 transition-colors border border-transparent hover:border-white/5">
-                                        <div className="flex flex-col md:flex-row md:items-start justify-between gap-2 mb-4">
-                                            <div>
-                                                <h3 className="font-display text-2xl font-bold text-foreground mb-1">{t(`items.item${idx}.role`)}</h3>
-                                                <p className="font-mono text-[var(--accent)] text-sm">{t(`items.item${idx}.company`)}</p>
-                                            </div>
-                                            <div className="flex flex-col md:items-end font-mono text-xs text-[var(--text-muted)] space-y-1 pt-1 md:pt-0">
-                                                <span>{t(`items.item${idx}.period`)}</span>
-                                                <span>{t(`items.item${idx}.location`)} • {t(`items.item${idx}.type`)}</span>
-                                            </div>
-                                        </div>
-                                        <p className="text-[var(--text-muted)] leading-relaxed text-sm md:text-base">
-                                            {t(`items.item${idx}.description`)}
-                                        </p>
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </Container>
-        </Section>
-    );
+  return (
+    <Section id="experience" className="py-20 md:py-28">
+      <Container>
+        <p className="section-label text-[10px] uppercase tracking-[.2em] text-muted">Expérience &amp; éducation</p>
+        <h2 className="mt-3 font-display text-4xl font-semibold tracking-tight">My Resume</h2>
+        <div className="mt-10 grid gap-14 md:grid-cols-2">
+          <div><h3 className="mb-5 font-display text-xl font-semibold">Experience</h3><div className="divide-y divide-card-border border-y border-card-border">{experience.map(([company, role, period]) => <article key={company} className="flex items-start justify-between gap-4 py-4"><div><h4 className="text-sm font-semibold">{company}</h4><p className="mt-1 text-sm text-muted">{role}</p></div><span className="shrink-0 rounded border border-card-border px-2 py-1 text-right text-[10px] text-muted">{period}</span></article>)}</div></div>
+          <div><h3 className="mb-5 font-display text-xl font-semibold">Education</h3><div className="divide-y divide-card-border border-y border-card-border">{education.map(([degree, school, period]) => <article key={degree} className="flex items-start justify-between gap-4 py-4"><div><h4 className="text-sm font-semibold">{degree}</h4>{school && <p className="mt-1 text-sm text-muted">{school}</p>}</div><span className="shrink-0 rounded border border-card-border px-2 py-1 text-right text-[10px] text-muted">{period}</span></article>)}</div></div>
+        </div>
+      </Container>
+    </Section>
+  );
 }

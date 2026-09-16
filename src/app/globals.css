@@ -16,13 +16,13 @@
 }
 
 :root {
-  --bg: #0A0A0F;
-  --bg-2: #111118;
-  --accent: #C1440E;
-  --accent-gold: #F5A623;
-  --text: #E8E8E8;
-  --text-muted: #6B7280;
-  --border: rgba(255,255,255,0.06);
+  --bg: #f7f7f5;
+  --bg-2: #ffffff;
+  --accent: #263b32;
+  --accent-gold: #a68148;
+  --text: #20231f;
+  --text-muted: #69716b;
+  --border: rgba(32,35,31,0.12);
   --font-display: 'Syne', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
   --font-body: 'Inter', sans-serif;
@@ -36,7 +36,7 @@
   --primary: var(--accent);
   --primary-foreground: #ffffff;
   
-  --glass-bg: rgba(17, 17, 24, 0.7);
+  --glass-bg: rgba(255, 255, 255, 0.88);
   --glass-border: var(--border);
 }
 
@@ -109,3 +109,5 @@ h1, h2, h3 {
   -ms-overflow-style: none !important;  /* IE and Edge */
   scrollbar-width: none !important;  /* Firefox */
 }
+
+a { color: inherit; }

@@ -11,7 +11,7 @@ export function Contact() {
     const t = useTranslations('Contact');
 
     return (
-        <Section id="contact" className="bg-gradient-to-t from-black to-card-bg/20">
+    <Section id="contact" className="bg-[#ecece9]">
             <Container>
                 <div className="max-w-3xl space-y-8 flex flex-col items-center md:items-start text-center md:text-left mx-auto md:mx-0">
                     <SectionHeader number="04" title={t('title')} centeredMobile />

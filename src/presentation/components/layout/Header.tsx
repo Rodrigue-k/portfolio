@@ -1,140 +1,78 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Container } from "../ui/Layout";
-import { LanguageSwitcher } from "../ui/LanguageSwitcher";
-import { useTranslations } from "next-intl";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { useLocale, useTranslations } from "next-intl";
+import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { resumeData } from "@/core/data/resume";
+import { Container } from "../ui/Layout";
+import { LanguageSwitcher } from "../ui/LanguageSwitcher";
 
 export function Header() {
-    const t = useTranslations('Header');
-    const [scrolled, setScrolled] = useState(false);
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const t = useTranslations("Header");
+  const locale = useLocale();
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
-        };
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+  const navLinks = [
+    { name: t("nav.about"), href: `/${locale}#about` },
+    { name: t("nav.skills"), href: `/${locale}#skills` },
+    { name: t("nav.projects"), href: `/${locale}/projects` },
+    { name: t("nav.experience"), href: `/${locale}#experience` },
+    { name: t("nav.contact"), href: `/${locale}#contact` },
+  ];
 
-    const navLinks = [
-        { name: t('nav.about'), href: "#about" },
-        { name: t('nav.skills'), href: "#skills" },
-        { name: t('nav.projects'), href: "#projects" },
-        { name: t('nav.experience'), href: "#experience" },
-        { name: t('nav.contact'), href: "#contact" },
-    ];
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 24);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-    // Lock body scroll when menu is open
-    useEffect(() => {
-        if (mobileMenuOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'unset';
-        }
-        return () => { document.body.style.overflow = 'unset'; }
-    }, [mobileMenuOpen]);
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [menuOpen]);
 
-    return (
-        <>
-            <header
-                className={cn(
-                    "fixed top-0 left-0 right-0 z-40 transition-all duration-300 py-5 bg-[#0A0A0F]/95 backdrop-blur-md",
-                    scrolled ? "border-b border-[var(--accent)]" : "border-b border-transparent"
-                )}
-            >
-                <Container className="flex items-center justify-between px-8">
-                    <a href="#" className="flex items-center gap-4">
-                        <span className="font-mono font-bold text-xl leading-none text-foreground">RK</span>
-                        <span className="h-5 w-[2px] bg-[var(--accent)]"></span>
-                    </a>
+  return (
+    <>
+      <header className={cn("fixed inset-x-0 top-0 z-40 py-6 transition-all duration-300 md:py-8", scrolled && "border-b border-card-border bg-[var(--bg)]/90 py-4 backdrop-blur-md md:py-5")}>
+        <Container className="flex items-center justify-between">
+          <a href={`/${locale}`} className="font-display text-xl font-semibold tracking-[-0.06em] md:text-2xl" aria-label="Accueil">RK<span className="text-[var(--accent-gold)]">.</span></a>
+          <div className="flex items-center gap-5">
+            <button type="button" onClick={() => setMenuOpen(true)} aria-label="Ouvrir le menu" aria-expanded={menuOpen} className="group grid size-11 place-items-center rounded-full bg-[var(--text)] text-[var(--bg)] transition-transform hover:scale-105 md:size-12">
+              <span className="flex w-4 flex-col gap-[5px]"><span className="h-px w-full bg-current transition-transform group-hover:translate-x-0.5" /><span className="h-px w-3 bg-current transition-transform group-hover:-translate-x-0.5" /></span>
+            </button>
+            <span aria-hidden="true" className="size-1.5 rounded-full bg-[var(--text)]" />
+          </div>
+        </Container>
+      </header>
 
-                    {/* Desktop Nav */}
-                    <nav className="hidden md:flex items-center gap-6">
-                        {navLinks.map((item) => (
-                            <a
-                                key={item.name}
-                                href={item.href}
-                                className="text-[11px] font-mono tracking-widest uppercase text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors"
-                            >
-                                {item.name}
-                            </a>
-                        ))}
-                        <div className="flex items-center gap-2 border-l border-white/10 pl-6 ml-2">
-                            <LanguageSwitcher />
-                        </div>
-                        <a
-                            href={`mailto:${resumeData.profile.contact.email}`}
-                            className="text-[11px] font-mono uppercase tracking-widest border border-[var(--accent)] text-[var(--accent)] px-4 py-2 rounded-[2px] hover:bg-[var(--accent)] hover:text-white transition-all ml-2"
-                        >
-                            {t('nav.hireMe')}
-                        </a>
-                    </nav>
-
-                    {/* Mobile Menu Toggle */}
-                    <div className="flex items-center gap-4 md:hidden">
-                        <LanguageSwitcher />
-                        <button
-                            className="text-[var(--text)] p-2 hover:text-[var(--accent)] transition-colors"
-                            onClick={() => setMobileMenuOpen(true)}
-                        >
-                            <Menu />
-                        </button>
-                    </div>
-                </Container>
-            </header>
-
-            {/* Mobile Nav Drawer Overlay */}
-            <AnimatePresence>
-                {mobileMenuOpen && (
-                    <motion.div
-                        initial={{ x: "100%" }}
-                        animate={{ x: 0 }}
-                        exit={{ x: "100%" }}
-                        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                        className="fixed inset-0 z-50 bg-[#0A0A0F] flex flex-col md:hidden"
-                    >
-                        <div className="flex items-center justify-between p-6 mt-2">
-                            <a href="#" className="flex items-center gap-4" onClick={() => setMobileMenuOpen(false)}>
-                                <span className="font-mono font-bold text-xl leading-none text-foreground">RK</span>
-                                <span className="h-5 w-[2px] bg-[var(--accent)]"></span>
-                            </a>
-                            <button
-                                className="text-[var(--text-muted)] p-2 hover:text-[var(--accent)] transition-colors"
-                                onClick={() => setMobileMenuOpen(false)}
-                            >
-                                <X className="w-8 h-8" />
-                            </button>
-                        </div>
-                        <div className="flex-1 flex flex-col justify-center items-center gap-8">
-                            {navLinks.map((item) => (
-                                <a
-                                    key={item.name}
-                                    href={item.href}
-                                    onClick={() => setMobileMenuOpen(false)}
-                                    className="text-4xl font-display font-bold text-foreground hover:text-[var(--accent)] transition-colors"
-                                >
-                                    {item.name}
-                                </a>
-                            ))}
-                        </div>
-                        <div className="p-8 flex flex-col items-center gap-4 font-mono text-[11px] tracking-widest uppercase text-[var(--text-muted)]">
-                            <a href={`mailto:${resumeData.profile.contact.email}`} className="hover:text-[var(--accent)] transition-colors">
-                                {resumeData.profile.contact.email}
-                            </a>
-                            <div className="flex items-center gap-6">
-                                <a href={resumeData.profile.contact.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--accent)] transition-colors">LinkedIn</a>
-                                <a href={resumeData.profile.contact.github} target="_blank" rel="noopener noreferrer" className="hover:text-[var(--accent)] transition-colors">GitHub</a>
-                            </div>
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-        </>
-    );
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.25 }} className="fixed inset-0 z-50 flex min-h-svh flex-col bg-[var(--text)] text-[var(--bg)]">
+            <Container className="flex w-full items-center justify-between py-6 md:py-8">
+              <span className="font-display text-xl font-semibold tracking-[-0.06em] md:text-2xl">RK.</span>
+              <button type="button" onClick={() => setMenuOpen(false)} aria-label="Fermer le menu" className="grid size-11 place-items-center rounded-full border border-white/25 transition-colors hover:bg-white hover:text-black md:size-12"><X className="size-5" /></button>
+            </Container>
+            <Container className="grid w-full flex-1 items-center py-10 md:grid-cols-[1fr_auto] md:gap-20">
+              <nav className="flex flex-col items-start">
+                {navLinks.map((item, index) => (
+                  <a key={item.name} href={item.href} onClick={() => setMenuOpen(false)} className="group flex w-full items-baseline gap-4 border-b border-white/15 py-3 font-display text-4xl font-semibold tracking-tight transition-colors hover:text-white/55 sm:text-5xl md:text-6xl">
+                    <span className="font-mono text-[10px] font-normal tracking-widest text-white/40">0{index + 1}</span>{item.name}
+                  </a>
+                ))}
+              </nav>
+              <div className="mt-10 space-y-7 font-mono text-[10px] uppercase tracking-[.18em] text-white/55 md:mt-0 md:min-w-48">
+                <LanguageSwitcher />
+                <a className="block hover:text-white" href={`mailto:${resumeData.profile.contact.email}`}>{t("nav.hireMe")}</a>
+                <div className="flex gap-5"><a className="hover:text-white" href={resumeData.profile.contact.linkedin} target="_blank" rel="noreferrer">LinkedIn</a><a className="hover:text-white" href={resumeData.profile.contact.github} target="_blank" rel="noreferrer">GitHub</a></div>
+              </div>
+            </Container>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
 }
