@@ -72,7 +72,7 @@ export function Hero() {
               className="absolute inset-x-7 bottom-8 top-10 rounded-[45%_55%_48%_52%/34%_38%_62%_66%] bg-[var(--text)]/[0.055] ring-1 ring-[var(--text)]/10"
             />
             <Image
-              src="/images/komi-speaking-portrait-v1.png"
+              src="/images/komi-speaking-portrait-v1.webp"
               alt={t("portraitAlt")}
               fill
               priority

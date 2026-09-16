@@ -50,12 +50,12 @@ export const resumeData: PortfolioData = {
             title: "Grand Voyageur",
             description: "Application de covoiturage pensée pour l'Afrique de l'Ouest. Trouvez un trajet ou proposez le vôtre, simplement.",
             tags: ["Flutter", "Dart", "Clean Architecture", "REST API", "Android", "iOS", "Freelance"],
-            image: "/assets/projects/gv-main.png",
+            image: "/assets/projects/gv-main.webp",
             gallery: [
-                "/assets/projects/gv-main.png",
-                "/assets/projects/gv-1.png",
-                "/assets/projects/gv-2.png",
-                "/assets/projects/gv-3.png"
+                "/assets/projects/gv-main.webp",
+                "/assets/projects/gv-1.webp",
+                "/assets/projects/gv-2.webp",
+                "/assets/projects/gv-3.webp"
             ],
             playStore: "https://play.google.com/store/apps/details?id=com.grandvoyageur.grand_voyageur&pcampaignid=web_share",
             appStore: "https://apps.apple.com/in/app/grand-voyageur-covoiturage/id6755688855",
@@ -68,7 +68,7 @@ export const resumeData: PortfolioData = {
             tags: ["Flutter", "Dart", "Firebase", "Micro-paiement", "Android", "iOS", "Solo"],
             website: "https://cherish-app.web.app/",
             playStore: "https://play.google.com/store/apps/details?id=com.koudatek.cherish&pcampaignid=web_share",
-            image: "/assets/projects/cherish-main.png",
+            image: "/assets/projects/cherish-main.webp",
             category: "personal"
         },
         {
@@ -78,23 +78,22 @@ export const resumeData: PortfolioData = {
             playStore: "https://play.google.com/store/apps/details?id=com.eveeengineering.ticketto&pcampaignid=web_share",
             associatedCompany: "Evee Engineering",
             category: "professional",
-            image: "/assets/projects/ticketto-main.png"
+            image: "/assets/projects/ticketto-main.webp"
         },
         {
             title: "EcoMap",
             description: "Plateforme cartographique pour visualiser la santé environnementale des villes africaines — signalement de dépotoirs et qualité de l'air en temps réel.",
             tags: ["Flutter", "Dart", "Géolocalisation", "Cartographie", "Web", "Hackathon", "Équipe"],
             github: "https://github.com/Rodrigue-k/EcoMap",
-            image: "/assets/projects/ecomap-main.png",
+            image: "/assets/projects/ecomap-main.webp",
             category: "personal"
         },
         {
-            title: "Miabé Hackathon",
+            title: "Miabé Hackathon App",
             description: "L'app officielle de la plus grande compétition tech panafricaine pour étudiants. Toutes les infos sur la compétition 2026, sans inscription, dans 15 pays.",
             tags: ["Flutter", "Firebase", "Supabase"],
-            website: "https://miabe-hackathon.web.app/",
             playStore: "https://play.google.com/store/apps/details?id=com.dtc.miabehackathon.public&pcampaignid=web_share",
-            image: "/assets/projects/mbhackathon-main.png",
+            image: "/assets/projects/mbhackathon-main.webp",
             associatedCompany: "Darollo Technologies Corporation (DTC)",
             category: "professional"
         },
@@ -103,7 +102,7 @@ export const resumeData: PortfolioData = {
             description: "Réservez des hébergements locaux avec des paiements adaptés à l'Afrique de l'Ouest. Une alternative à Booking.com pensée pour le terrain.",
             tags: ["Flutter", "Dart", "Supabase", "Géolocalisation"],
             website: "https://pro.woez-app.com/",
-            image: "/assets/projects/woez-main.png",
+            image: "/assets/projects/woez-main.webp",
             category: "personal"
         },
         {
@@ -112,7 +111,7 @@ export const resumeData: PortfolioData = {
             tags: ["Flutter", "Dart", "QR Code", "vCard"],
             github: "https://github.com/Rodrigue-k/s_contact",
             playStore: "https://play.google.com/store/apps/details?id=com.koudatek.s_contact&pcampaignid=web_share",
-            image: "/assets/projects/scontact-main.png",
+            image: "/assets/projects/scontact-main.webp",
             category: "personal"
         },
         {
@@ -120,8 +119,42 @@ export const resumeData: PortfolioData = {
             description: "Un jeu de puzzle arithmétique — combinez des tuiles colorées pour obtenir exactement 10. Simple, addictif, fait maison.",
             tags: ["Unity", "C#", "Game Dev", "Android"],
             playStore: "https://play.google.com/store/apps/details?id=com.latex.make&pcampaignid=web_share",
-            image: "/assets/projects/make10-main.png",
+            image: "/assets/projects/make10-main.webp",
             category: "other"
+        },
+        {
+            title: "Corafric",
+            description: "Plateforme participative de collecte et de validation de données vocales pour préserver les langues africaines et entraîner les technologies vocales de demain.",
+            tags: ["Next.js", "IA", "Voix", "Langues africaines", "Open data", "Web app"],
+            website: "https://corafric.com/",
+            image: "/assets/projects/corafric-main.webp",
+            category: "professional"
+        },
+        {
+            title: "Miabé Hackathon",
+            description: "Site officiel d’une plateforme panafricaine qui rapproche les compétences des étudiants des besoins réels des entreprises, avec une présence annoncée dans plusieurs pays.",
+            tags: ["Site web", "Hackathon", "Pan-Africain", "Étudiants", "Entreprises", "DTC"],
+            website: "https://miabehackathon.com/",
+            image: "/assets/projects/miabe-hackathon-web.webp",
+            associatedCompany: "Darollo Technologies Corporation (DTC)",
+            category: "professional"
+        },
+        {
+            title: "Tavalo",
+            description: "Plateforme de private markets qui connecte les entreprises non cotées avec des investisseurs privés qualifiés, dans un cadre clair et vérifiable.",
+            tags: ["Next.js", "Fintech", "Marketplace", "Investissement", "SaaS", "Web app"],
+            website: "https://tavalo.woez-app.com/",
+            image: "/assets/projects/tavalo-main.webp",
+            category: "professional"
+        },
+        {
+            title: "ISHA Agency",
+            description: "Site vitrine immersif pour une agence de communication et de production audiovisuelle basée à Lomé, conçu dans le cadre de Darollo Technologies Corporation.",
+            tags: ["Next.js", "Site vitrine", "Motion design", "Communication", "Client", "DTC"],
+            website: "https://www.ishaagency.com/",
+            image: "/assets/projects/isha-main.webp",
+            associatedCompany: "Darollo Technologies Corporation (DTC)",
+            category: "professional"
         }
     ],
     education: [
