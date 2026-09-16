@@ -148,14 +148,17 @@ export function Projects() {
                                             </p>
 
                                             <div className="flex flex-wrap gap-2 mt-auto">
-                                                {project.tags?.map((tag, tIdx) => (
-                                                    <span
-                                                        key={tIdx}
-                                                        className="font-mono text-[11px] font-semibold bg-white/5 text-white/90 px-4 py-2 rounded-full border border-white/10 backdrop-blur-md transition-colors hover:bg-white/10"
-                                                    >
-                                                        {tag}
-                                                    </span>
-                                                ))}
+                                                {project.tags?.map((tag, tIdx) => {
+                                                    const tagKey = tag.replace(/\./g, '_');
+                                                    return (
+                                                        <span
+                                                            key={tIdx}
+                                                            className="font-mono text-[11px] font-semibold bg-white/5 text-white/90 px-4 py-2 rounded-full border border-white/10 backdrop-blur-md transition-colors hover:bg-white/10"
+                                                        >
+                                                            {t.has(`tags.${tagKey}`) ? t(`tags.${tagKey}`) : tag}
+                                                        </span>
+                                                    );
+                                                })}
                                             </div>
                                         </div>
 
@@ -173,12 +176,13 @@ export function Projects() {
                                                         layoutId={`image-${originalIndex}`}
                                                         src={project.image} 
                                                         alt={t(`items.item${originalIndex}.title`)} 
+                                                        decoding="async"
                                                         className="h-[500px] md:h-[650px] lg:h-[800px] w-auto max-w-none object-contain drop-shadow-[0_40px_100px_rgba(0,0,0,0.8)] rounded-3xl md:rounded-[3rem] transition-transform duration-700 ease-out group-hover:scale-[1.03] group-hover:-translate-y-4"
                                                     />
                                                 </motion.div>
                                             ) : (
                                                 <div className="absolute inset-8 border-2 border-dashed border-white/10 rounded-2xl flex items-center justify-center text-white/30 font-mono text-sm">
-                                                    Image Container
+                                                    {t("imagePlaceholder")}
                                                 </div>
                                             )}
                                         </div>
@@ -246,6 +250,8 @@ export function Projects() {
                                                         layoutId={`image-${originalIndex}`}
                                                         src={project.image} 
                                                         alt={t(`items.item${originalIndex}.title`)} 
+                                                        loading={displayIdx < 2 ? "eager" : "lazy"}
+                                                        decoding="async"
                                                         className={`h-[320px] sm:h-[400px] md:h-[460px] w-auto max-w-none object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.9)] rounded-2xl md:rounded-3xl transition-all duration-700 ease-[cubic-bezier(0.2,0.8,0.2,1)]
                                                             ${displayIdx % 2 === 0 
                                                                 ? 'group-hover:scale-[1.15] group-hover:-translate-y-4 group-hover:-rotate-3' 
@@ -265,14 +271,17 @@ export function Projects() {
                                             </p>
 
                                             <div className={`flex flex-wrap gap-2 ${displayIdx % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
-                                                {project.tags?.map((tag, tIdx) => (
-                                                    <span
-                                                        key={tIdx}
-                                                        className="font-mono text-[9px] md:text-[10px] uppercase font-semibold tracking-wider bg-white/5 text-white/70 px-3 py-1.5 rounded-lg border border-white/5"
-                                                    >
-                                                        {tag}
-                                                    </span>
-                                                ))}
+                                                {project.tags?.map((tag, tIdx) => {
+                                                    const tagKey = tag.replace(/\./g, '_');
+                                                    return (
+                                                        <span
+                                                            key={tIdx}
+                                                            className="font-mono text-[9px] md:text-[10px] uppercase font-semibold tracking-wider bg-white/5 text-white/70 px-3 py-1.5 rounded-lg border border-white/5"
+                                                        >
+                                                            {t.has(`tags.${tagKey}`) ? t(`tags.${tagKey}`) : tag}
+                                                        </span>
+                                                    );
+                                                })}
                                             </div>
                                             
 
@@ -336,28 +345,31 @@ export function Projects() {
                                         </div>
 
                                         <div className="flex flex-wrap gap-2">
-                                            {resumeData.projects[selectedProject].tags?.map((tag, tIdx) => (
-                                                <span
-                                                    key={tIdx}
-                                                    className="font-mono text-xs font-semibold bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 px-3 py-1.5 rounded-full"
-                                                >
-                                                    {tag}
-                                                </span>
-                                            ))}
+                                            {resumeData.projects[selectedProject].tags?.map((tag, tIdx) => {
+                                                const tagKey = tag.replace(/\./g, '_');
+                                                return (
+                                                    <span
+                                                        key={tIdx}
+                                                        className="font-mono text-xs font-semibold bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 px-3 py-1.5 rounded-full"
+                                                    >
+                                                        {t.has(`tags.${tagKey}`) ? t(`tags.${tagKey}`) : tag}
+                                                    </span>
+                                                );
+                                            })}
                                         </div>
 
                                         {/* Links panel */}
                                         {!resumeData.projects[selectedProject].hideLink && (() => {
                                             const proj = resumeData.projects[selectedProject];
                                             const links: { label: string; url: string; icon: ReactNode }[] = [];
-                                            if (proj.website)   links.push({ label: 'Site Web',   url: proj.website,   icon: <Globe /> });
-                                            if (proj.playStore) links.push({ label: 'Play Store',  url: proj.playStore, icon: <ShoppingBag /> });
-                                            if (proj.appStore)  links.push({ label: 'App Store',   url: proj.appStore,  icon: <Smartphone /> });
-                                            if (proj.github)    links.push({ label: 'GitHub',      url: proj.github,    icon: <Github /> });
+                                            if (proj.website)   links.push({ label: t("viewProject"), url: proj.website, icon: <Globe /> });
+                                            if (proj.playStore) links.push({ label: t("playStore"),   url: proj.playStore, icon: <ShoppingBag /> });
+                                            if (proj.appStore)  links.push({ label: t("appStore"),    url: proj.appStore,  icon: <Smartphone /> });
+                                            if (proj.github)    links.push({ label: t("viewCode"),    url: proj.github,    icon: <Github /> });
                                             if (links.length === 0) return null;
                                             return (
                                                 <div className="space-y-3">
-                                                    <p className="text-[10px] font-mono font-semibold uppercase tracking-[0.18em] text-white/25">Liens</p>
+                                                    <p className="text-[10px] font-mono font-semibold uppercase tracking-[0.18em] text-white/25">{t("links")}</p>
                                                     <ProjectLinksPanel links={links} />
                                                 </div>
                                             );
@@ -423,7 +435,6 @@ export function Projects() {
                                                     </>
                                                 )}
 
-
                                                 {/* Scrollable track */}
                                                 <div 
                                                     ref={galleryRef}
@@ -445,13 +456,16 @@ export function Projects() {
                                                                     <motion.img
                                                                         layoutId={`image-${selectedProject}`}
                                                                         src={img}
-                                                                        alt={`${t(`items.item${selectedProject}.title`)} - Screenshot ${idx + 1}`}
+                                                                        alt={t("screenshotAlt", { title: t(`items.item${selectedProject}.title`), index: idx + 1 })}
+                                                                        decoding="async"
                                                                         className="h-full w-auto max-w-none object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.8)] rounded-3xl md:rounded-[3rem] transition-all duration-500 relative z-10 scale-[1.1] group-hover:scale-[1.25]"
                                                                     />
                                                                 ) : (
                                                                     <img
                                                                         src={img}
-                                                                        alt={`${t(`items.item${selectedProject}.title`)} - Screenshot ${idx + 1}`}
+                                                                        alt={t("screenshotAlt", { title: t(`items.item${selectedProject}.title`), index: idx + 1 })}
+                                                                        loading="lazy"
+                                                                        decoding="async"
                                                                         className="h-full w-auto max-w-none object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.8)] rounded-3xl md:rounded-[3rem] transition-all duration-500 relative z-10 scale-[1.1] group-hover:scale-[1.25]"
                                                                     />
                                                                 )}

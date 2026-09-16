@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { AnimatePresence, motion } from "framer-motion";
 import { Check, Copy, ExternalLink, QrCode, X } from "lucide-react";
 
@@ -78,6 +79,7 @@ function QrPopover({ url, label, onClose }: { url: string; label: string; onClos
 }
 
 export function ProjectLinksPanel({ links }: ProjectLinksPanelProps) {
+  const common = useTranslations("Common");
   const [copiedUrl, setCopiedUrl] = useState<string | null>(null);
   const [openQr, setOpenQr] = useState<string | null>(null);
 
@@ -131,7 +133,7 @@ export function ProjectLinksPanel({ links }: ProjectLinksPanelProps) {
                 <motion.button
                   whileTap={{ scale: 0.85 }}
                   onClick={() => handleCopy(link.url)}
-                  title="Copier le lien"
+                  title={common("copyLink")}
                   className="p-1.5 rounded-lg text-white/35 hover:text-white hover:bg-white/10 transition-all"
                 >
                   <AnimatePresence mode="wait" initial={false}>
@@ -151,7 +153,7 @@ export function ProjectLinksPanel({ links }: ProjectLinksPanelProps) {
                 <motion.button
                   whileTap={{ scale: 0.85 }}
                   onClick={() => setOpenQr(isQrOpen ? null : link.url)}
-                  title="Afficher le QR code"
+                  title={common("showQrCode")}
                   className="p-1.5 rounded-lg transition-all"
                   style={
                     isQrOpen
@@ -170,7 +172,7 @@ export function ProjectLinksPanel({ links }: ProjectLinksPanelProps) {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  title="Ouvrir"
+                  title={common("open")}
                   className="p-1.5 rounded-lg text-white/35 hover:text-white hover:bg-white/10 transition-all"
                 >
                   <ExternalLink className="w-3.5 h-3.5" />

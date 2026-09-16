@@ -2,23 +2,243 @@ import { Header } from "@/presentation/components/layout/Header";
 import { Footer } from "@/presentation/components/layout/Footer";
 import { Container, Section } from "@/presentation/components/ui/Layout";
 import { resumeData } from "@/core/data/resume";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 
-const businessProjects = [
-  { name: "Cahier Boulanger", client: "Boulangerie", need: "Suivre l’activité et organiser la gestion quotidienne d’une boulangerie.", solution: "Un logiciel de gestion conçu pour les besoins métier d’une boulangerie.", result: "Solution développée pour structurer les opérations de l’établissement.", image: "[SCREENSHOT_CAHIER_BOULANGER]" },
-  { name: "Cahier Opticien", client: "Eye Fashion Wear", need: "Disposer d’un outil adapté à la gestion d’une lunetterie.", solution: "Un logiciel de gestion conçu pour Eye Fashion Wear et son activité d’opticien.", result: "Solution métier dédiée à la gestion de la lunetterie.", image: "[SCREENSHOT_CAHIER_OPTICIEN]" },
-  { name: "Dashboard de suivi commercial", client: "B Pilot SARL", need: "Donner à l’équipe commerciale un outil interne pour suivre son activité.", solution: "Un tableau de bord de suivi commercial, de type CRM, développé pour l’équipe.", result: "Outil interne de suivi conçu autour des besoins de l’équipe commerciale.", image: "[SCREENSHOT_DASHBOARD_COMMERCIAL]" },
+const businessProjectMeta = [
+  { image: "/assets/projects/cahier-boulanger-dashboard.webp" },
+  { image: "/assets/projects/cahier-opticien-dashboard.webp" },
+  { image: "/assets/projects/ciforms-dashboard.webp", link: "https://ciforms-web.woez-app.com/" },
 ];
+
+const productPresentationMeta = [
+  { color: "#c02f7c" },
+  { color: "#8c6a35" },
+  { color: "#4664c8" },
+  { color: "#2f7b65" },
+  { color: "#f05b35" },
+  { color: "#2567d8" },
+  { color: "#20231f" },
+  { color: "#d74838" },
+];
+
+function getProjectLinks(
+  project: (typeof resumeData.projects)[number],
+  t: (key: string) => string
+) {
+  return [
+    project.website && { label: t("viewProject"), url: project.website },
+    project.playStore && { label: t("playStore"), url: project.playStore },
+    project.appStore && { label: t("appStore"), url: project.appStore },
+    project.github && { label: t("viewCode"), url: project.github },
+  ].filter(Boolean) as Array<{ label: string; url: string }>;
+}
+
+function isWebProject(project: (typeof resumeData.projects)[number]) {
+  return project.tags.some((tag) => ["Next.js", "Site web", "Site vitrine", "Web app", "SaaS"].includes(tag));
+}
+
+function ProjectCard({
+  project,
+  index,
+  originalIndex,
+  t,
+}: {
+  project: (typeof resumeData.projects)[number];
+  index: number;
+  originalIndex: number;
+  t: any;
+}) {
+  const presentation = productPresentationMeta[index % productPresentationMeta.length];
+  const projectLinks = getProjectLinks(project, t);
+  const webProject = isWebProject(project);
+
+  const title = t.has(`items.item${originalIndex}.title`)
+    ? t(`items.item${originalIndex}.title`)
+    : project.title;
+
+  const description = t.has(`items.item${originalIndex}.description`)
+    ? t(`items.item${originalIndex}.description`)
+    : project.description;
+
+  const presentationLabels = t.raw("page.presentationLabels") as string[];
+  const presentationLabel = presentationLabels[index % presentationLabels.length] || "";
+
+  const screenshotAlt = t("page.projectScreenshotAlt", { title });
+
+  return (
+    <article className="overflow-hidden border border-card-border bg-card-bg">
+      <div className="relative aspect-[16/11] overflow-hidden bg-[#f5f3ef]">
+        {project.image ? (
+          webProject ? (
+            <div className="relative flex h-full items-center justify-center p-5">
+              <div className="pointer-events-none absolute -left-12 top-10 size-40 rounded-full bg-[#c0461c]/10 blur-2xl" />
+              <div className="pointer-events-none absolute -bottom-14 -right-10 size-44 rounded-full bg-[#263b32]/10 blur-2xl" />
+              <div className="relative w-full overflow-hidden rounded-[6px] border border-black/10 bg-white shadow-[0_18px_45px_rgba(32,35,31,.16)]">
+                <div className="flex h-6 items-center gap-1.5 border-b border-black/10 bg-[#f8f6f3] px-3">
+                  <span className="size-1.5 rounded-full bg-[#d25b35]" />
+                  <span className="size-1.5 rounded-full bg-[#d2a05d]" />
+                  <span className="size-1.5 rounded-full bg-[#6f8f75]" />
+                </div>
+                <img src={project.image} alt={screenshotAlt} loading="lazy" decoding="async" className="aspect-[16/9] w-full object-cover object-top" />
+              </div>
+            </div>
+          ) : (
+            <>
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_45%,rgba(32,35,31,.09),transparent_38%)]" />
+              <div className="absolute left-6 top-1/2 z-10 max-w-[42%] -translate-y-1/2">
+                <p className="font-display text-2xl font-semibold leading-none tracking-[-.04em] sm:text-3xl" style={{ color: presentation.color }}>{title}</p>
+                <p className="mt-3 text-[11px] font-semibold uppercase tracking-[.18em] text-muted">{presentationLabel}</p>
+              </div>
+              <div className="pointer-events-none absolute bottom-7 right-5 h-8 w-[58%] rounded-full bg-black/16 blur-2xl" />
+              <div className="absolute inset-y-5 right-3 flex w-[68%] items-center justify-end">
+                <img src={project.image} alt={screenshotAlt} loading="lazy" decoding="async" className="h-full w-full object-contain object-right drop-shadow-[0_20px_30px_rgba(32,35,31,.22)]" />
+              </div>
+            </>
+          )
+        ) : (
+          <div className="flex h-full items-center justify-center font-mono text-xs text-muted">[SCREENSHOT_{title.toUpperCase().replace(/[^A-Z0-9]+/g, "_")}]</div>
+        )}
+      </div>
+      <div className="p-5">
+        <div className="flex flex-wrap gap-2">
+          {project.tags?.map((tag) => {
+            const tagKey = tag.replace(/\./g, '_');
+            return (
+              <span key={tag} className="rounded-full border border-card-border px-2.5 py-1 font-mono text-[10px] text-muted">
+                {t.has(`tags.${tagKey}`) ? t(`tags.${tagKey}`) : tag}
+              </span>
+            );
+          })}
+        </div>
+        <h3 className="mt-4 font-display text-xl font-semibold">{title}</h3>
+        {project.associatedCompany && <p className="mt-1 text-xs uppercase tracking-[.16em] text-muted">{project.associatedCompany}</p>}
+        <p className="mt-2 text-sm leading-6 text-muted">{description}</p>
+        {projectLinks.length > 0 && (
+          <div className="mt-5 flex flex-wrap gap-2">
+            {projectLinks.map((link) => (
+              <a key={link.url} href={link.url} target="_blank" rel="noreferrer" style={{ color: "#fff" }} className="inline-flex items-center rounded-full bg-[var(--text)] px-3.5 py-2 text-xs font-semibold tracking-normal transition-transform hover:scale-[1.02]">
+                {link.label} <span aria-hidden="true" className="ml-1">↗</span>
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
+    </article>
+  );
+}
 
 export function generateStaticParams() { return routing.locales.map((locale) => ({ locale })); }
 
 export default async function ProjectsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  return <main className="min-h-screen bg-background text-foreground"><Header/><Section className="pt-32"><Container>
-    <p className="section-label text-[10px] uppercase tracking-[.2em] text-muted">Sélection de projets</p><h1 className="mt-3 font-display text-5xl font-semibold tracking-tight">Projets</h1>
-    <section className="mt-16"><p className="section-label text-[10px] uppercase tracking-[.2em] text-muted">Études de cas</p><h2 className="mt-2 font-display text-3xl font-semibold">Solutions métier pour entreprises</h2><div className="mt-8 space-y-6">{businessProjects.map(project=><article key={project.name} className="grid overflow-hidden border border-card-border bg-card-bg md:grid-cols-[260px_1fr]"><div className="flex min-h-48 items-center justify-center bg-[#e9e9e6] p-6 text-center font-mono text-xs text-muted">{project.image}</div><div className="p-6 md:p-8"><p className="text-xs uppercase tracking-widest text-muted">{project.client}</p><h3 className="mt-2 font-display text-2xl font-semibold">{project.name}</h3><dl className="mt-5 grid gap-x-8 gap-y-4 text-sm sm:grid-cols-3"><div><dt className="font-semibold">Besoin</dt><dd className="mt-1 leading-6 text-muted">{project.need}</dd></div><div><dt className="font-semibold">Solution</dt><dd className="mt-1 leading-6 text-muted">{project.solution}</dd></div><div><dt className="font-semibold">Résultat</dt><dd className="mt-1 leading-6 text-muted">{project.result}</dd></div></dl></div></article>)}</div></section>
-    <section className="mt-20"><p className="section-label text-[10px] uppercase tracking-[.2em] text-muted">Applications &amp; produits</p><h2 className="mt-2 font-display text-3xl font-semibold">Applications produits</h2><div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">{resumeData.projects.map((project,index)=><article key={project.title} className="overflow-hidden border border-card-border bg-card-bg"><div className="aspect-[16/10] bg-[#ececea]">{project.image ? <img src={project.image} alt={`Capture d’écran de ${project.title}`} className="h-full w-full object-cover"/> : <div className="flex h-full items-center justify-center font-mono text-xs text-muted">[SCREENSHOT_{project.title.toUpperCase().replace(/[^A-Z0-9]+/g,"_")}]</div>}</div><div className="p-5"><div className="flex flex-wrap gap-2">{project.tags?.map(tag=><span key={tag} className="rounded-full border border-card-border px-2.5 py-1 font-mono text-[10px] text-muted">{tag}</span>)}</div><h3 className="mt-4 font-display text-xl font-semibold">{project.title}</h3><p className="mt-2 text-sm leading-6 text-muted">{project.description}</p></div></article>)}</div></section>
-  </Container></Section><Footer/></main>;
+
+  const t = await getTranslations("Projects");
+
+  const projectsWithIndices = resumeData.projects.map((project, originalIndex) => ({
+    project,
+    originalIndex
+  }));
+
+  const mobileProjects = projectsWithIndices.filter(({ project }) => !isWebProject(project));
+  const webProjects = projectsWithIndices.filter(({ project }) => isWebProject(project));
+
+  const businessProjectsData = t.raw("page.businessProjects") as Array<{
+    name: string;
+    client: string;
+    need: string;
+    solution: string;
+    result: string;
+  }>;
+
+  const businessProjects = businessProjectsData.map((item, idx) => ({
+    ...item,
+    ...businessProjectMeta[idx]
+  }));
+
+  return (
+    <main className="min-h-screen bg-background text-foreground">
+      <Header />
+      <Section className="pt-40 md:pt-48">
+        <Container>
+          <p className="section-label text-[10px] uppercase tracking-[.2em] text-muted">{t("page.eyebrow")}</p>
+          <h1 className="mt-3 font-display text-5xl font-semibold tracking-tight">{t("page.title")}</h1>
+
+          <section className="mt-16">
+            <p className="section-label text-[10px] uppercase tracking-[.2em] text-muted">{t("page.caseStudiesEyebrow")}</p>
+            <h2 className="mt-2 font-display text-3xl font-semibold">{t("page.caseStudiesTitle")}</h2>
+            <div className="mt-8 space-y-6">
+              {businessProjects.map((project) => (
+                <article key={project.name} className="grid overflow-hidden border border-card-border bg-card-bg lg:grid-cols-[430px_1fr]">
+                  <div className="flex min-h-64 items-center justify-center bg-[#f2eee9] p-5 text-center font-mono text-xs text-muted">
+                    {project.image.startsWith("/") ? (
+                      <div className="relative w-full overflow-hidden rounded-[6px] border border-black/10 bg-[#ede6df] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,.55)]">
+                        <div className="pointer-events-none absolute -left-16 -top-16 size-40 rounded-full bg-[#c0461c]/10 blur-2xl" />
+                        <div className="pointer-events-none absolute -bottom-20 -right-16 size-44 rounded-full bg-[#263b32]/10 blur-2xl" />
+                        <div className="relative overflow-hidden rounded-[5px] border border-black/10 bg-white shadow-[0_18px_45px_rgba(32,35,31,.18)]">
+                          <div className="flex h-7 items-center gap-1.5 border-b border-black/10 bg-[#f8f6f3] px-3">
+                            <span className="size-2 rounded-full bg-[#d25b35]" />
+                            <span className="size-2 rounded-full bg-[#d2a05d]" />
+                            <span className="size-2 rounded-full bg-[#6f8f75]" />
+                          </div>
+                          <img src={project.image} alt={t("page.dashboardScreenshotAlt", { title: project.name })} loading="lazy" decoding="async" className="aspect-[16/9] w-full object-cover object-left-top" />
+                        </div>
+                      </div>
+                    ) : (
+                      project.image
+                    )}
+                  </div>
+                  <div className="p-6 md:p-8">
+                    <p className="text-xs uppercase tracking-widest text-muted">{project.client}</p>
+                    <h3 className="mt-2 font-display text-2xl font-semibold">{project.name}</h3>
+                    <dl className="mt-5 grid gap-x-8 gap-y-4 text-sm sm:grid-cols-3">
+                      <div>
+                        <dt className="font-semibold">{t("page.need")}</dt>
+                        <dd className="mt-1 leading-6 text-muted">{project.need}</dd>
+                      </div>
+                      <div>
+                        <dt className="font-semibold">{t("page.solution")}</dt>
+                        <dd className="mt-1 leading-6 text-muted">{project.solution}</dd>
+                      </div>
+                      <div>
+                        <dt className="font-semibold">{t("page.result")}</dt>
+                        <dd className="mt-1 leading-6 text-muted">{project.result}</dd>
+                      </div>
+                    </dl>
+                    {"link" in project && project.link && (
+                      <a href={project.link} target="_blank" rel="noreferrer" style={{ color: "#fff" }} className="mt-6 inline-flex items-center rounded-full bg-[var(--text)] px-4 py-2 text-xs font-semibold transition-transform hover:scale-[1.02]">
+                        {t("page.viewProject")} <span aria-hidden="true" className="ml-1">↗</span>
+                      </a>
+                    )}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+
+          <section className="mt-20">
+            <p className="section-label text-[10px] uppercase tracking-[.2em] text-muted">{t("page.mobileEyebrow")}</p>
+            <h2 className="mt-2 font-display text-3xl font-semibold">{t("page.mobileTitle")}</h2>
+            <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {mobileProjects.map(({ project, originalIndex }, index) => (
+                <ProjectCard key={project.title} project={project} index={index} originalIndex={originalIndex} t={t} />
+              ))}
+            </div>
+          </section>
+
+          <section className="mt-20">
+            <p className="section-label text-[10px] uppercase tracking-[.2em] text-muted">{t("page.webEyebrow")}</p>
+            <h2 className="mt-2 font-display text-3xl font-semibold">{t("page.webTitle")}</h2>
+            <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {webProjects.map(({ project, originalIndex }, index) => (
+                <ProjectCard key={project.title} project={project} index={index} originalIndex={originalIndex} t={t} />
+              ))}
+            </div>
+          </section>
+        </Container>
+      </Section>
+      <Footer />
+    </main>
+  );
 }
