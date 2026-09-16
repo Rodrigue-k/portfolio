@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter } from "next/font/google";
 import "@fontsource/syne";
 import "@fontsource/jetbrains-mono";
@@ -50,6 +51,12 @@ export default async function RootLayout({
       <NextIntlClientProvider messages={messages}>
         {children}
       </NextIntlClientProvider>
+      <Script
+        defer
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon='{"token": "6e55ffab764c48aca3211e6554d9b397"}'
+        strategy="afterInteractive"
+      />
     </div>
   );
 }
