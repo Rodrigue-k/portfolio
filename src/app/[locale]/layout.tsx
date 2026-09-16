@@ -43,7 +43,7 @@ export async function generateMetadata({
           url: "/og-image.png",
           width: 1200,
           height: 630,
-          alt: "Komi Rodrigue Koudakpo — Flutter & Mobile Specialist",
+          alt: t('title'),
           type: "image/png",
         },
       ],
