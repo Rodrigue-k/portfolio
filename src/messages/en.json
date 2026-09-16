@@ -44,7 +44,7 @@
             },
             "technical": {
                 "title": "Technical",
-                "items": ["Flutter", "Dart", "Next.js", "Firebase", "Supabase", "Python", "C#"]
+                "items": ["Flutter", "Dart", "Next.js", "Firebase", "Supabase", "Cloudflare", "Oracle Cloud", "Python", "C#"]
             }
         }
     },

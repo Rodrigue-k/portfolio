@@ -16,7 +16,7 @@ export const resumeData: PortfolioData = {
     skills: {
         mobile: ["Flutter", "Dart", "Firebase", "Supabase", "Android", "iOS"],
         languages: ["Python", "C#", "Java", "JavaScript", "TypeScript"],
-        other: ["Next.js", "Git", "Figma", "Unity", "Blender", "Clean Architecture", "System Design"],
+        other: ["Next.js", "Cloudflare", "Oracle Cloud", "Git", "Figma", "Unity", "Blender", "Clean Architecture", "System Design"],
         languagesSpoken: ["Français", "Anglais", "Ewe"]
     },
     experience: [
