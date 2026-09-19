@@ -6,6 +6,7 @@ import "@fontsource/jetbrains-mono";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
+import { JsonLd } from "@/presentation/components/seo/JsonLd";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,17 +25,57 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'Metadata' });
 
+  const canonicalUrl = `https://rodriguekoudakpo.com/${locale}`;
+
   return {
     metadataBase: new URL("https://rodriguekoudakpo.com"),
-    title: t('title'),
+    title: {
+      default: t('title'),
+      template: "%s · Komi Rodrigue Koudakpo"
+    },
     description: t('description'),
-    keywords: "Flutter, Dart, Next.js, TypeScript, Mobile Development, Web Development, iOS, Android, Rodrigue Koudakpo",
+    keywords: [
+      "Komi Rodrigue Koudakpo",
+      "Rodrigue Koudakpo",
+      "Développeur Flutter Togo",
+      "Flutter Developer West Africa",
+      "Développeur Mobile Freelance",
+      "Next.js",
+      "TypeScript",
+      "Mobile App Development",
+      "iOS",
+      "Android",
+      "Clean Architecture",
+      "Darollo Technologies Corporation",
+      "Evee Engineering"
+    ],
     authors: [{ name: "Komi Rodrigue Koudakpo", url: "https://rodriguekoudakpo.com" }],
     creator: "Komi Rodrigue Koudakpo",
+    publisher: "Komi Rodrigue Koudakpo",
+    alternates: {
+      canonical: canonicalUrl,
+      languages: {
+        fr: "https://rodriguekoudakpo.com/fr",
+        en: "https://rodriguekoudakpo.com/en",
+        "x-default": "https://rodriguekoudakpo.com/fr"
+      }
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
     openGraph: {
       type: "website",
       locale: locale === "fr" ? "fr_FR" : "en_US",
-      url: `https://rodriguekoudakpo.com/${locale}`,
+      alternateLocale: locale === "fr" ? ["en_US"] : ["fr_FR"],
+      url: canonicalUrl,
       title: t('title'),
       description: t('description'),
       siteName: "Komi Rodrigue Koudakpo — Portfolio",
@@ -52,6 +93,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: t('title'),
       description: t('description'),
+      creator: "@rodrigue_k",
       images: ["/og-image.png"],
     },
     icons: {
@@ -74,6 +116,7 @@ export default async function RootLayout({
 
   return (
     <div lang={locale} className={`${inter.variable} contents`}>
+      <JsonLd locale={locale} />
       <NextIntlClientProvider messages={messages}>
         {children}
       </NextIntlClientProvider>

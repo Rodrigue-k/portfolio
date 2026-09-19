@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- Homepage French (Default) -->
+  <url>
+    <loc>https://rodriguekoudakpo.com/fr</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rodriguekoudakpo.com/fr" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://rodriguekoudakpo.com/en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rodriguekoudakpo.com/fr" />
+    <image:image>
+      <image:loc>https://rodriguekoudakpo.com/images/komi-speaking-portrait-v1.webp</image:loc>
+      <image:title>Komi Rodrigue Koudakpo — Développeur Flutter et Mobile</image:title>
+      <image:caption>Portrait de Komi Rodrigue Koudakpo, Développeur d'applications mobiles et web</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Homepage English -->
+  <url>
+    <loc>https://rodriguekoudakpo.com/en</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rodriguekoudakpo.com/fr" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://rodriguekoudakpo.com/en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rodriguekoudakpo.com/fr" />
+    <image:image>
+      <image:loc>https://rodriguekoudakpo.com/images/komi-speaking-portrait-v1.webp</image:loc>
+      <image:title>Komi Rodrigue Koudakpo — Flutter &amp; Mobile Developer</image:title>
+      <image:caption>Portrait of Komi Rodrigue Koudakpo, Mobile &amp; Web Applications Developer</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Projects Page French -->
+  <url>
+    <loc>https://rodriguekoudakpo.com/fr/projects</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rodriguekoudakpo.com/fr/projects" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://rodriguekoudakpo.com/en/projects" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rodriguekoudakpo.com/fr/projects" />
+  </url>
+
+  <!-- Projects Page English -->
+  <url>
+    <loc>https://rodriguekoudakpo.com/en/projects</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://rodriguekoudakpo.com/fr/projects" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://rodriguekoudakpo.com/en/projects" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rodriguekoudakpo.com/fr/projects" />
+  </url>
+</urlset>

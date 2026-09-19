@@ -8,7 +8,7 @@ export const resumeData: PortfolioData = {
         location: "Agoe Cacaveli, Lomé, Togo",
         contact: {
             phone: "+228 97385173",
-            email: "koudakporodrigue03@gmail.com",
+            email: "contact@rodriguekoudakpo.com",
             linkedin: "https://www.linkedin.com/in/rodrigue-koudakpo",
             github: "https://github.com/Rodrigue-k"
         }

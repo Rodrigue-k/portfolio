@@ -1,7 +1,7 @@
 {
     "Metadata": {
-        "title": "Komi Rodrigue Koudakpo — Je construis. Je vends.",
-        "description": "Développeur par passion, commercial par expérience. Je construis des produits et je les porte jusqu'au client."
+        "title": "Komi Rodrigue Koudakpo — Développeur Flutter & Mobile · Portfolio",
+        "description": "Portfolio de Komi Rodrigue Koudakpo, Développeur spécialisé Flutter (iOS & Android) et Next.js. Conception d'applications mobiles, études de cas et solutions digitales."
     },
     "Header": {
         "nav": {
@@ -19,7 +19,7 @@
             "line2": "Je vends."
         },
         "description": "Développeur par passion, commercial par expérience. Je construis des produits et je les porte jusqu'au client.",
-        "portraitAlt": "Komi présentant un sujet",
+        "portraitAlt": "Portrait officiel de Komi Rodrigue Koudakpo — Développeur d'Applications Mobiles Flutter & Web",
         "location": "Agoe Cacaveli, Lomé, Togo",
         "actions": {
             "contact": "Me contacter",

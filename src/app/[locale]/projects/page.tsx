@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Header } from "@/presentation/components/layout/Header";
 import { Footer } from "@/presentation/components/layout/Footer";
 import { Container, Section } from "@/presentation/components/ui/Layout";
@@ -129,6 +130,58 @@ function ProjectCard({
 }
 
 export function generateStaticParams() { return routing.locales.map((locale) => ({ locale })); }
+
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const isFr = locale === "fr";
+
+  const title = isFr
+    ? "Projets & Réalisations — Applications Mobiles & Web"
+    : "Projects & Portfolio — Mobile Apps & Web Platforms";
+
+  const description = isFr
+    ? "Découvrez les projets conçus et déployés par Komi Rodrigue Koudakpo : Grand Voyageur, Cherish, Ticketto, EcoMap, Miabé Hackathon, Corafric, Tavalo."
+    : "Explore apps and digital products engineered by Komi Rodrigue Koudakpo: Grand Voyageur, Cherish, Ticketto, EcoMap, Miabé Hackathon, Corafric, Tavalo.";
+
+  const canonicalUrl = `https://rodriguekoudakpo.com/${locale}/projects`;
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: canonicalUrl,
+      languages: {
+        fr: "https://rodriguekoudakpo.com/fr/projects",
+        en: "https://rodriguekoudakpo.com/en/projects",
+        "x-default": "https://rodriguekoudakpo.com/fr/projects"
+      }
+    },
+    openGraph: {
+      title: `${title} · Komi Rodrigue Koudakpo`,
+      description,
+      url: canonicalUrl,
+      type: "website",
+      images: [
+        {
+          url: "/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: title
+        }
+      ]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${title} · Komi Rodrigue Koudakpo`,
+      description,
+      images: ["/og-image.png"]
+    }
+  };
+}
 
 export default async function ProjectsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
