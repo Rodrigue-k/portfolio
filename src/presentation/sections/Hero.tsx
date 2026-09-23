@@ -13,7 +13,7 @@ export function Hero() {
   const portraitY = useTransform(scrollYProgress, [0, 0.35], [0, reduceMotion ? 0 : 42]);
 
   return (
-    <Section id="about" className="flex min-h-svh items-center pb-8 pt-20 md:pb-16 md:pt-32">
+    <Section id="about" className="flex min-h-svh items-center pb-8 pt-28 md:pb-16 md:pt-32">
       <Container className="w-full">
         <div className="grid items-center gap-6 md:grid-cols-[minmax(0,1.15fr)_minmax(360px,.85fr)] md:gap-10 lg:gap-14 xl:grid-cols-[minmax(0,1.08fr)_520px] xl:gap-20">
           <div className="max-w-[700px] md:py-8">
@@ -65,7 +65,7 @@ export function Hero() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ delay: 0.18, duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
             style={{ y: portraitY }}
-            className="relative mx-auto mt-1 aspect-[4/5] w-[min(60vw,220px)] overflow-visible sm:w-[min(64vw,340px)] md:mt-0 md:w-full md:max-w-[500px] md:justify-self-end xl:max-w-[540px]"
+            className="relative mx-auto translate-y-6 aspect-[4/5] w-[min(76vw,285px)] overflow-visible sm:w-[min(64vw,340px)] md:mt-0 md:w-full md:max-w-[500px] md:translate-y-0 md:justify-self-end xl:max-w-[540px]"
           >
             <div
               aria-hidden="true"
