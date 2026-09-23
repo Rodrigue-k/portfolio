@@ -13,7 +13,7 @@ export function Hero() {
   const portraitY = useTransform(scrollYProgress, [0, 0.35], [0, reduceMotion ? 0 : 42]);
 
   return (
-    <Section id="about" className="flex min-h-svh items-center pb-8 pt-28 md:pb-16 md:pt-32">
+    <Section id="about" className="flex min-h-svh items-center pb-0 pt-28 md:pb-16 md:pt-32">
       <Container className="w-full">
         <div className="grid items-center gap-6 md:grid-cols-[minmax(0,1.15fr)_minmax(360px,.85fr)] md:gap-10 lg:gap-14 xl:grid-cols-[minmax(0,1.08fr)_520px] xl:gap-20">
           <div className="max-w-[700px] md:py-8">
