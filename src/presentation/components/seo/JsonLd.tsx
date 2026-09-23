@@ -56,7 +56,7 @@ export function JsonLd({ locale }: { locale: string }) {
       },
       {
         "@type": "Organization",
-        name: "Evee Engineering"
+        name: "Software Box"
       }
     ],
     alumniOf: [

@@ -66,10 +66,10 @@
             },
             "item1": {
                 "role": "Développeur d'Applications Mobiles",
-                "company": "Evee Engineering",
+                "company": "Software Box",
                 "location": "Côte d'Ivoire",
                 "type": "Freelance",
-                "period": "Oct. 2025 - Présent",
+                "period": "Oct. 2025 - Mars 2026",
                 "description": "Reprise et finalisation d'une codebase existante jusqu'à la publication sur App Store & Play Store. Refonte complète d'une application après analyse UX — livrée en une semaine. 2 apps publiées sur les stores."
             },
             "item2": {
@@ -82,10 +82,10 @@
             }
         },
         "resumeItems": [
-            ["B Pilot SARL", "Commercial terrain (Budget Pilot)", "Depuis juin 2026"],
-            ["Darollo Technologies Corporation (DTC)", "Associé & Développeur produit", "Depuis janvier 2025"],
-            ["Evee Engineering", "Développeur mobile freelance", "Octobre 2025 – Mars 2026"],
-            ["CAGECFI SA", "Opérateur de saisie et contrôle qualité", "Mars – Juin 2025"]
+            ["B Pilot SARL", "Commercial terrain (Budget Pilot)", "Lomé, Togo · Depuis juin 2026"],
+            ["Darollo Technologies Corporation (DTC)", "Associé & Développeur produit", "Lomé, Togo · Depuis janvier 2025"],
+            ["Software Box", "Développeur mobile freelance", "Côte d’Ivoire · À distance · Octobre 2025 – Mars 2026"],
+            ["CAGECFI SA", "Opérateur de saisie et contrôle qualité", "Lomé, Togo · Mars – Juin 2025"]
         ],
         "educationItems": [
             ["Baccalauréat", "", "2021"],
@@ -156,7 +156,7 @@
             "item0": {
                 "title": "Grand Voyageur",
                 "description": "Application de covoiturage pensée pour l'Afrique de l'Ouest. Trouvez un trajet ou proposez le vôtre, simplement.",
-                "fullDescription": "Grand Voyageur repense la mobilité partagée en Afrique de l'Ouest. Développée pour Evee Engineering (Côte d'Ivoire), l'app permet aux conducteurs de publier leurs trajets et aux passagers de réserver en quelques secondes. J'ai pris en charge l'intégralité de la partie Flutter — architecture Clean, gestion d'état, intégration avec le backend Java, et déploiement sur les deux stores. Un projet de six mois en contexte professionnel réel."
+                "fullDescription": "Grand Voyageur repense la mobilité partagée en Afrique de l'Ouest. Développée pour Software Box (Côte d'Ivoire), l'app permet aux conducteurs de publier leurs trajets et aux passagers de réserver en quelques secondes. J'ai pris en charge l'intégralité de la partie Flutter — architecture Clean, gestion d'état, intégration avec le backend Java, et déploiement sur les deux stores. Un projet de six mois en contexte professionnel réel."
             },
             "item1": {
                 "title": "Cherish",
@@ -166,7 +166,7 @@
             "item2": {
                 "title": "Ticketto",
                 "description": "Découvrez concerts, festivals et matchs près de chez vous. Réservez vos places et recevez vos billets directement sur votre téléphone.",
-                "fullDescription": "Ticketto est une application de billetterie événementielle développée pour Evee Engineering. Elle centralise les événements culturels et sportifs locaux — concerts, spectacles, matchs — et permet de réserver et recevoir ses billets en quelques clics. Interface épurée, expérience fluide, paiement sécurisé. Développée en Flutter et publiée sur le Play Store dans le cadre d'une mission freelance."
+                "fullDescription": "Ticketto est une application de billetterie événementielle développée pour Software Box. Elle centralise les événements culturels et sportifs locaux — concerts, spectacles, matchs — et permet de réserver et recevoir ses billets en quelques clics. Interface épurée, expérience fluide, paiement sécurisé. Développée en Flutter et publiée sur le Play Store dans le cadre d'une mission freelance."
             },
             "item3": {
                 "title": "EcoMap",

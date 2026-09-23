@@ -23,9 +23,15 @@ const productPresentationMeta = [
   { color: "#d74838" },
 ];
 
+type ProjectTranslator = {
+  (key: string, values?: Record<string, string | number>): string;
+  has(key: string): boolean;
+  raw(key: string): unknown;
+};
+
 function getProjectLinks(
   project: (typeof resumeData.projects)[number],
-  t: (key: string) => string
+  t: ProjectTranslator
 ) {
   return [
     project.website && { label: t("viewProject"), url: project.website },
@@ -48,7 +54,7 @@ function ProjectCard({
   project: (typeof resumeData.projects)[number];
   index: number;
   originalIndex: number;
-  t: any;
+  t: ProjectTranslator;
 }) {
   const presentation = productPresentationMeta[index % productPresentationMeta.length];
   const projectLinks = getProjectLinks(project, t);

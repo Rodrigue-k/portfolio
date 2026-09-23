@@ -30,10 +30,10 @@ export const resumeData: PortfolioData = {
         },
         {
             role: "Développeur d'Applications Mobiles",
-            company: "Evee Engineering",
+            company: "Software Box",
             location: "Côte d'Ivoire",
             type: "Freelance",
-            period: "Oct. 2025 - Présent",
+            period: "Oct. 2025 - Mars 2026",
             description: "Reprise et finalisation d'une codebase existante jusqu'à la publication sur App Store & Play Store. Refonte complète d'une application après analyse UX — livrée en une semaine. 2 apps publiées sur les stores."
         },
         {
@@ -59,7 +59,7 @@ export const resumeData: PortfolioData = {
             ],
             playStore: "https://play.google.com/store/apps/details?id=com.grandvoyageur.grand_voyageur&pcampaignid=web_share",
             appStore: "https://apps.apple.com/in/app/grand-voyageur-covoiturage/id6755688855",
-            associatedCompany: "Evee Engineering",
+            associatedCompany: "Software Box",
             category: "professional"
         },
         {
@@ -76,7 +76,7 @@ export const resumeData: PortfolioData = {
             description: "Découvrez concerts, festivals et matchs près de chez vous. Réservez vos places et recevez vos billets directement sur votre téléphone.",
             tags: ["Flutter", "Dart", "Firebase", "Paiement", "Android", "Freelance"],
             playStore: "https://play.google.com/store/apps/details?id=com.eveeengineering.ticketto&pcampaignid=web_share",
-            associatedCompany: "Evee Engineering",
+            associatedCompany: "Software Box",
             category: "professional",
             image: "/assets/projects/ticketto-main.webp"
         },

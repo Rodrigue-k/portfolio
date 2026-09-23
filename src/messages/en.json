@@ -66,10 +66,10 @@
             },
             "item1": {
                 "role": "Mobile Application Developer",
-                "company": "Evee Engineering",
+                "company": "Software Box",
                 "location": "Ivory Coast",
                 "type": "Freelance",
-                "period": "Oct. 2025 - Present",
+                "period": "Oct. 2025 - March 2026",
                 "description": "Taking over and finalizing an existing codebase until publication on App Store & Play Store. Complete redesign of an application after UX analysis — delivered in one week. 2 apps published on stores."
             },
             "item2": {
@@ -82,10 +82,10 @@
             }
         },
         "resumeItems": [
-            ["B Pilot SARL", "Field Sales Representative (Budget Pilot)", "Since June 2026"],
-            ["Darollo Technologies Corporation (DTC)", "Partner & Product Developer", "Since January 2025"],
-            ["Evee Engineering", "Freelance Mobile Developer", "October 2025 – March 2026"],
-            ["CAGECFI SA", "Data Entry and Quality Control Operator", "March – June 2025"]
+            ["B Pilot SARL", "Field Sales Representative (Budget Pilot)", "Lome, Togo · Since June 2026"],
+            ["Darollo Technologies Corporation (DTC)", "Partner & Product Developer", "Lome, Togo · Since January 2025"],
+            ["Software Box", "Freelance Mobile Developer", "Ivory Coast · Remote · October 2025 – March 2026"],
+            ["CAGECFI SA", "Data Entry and Quality Control Operator", "Lome, Togo · March – June 2025"]
         ],
         "educationItems": [
             ["Baccalaureate", "", "2021"],
@@ -156,7 +156,7 @@
             "item0": {
                 "title": "Grand Voyageur",
                 "description": "Carpooling app designed for West Africa. Find a ride or offer yours, simply.",
-                "fullDescription": "Grand Voyageur reimagines shared mobility in West Africa. Developed for Evee Engineering (Ivory Coast), the app allows drivers to publish their trips and passengers to book in seconds. I took charge of the entire Flutter part — Clean Architecture, state management, Java backend integration, and deployment on both stores. A six-month project in a real professional context."
+                "fullDescription": "Grand Voyageur reimagines shared mobility in West Africa. Developed for Software Box (Ivory Coast), the app allows drivers to publish their trips and passengers to book in seconds. I took charge of the entire Flutter part — Clean Architecture, state management, Java backend integration, and deployment on both stores. A six-month project in a real professional context."
             },
             "item1": {
                 "title": "Cherish",
@@ -166,7 +166,7 @@
             "item2": {
                 "title": "Ticketto",
                 "description": "Discover concerts, festivals, and matches near you. Book your seats and receive your tickets directly on your phone.",
-                "fullDescription": "Ticketto is an event ticketing application developed for Evee Engineering. It centralizes local cultural and sporting events — concerts, shows, matches — and allows users to book and receive their tickets in a few clicks. Clean interface, smooth experience, secure payment. Developed in Flutter and published on the Play Store as part of a freelance mission."
+                "fullDescription": "Ticketto is an event ticketing application developed for Software Box. It centralizes local cultural and sporting events — concerts, shows, matches — and allows users to book and receive their tickets in a few clicks. Clean interface, smooth experience, secure payment. Developed in Flutter and published on the Play Store as part of a freelance mission."
             },
             "item3": {
                 "title": "EcoMap",
