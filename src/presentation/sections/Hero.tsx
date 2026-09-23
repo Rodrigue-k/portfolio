@@ -13,9 +13,9 @@ export function Hero() {
   const portraitY = useTransform(scrollYProgress, [0, 0.35], [0, reduceMotion ? 0 : 42]);
 
   return (
-    <Section id="about" className="flex min-h-svh items-center pb-14 pt-28 md:pb-16 md:pt-32">
+    <Section id="about" className="flex min-h-svh items-center pb-8 pt-20 md:pb-16 md:pt-32">
       <Container className="w-full">
-        <div className="grid items-center gap-10 md:grid-cols-[minmax(0,1.15fr)_minmax(360px,.85fr)] lg:gap-14 xl:grid-cols-[minmax(0,1.08fr)_520px] xl:gap-20">
+        <div className="grid items-center gap-6 md:grid-cols-[minmax(0,1.15fr)_minmax(360px,.85fr)] md:gap-10 lg:gap-14 xl:grid-cols-[minmax(0,1.08fr)_520px] xl:gap-20">
           <div className="max-w-[700px] md:py-8">
             <motion.h1
               initial="hidden"
@@ -44,7 +44,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.34, duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-7 max-w-xl text-base leading-7 text-muted"
+              className="mt-5 max-w-xl text-base leading-7 text-muted md:mt-7"
             >
               {t("description")}
             </motion.p>
@@ -55,7 +55,7 @@ export function Hero() {
               whileHover={reduceMotion ? undefined : { y: -3, scale: 1.02 }}
               whileTap={reduceMotion ? undefined : { scale: 0.98 }}
               transition={{ delay: 0.48, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-8 inline-flex rounded-full bg-[var(--accent)] px-5 py-3 text-sm font-semibold !text-white shadow-sm transition hover:opacity-90"
+              className="mt-6 inline-flex rounded-full bg-[var(--accent)] px-5 py-3 text-sm font-semibold !text-white shadow-sm transition hover:opacity-90 md:mt-8"
             >
               {t("actions.contact")}
             </motion.a>
@@ -65,11 +65,11 @@ export function Hero() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ delay: 0.18, duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
             style={{ y: portraitY }}
-            className="relative mx-auto aspect-[4/5] w-full max-w-[500px] overflow-visible md:justify-self-end xl:max-w-[540px]"
+            className="relative mx-auto mt-1 aspect-[4/5] w-[min(60vw,220px)] overflow-visible sm:w-[min(64vw,340px)] md:mt-0 md:w-full md:max-w-[500px] md:justify-self-end xl:max-w-[540px]"
           >
             <div
               aria-hidden="true"
-              className="absolute inset-x-7 bottom-8 top-10 rounded-[45%_55%_48%_52%/34%_38%_62%_66%] bg-[var(--text)]/[0.055] ring-1 ring-[var(--text)]/10"
+              className="absolute inset-x-4 bottom-6 top-8 rounded-[45%_55%_48%_52%/34%_38%_62%_66%] bg-[var(--text)]/[0.055] ring-1 ring-[var(--text)]/10 md:inset-x-7 md:bottom-8 md:top-10"
             />
             <Image
               src="/images/komi-speaking-portrait-v1.webp"
