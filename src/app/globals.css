@@ -47,6 +47,8 @@ html, body {
 
 html {
   scroll-behavior: smooth;
+  color-scheme: light;
+  background-color: var(--bg);
 }
 
 body {

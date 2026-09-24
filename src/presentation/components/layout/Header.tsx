@@ -53,7 +53,7 @@ export function Header() {
           <a
             href={`/${locale}`}
             className={cn(
-              "pointer-events-auto font-display text-xl font-semibold tracking-[-0.06em] transition-all duration-700 ease-[cubic-bezier(.22,1,.36,1)] hover:scale-105 md:text-2xl",
+              "pointer-events-auto inline-flex items-center font-display text-xl font-semibold tracking-[-0.06em] transition-[transform,opacity] duration-700 ease-[cubic-bezier(.22,1,.36,1)] hover:scale-105 md:text-2xl [transform:translateZ(0)] [backface-visibility:hidden]",
               scrolled && "pointer-events-none translate-x-14 scale-90 opacity-0 md:translate-x-24"
             )}
             aria-label={common("home")}
