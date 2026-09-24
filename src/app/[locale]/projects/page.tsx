@@ -217,9 +217,10 @@ export default async function ProjectsPage({ params }: { params: Promise<{ local
   }));
 
   return (
-    <main className="min-h-screen bg-background text-foreground">
-      <Header />
-      <Section className="pt-40 md:pt-48">
+    <main className="min-h-screen text-foreground selection:bg-white selection:text-black">
+      <div className="relative z-10 w-full h-full">
+        <Header />
+        <Section className="pt-40 md:pt-48">
         <Container>
           <p className="section-label text-[10px] uppercase tracking-[.2em] text-muted">{t("page.eyebrow")}</p>
           <h1 className="mt-3 font-display text-5xl font-semibold tracking-tight">{t("page.title")}</h1>
@@ -298,6 +299,7 @@ export default async function ProjectsPage({ params }: { params: Promise<{ local
         </Container>
       </Section>
       <Footer />
-    </main>
-  );
+    </div>
+  </main>
+);
 }
