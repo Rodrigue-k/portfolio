@@ -47,13 +47,13 @@ export function Header() {
     <>
       <header className="pointer-events-none fixed inset-x-0 top-0 z-40">
         <div className={cn(
-          "mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-6 transition-all duration-700 ease-out sm:px-6 md:py-8 lg:px-8",
+          "mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-6 transition-[padding] duration-700 ease-out sm:px-6 md:py-8 lg:px-8",
           scrolled && "py-4 md:py-5"
         )}>
           <a
             href={`/${locale}`}
             className={cn(
-              "pointer-events-auto inline-flex items-center font-display text-xl font-semibold tracking-[-0.06em] transition-[transform,opacity] duration-700 ease-[cubic-bezier(.22,1,.36,1)] hover:scale-105 md:text-2xl [transform:translateZ(0)] [backface-visibility:hidden]",
+              "pointer-events-auto inline-flex items-center font-display text-xl font-semibold tracking-[-0.06em] text-foreground transition-[transform,opacity] duration-700 ease-[cubic-bezier(.22,1,.36,1)] hover:scale-105 md:text-2xl",
               scrolled && "pointer-events-none translate-x-14 scale-90 opacity-0 md:translate-x-24"
             )}
             aria-label={common("home")}

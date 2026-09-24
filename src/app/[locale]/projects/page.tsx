@@ -79,8 +79,8 @@ function ProjectCard({
         {project.image ? (
           webProject ? (
             <div className="relative flex h-full items-center justify-center p-5">
-              <div className="pointer-events-none absolute -left-12 top-10 size-40 rounded-full bg-[#c0461c]/10 blur-2xl" />
-              <div className="pointer-events-none absolute -bottom-14 -right-10 size-44 rounded-full bg-[#263b32]/10 blur-2xl" />
+              <div className="pointer-events-none absolute -left-12 top-10 size-40 rounded-full bg-[radial-gradient(circle,rgba(192,70,28,0.18)_0%,transparent_70%)]" />
+              <div className="pointer-events-none absolute -bottom-14 -right-10 size-44 rounded-full bg-[radial-gradient(circle,rgba(38,59,50,0.18)_0%,transparent_70%)]" />
               <div className="relative w-full overflow-hidden rounded-[6px] border border-black/10 bg-white shadow-[0_18px_45px_rgba(32,35,31,.16)]">
                 <div className="flex h-6 items-center gap-1.5 border-b border-black/10 bg-[#f8f6f3] px-3">
                   <span className="size-1.5 rounded-full bg-[#d25b35]" />
@@ -97,9 +97,9 @@ function ProjectCard({
                 <p className="font-display text-2xl font-semibold leading-none tracking-[-.04em] sm:text-3xl" style={{ color: presentation.color }}>{title}</p>
                 <p className="mt-3 text-[11px] font-semibold uppercase tracking-[.18em] text-muted">{presentationLabel}</p>
               </div>
-              <div className="pointer-events-none absolute bottom-7 right-5 h-8 w-[58%] rounded-full bg-black/16 blur-2xl" />
+              <div className="pointer-events-none absolute bottom-7 right-5 h-8 w-[58%] rounded-full bg-[radial-gradient(ellipse,rgba(0,0,0,0.16)_0%,transparent_70%)]" />
               <div className="absolute inset-y-5 right-3 flex w-[68%] items-center justify-end">
-                <img src={project.image} alt={screenshotAlt} loading="lazy" decoding="async" className="h-full w-full object-contain object-right drop-shadow-[0_20px_30px_rgba(32,35,31,.22)]" />
+                <img src={project.image} alt={screenshotAlt} loading="lazy" decoding="async" className="h-full w-full object-contain object-right" />
               </div>
             </>
           )
@@ -234,8 +234,8 @@ export default async function ProjectsPage({ params }: { params: Promise<{ local
                   <div className="flex min-h-64 items-center justify-center bg-[#f2eee9] p-5 text-center font-mono text-xs text-muted">
                     {project.image.startsWith("/") ? (
                       <div className="relative w-full overflow-hidden rounded-[6px] border border-black/10 bg-[#ede6df] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,.55)]">
-                        <div className="pointer-events-none absolute -left-16 -top-16 size-40 rounded-full bg-[#c0461c]/10 blur-2xl" />
-                        <div className="pointer-events-none absolute -bottom-20 -right-16 size-44 rounded-full bg-[#263b32]/10 blur-2xl" />
+                        <div className="pointer-events-none absolute -left-16 -top-16 size-40 rounded-full bg-[radial-gradient(circle,rgba(192,70,28,0.18)_0%,transparent_70%)]" />
+                        <div className="pointer-events-none absolute -bottom-20 -right-16 size-44 rounded-full bg-[radial-gradient(circle,rgba(38,59,50,0.18)_0%,transparent_70%)]" />
                         <div className="relative overflow-hidden rounded-[5px] border border-black/10 bg-white shadow-[0_18px_45px_rgba(32,35,31,.18)]">
                           <div className="flex h-7 items-center gap-1.5 border-b border-black/10 bg-[#f8f6f3] px-3">
                             <span className="size-2 rounded-full bg-[#d25b35]" />
