@@ -1,3 +1,6 @@
+import Image from "next/image";
+import { assets } from "@/core/data/assets";
+import { CaseDetails, ProjectVisual, type CaseStudy } from "@/presentation/sections/ProductSections";
 import type { Metadata } from "next";
 import { Header } from "@/presentation/components/layout/Header";
 import { Footer } from "@/presentation/components/layout/Footer";
@@ -7,9 +10,9 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 
 const businessProjectMeta = [
-  { image: "/assets/projects/cahier-boulanger-dashboard.webp" },
-  { image: "/assets/projects/cahier-opticien-dashboard.webp" },
-  { image: "/assets/projects/ciforms-dashboard.webp", link: "https://ciforms-web.woez-app.com/" },
+  { image: assets.CIFORMS_SCREENSHOT, link: "https://ciforms-web.woez-app.com/" },
+  { image: assets.CAHIER_SCREENSHOT_BOULANGER },
+  { image: assets.CAHIER_SCREENSHOT_OPTICIEN },
 ];
 
 const productPresentationMeta = [
@@ -56,6 +59,10 @@ function ProjectCard({
   originalIndex: number;
   t: ProjectTranslator;
 }) {
+  if (!project.image) return null;
+  const status = originalIndex === 5 ? "woez" : originalIndex === 10 ? "prototype" : project.playStore || project.appStore ? "published" : project.website ? "online" : null;
+  // [À CONFIRMER: statut de publication EcoMap ; carte masquée en attendant]
+  if (!status) return null;
   const presentation = productPresentationMeta[index % productPresentationMeta.length];
   const projectLinks = getProjectLinks(project, t);
   const webProject = isWebProject(project);
@@ -87,7 +94,7 @@ function ProjectCard({
                   <span className="size-1.5 rounded-full bg-[#d2a05d]" />
                   <span className="size-1.5 rounded-full bg-[#6f8f75]" />
                 </div>
-                <img src={project.image} alt={screenshotAlt} loading="lazy" decoding="async" className="aspect-[16/9] w-full object-cover object-top" />
+                <Image width={1910} height={1080} sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 400px" src={project.image} alt={screenshotAlt} loading="lazy" decoding="async" className="aspect-[16/9] w-full object-cover object-top" />
               </div>
             </div>
           ) : (
@@ -99,7 +106,7 @@ function ProjectCard({
               </div>
               <div className="pointer-events-none absolute bottom-7 right-5 h-8 w-[58%] rounded-full bg-[radial-gradient(ellipse,rgba(0,0,0,0.16)_0%,transparent_70%)]" />
               <div className="absolute inset-y-5 right-3 flex w-[68%] items-center justify-end">
-                <img src={project.image} alt={screenshotAlt} loading="lazy" decoding="async" className="h-full w-full object-contain object-right" />
+                <Image width={1910} height={1080} sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 400px" src={project.image} alt={screenshotAlt} loading="lazy" decoding="async" className="h-full w-full object-contain object-right" />
               </div>
             </>
           )
@@ -119,6 +126,7 @@ function ProjectCard({
           })}
         </div>
         <h3 className="mt-4 font-display text-xl font-semibold">{title}</h3>
+        <p className="mt-2 font-mono text-xs font-semibold">{t(`statuses.${status}`)}</p>
         {project.associatedCompany && <p className="mt-1 text-xs uppercase tracking-[.16em] text-muted">{project.associatedCompany}</p>}
         <p className="mt-2 text-sm leading-6 text-muted">{description}</p>
         {projectLinks.length > 0 && (
@@ -163,7 +171,7 @@ export async function generateMetadata({
       languages: {
         fr: "https://rodriguekoudakpo.com/fr/projects",
         en: "https://rodriguekoudakpo.com/en/projects",
-        "x-default": "https://rodriguekoudakpo.com/fr/projects"
+        "x-default": "https://rodriguekoudakpo.com/en/projects"
       }
     },
     openGraph: {
@@ -203,13 +211,7 @@ export default async function ProjectsPage({ params }: { params: Promise<{ local
   const mobileProjects = projectsWithIndices.filter(({ project }) => !isWebProject(project));
   const webProjects = projectsWithIndices.filter(({ project }) => isWebProject(project));
 
-  const businessProjectsData = t.raw("page.businessProjects") as Array<{
-    name: string;
-    client: string;
-    need: string;
-    solution: string;
-    result: string;
-  }>;
+  const businessProjectsData = t.raw("page.businessProjects") as CaseStudy[];
 
   const businessProjects = businessProjectsData.map((item, idx) => ({
     ...item,
@@ -231,41 +233,12 @@ export default async function ProjectsPage({ params }: { params: Promise<{ local
             <div className="mt-8 space-y-6">
               {businessProjects.map((project) => (
                 <article key={project.name} className="grid overflow-hidden border border-card-border bg-card-bg lg:grid-cols-[430px_1fr]">
-                  <div className="flex min-h-64 items-center justify-center bg-[#f2eee9] p-5 text-center font-mono text-xs text-muted">
-                    {project.image.startsWith("/") ? (
-                      <div className="relative w-full overflow-hidden rounded-[6px] border border-black/10 bg-[#ede6df] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,.55)]">
-                        <div className="pointer-events-none absolute -left-16 -top-16 size-40 rounded-full bg-[radial-gradient(circle,rgba(192,70,28,0.18)_0%,transparent_70%)]" />
-                        <div className="pointer-events-none absolute -bottom-20 -right-16 size-44 rounded-full bg-[radial-gradient(circle,rgba(38,59,50,0.18)_0%,transparent_70%)]" />
-                        <div className="relative overflow-hidden rounded-[5px] border border-black/10 bg-white shadow-[0_18px_45px_rgba(32,35,31,.18)]">
-                          <div className="flex h-7 items-center gap-1.5 border-b border-black/10 bg-[#f8f6f3] px-3">
-                            <span className="size-2 rounded-full bg-[#d25b35]" />
-                            <span className="size-2 rounded-full bg-[#d2a05d]" />
-                            <span className="size-2 rounded-full bg-[#6f8f75]" />
-                          </div>
-                          <img src={project.image} alt={t("page.dashboardScreenshotAlt", { title: project.name })} loading="lazy" decoding="async" className="aspect-[16/9] w-full object-cover object-left-top" />
-                        </div>
-                      </div>
-                    ) : (
-                      project.image
-                    )}
-                  </div>
+                  <ProjectVisual title={project.name} images={[project.image]} />
                   <div className="p-6 md:p-8">
                     <p className="text-xs uppercase tracking-widest text-muted">{project.client}</p>
                     <h3 className="mt-2 font-display text-2xl font-semibold">{project.name}</h3>
-                    <dl className="mt-5 grid gap-x-8 gap-y-4 text-sm sm:grid-cols-3">
-                      <div>
-                        <dt className="font-semibold">{t("page.need")}</dt>
-                        <dd className="mt-1 leading-6 text-muted">{project.need}</dd>
-                      </div>
-                      <div>
-                        <dt className="font-semibold">{t("page.solution")}</dt>
-                        <dd className="mt-1 leading-6 text-muted">{project.solution}</dd>
-                      </div>
-                      <div>
-                        <dt className="font-semibold">{t("page.result")}</dt>
-                        <dd className="mt-1 leading-6 text-muted">{project.result}</dd>
-                      </div>
-                    </dl>
+                    <p className="mt-2 font-mono text-xs">{project.status}</p>
+                    <CaseDetails project={project} labels={{need:t("page.need"),solution:t("page.solution"),result:t("page.result"),role:t("page.role")}}/>
                     {"link" in project && project.link && (
                       <a href={project.link} target="_blank" rel="noreferrer" style={{ color: "#fff" }} className="mt-6 inline-flex items-center rounded-full bg-[var(--text)] px-4 py-2 text-xs font-semibold transition-transform hover:scale-[1.02]">
                         {t("page.viewProject")} <span aria-hidden="true" className="ml-1">↗</span>
@@ -296,6 +269,8 @@ export default async function ProjectsPage({ params }: { params: Promise<{ local
               ))}
             </div>
           </section>
+
+          {/* [AWA_SCREENSHOT] / [KLAVIA_SCREENSHOT]: cards intentionally deferred. */}
         </Container>
       </Section>
       <Footer />

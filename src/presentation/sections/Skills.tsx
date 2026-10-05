@@ -12,7 +12,7 @@ type SkillGroup = {
 export function Skills() {
   const t = useTranslations("Skills");
   const reduceMotion = useReducedMotion();
-  const groups = ["commercial", "digital", "technical"].map((key) =>
+  const groups = ["mobile", "backend", "infra", "business"].map((key) =>
     t.raw(`categories.${key}`)
   ) as SkillGroup[];
 
@@ -20,7 +20,7 @@ export function Skills() {
     <Section id="skills" className="py-20 md:py-28">
       <Container>
         <motion.p
-          initial={{ opacity: 0, y: 14 }}
+          initial={reduceMotion ? false : { opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true, margin: "-80px" }}
@@ -29,7 +29,7 @@ export function Skills() {
           {t("eyebrow")}
         </motion.p>
         <motion.h2
-          initial={{ opacity: 0, y: 18 }}
+          initial={reduceMotion ? false : { opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.08 }}
           viewport={{ once: true, margin: "-80px" }}
@@ -38,11 +38,11 @@ export function Skills() {
           {t("title")}
         </motion.h2>
         <motion.div
-          initial="hidden"
+          initial={reduceMotion ? false : "hidden"}
           whileInView="show"
           viewport={{ once: true, margin: "-80px" }}
           variants={{ hidden: {}, show: { transition: { staggerChildren: 0.12 } } }}
-          className="mt-9 grid gap-8 md:grid-cols-3"
+          className="mt-9 grid gap-8 md:grid-cols-4"
         >
           {groups.map((group) => (
             <motion.div

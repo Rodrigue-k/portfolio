@@ -57,7 +57,7 @@ export async function generateMetadata({
       languages: {
         fr: "https://rodriguekoudakpo.com/fr",
         en: "https://rodriguekoudakpo.com/en",
-        "x-default": "https://rodriguekoudakpo.com/fr"
+        "x-default": "https://rodriguekoudakpo.com/en"
       }
     },
     robots: {

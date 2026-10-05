@@ -12,7 +12,7 @@ export function JsonLd({ locale }: { locale: string }) {
     alternateName: ["Rodrigue Koudakpo", "Komi Koudakpo", "Latex"],
     jobTitle: isFr
       ? "Développeur d'Applications Mobiles Flutter & Web"
-      : "Flutter & Mobile Application Developer",
+      : "Flutter & Full-Stack Application Developer",
     description: isFr
       ? "Développeur spécialisé Flutter pour le mobile (iOS & Android) et Next.js pour le web. Concepteur de produits numériques de l'architecture à la publication sur les stores."
       : "Software Developer specialized in Flutter mobile development (iOS & Android) and Next.js web applications with end-to-end product delivery.",
@@ -77,8 +77,8 @@ export function JsonLd({ locale }: { locale: string }) {
     url: baseUrl,
     name: "Komi Rodrigue Koudakpo — Portfolio",
     description: isFr
-      ? "Portfolio officiel de Komi Rodrigue Koudakpo, Développeur Flutter et Mobile."
-      : "Official portfolio of Komi Rodrigue Koudakpo, Flutter & Mobile Developer.",
+      ? "Portfolio officiel de Komi Rodrigue Koudakpo, Développeur Flutter et full-stack."
+      : "Official portfolio of Komi Rodrigue Koudakpo, Flutter & Full-Stack Developer.",
     publisher: {
       "@id": `${baseUrl}/#person`
     },
@@ -90,8 +90,8 @@ export function JsonLd({ locale }: { locale: string }) {
     "@id": `${currentUrl}/#webpage`,
     url: currentUrl,
     name: isFr
-      ? "Komi Rodrigue Koudakpo — Développeur Flutter & Mobile"
-      : "Komi Rodrigue Koudakpo — Flutter & Mobile Developer",
+      ? "Komi Rodrigue Koudakpo — Développeur Flutter & Full-Stack"
+      : "Komi Rodrigue Koudakpo — Flutter & Full-Stack Developer",
     isPartOf: {
       "@id": `${baseUrl}/#website`
     },

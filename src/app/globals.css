@@ -132,3 +132,17 @@ h1, h2, h3 {
     transition-duration: 0.001ms !important;
   }
 }
+.selected-project{position:relative;display:grid;isolation:isolate;border-top:1px solid var(--border);background:linear-gradient(135deg,transparent 35%,rgba(38,59,50,.035) 35%,rgba(38,59,50,.035) 75%,transparent 75%)}
+.selected-project:before{content:"";position:absolute;right:0;top:24px;width:60%;height:70%;border:1px solid var(--border);transform:skewY(-4deg);z-index:-1}
+.project-assembly{position:relative;min-height:280px;display:flex;align-items:center;padding:40px 24px;overflow:hidden;background:radial-gradient(circle at 80% 15%,rgba(166,129,72,.15),transparent 45%),repeating-linear-gradient(135deg,transparent 0 38px,rgba(38,59,50,.045) 39px 40px)}
+.assembly-lines{position:absolute;inset:0;width:100%;height:100%;color:var(--accent);opacity:.2}
+.assembly-screen{position:relative;width:100%;border:1px solid var(--border);box-shadow:12px 20px 30px rgba(32,35,31,.15);transform:rotate(-3deg);transition:transform .5s cubic-bezier(.22,1,.36,1)}
+.is-stacked{min-height:350px}.is-stacked .screen-0{position:absolute;width:78%;left:5%;top:12%;transform:rotate(-6deg)}.is-stacked .screen-1{width:83%;margin:70px 0 0 auto;transform:rotate(4deg)}
+.selected-project:hover .assembly-screen{transform:rotate(0deg) translateY(-5px)}
+.training-assembly{position:relative;display:grid;gap:24px;padding:20px 0;background:repeating-linear-gradient(90deg,transparent 0 78px,rgba(38,59,50,.05) 79px 80px)}
+.training-assembly:before{content:"";position:absolute;inset:0 12% 5% 5%;border:1px solid var(--border);transform:skewY(-3deg)}
+.training-panel{position:relative;border-top:3px solid var(--accent);padding:28px;background:linear-gradient(135deg,var(--bg-2) 0%,var(--bg) 100%);box-shadow:8px 12px 0 rgba(38,59,50,.06)}
+.sharing-panel{border-top:1px solid var(--border);border-left:3px solid var(--accent);margin-top:16px;background:linear-gradient(135deg,rgba(166,129,72,.06),var(--bg-2))}
+section[id]{scroll-margin-top:90px}:focus-visible{outline:3px solid var(--accent-gold);outline-offset:5px}
+@media(min-width:1024px){.selected-project{grid-template-columns:1fr 1fr}.project-assembly{min-height:100%}.is-stacked .screen-0{top:28%}.training-assembly{grid-template-columns:1fr 1fr;gap:40px}.sharing-panel{margin-top:60px;margin-bottom:-20px}}
+@media(prefers-reduced-motion:reduce){.assembly-screen,.selected-project:hover .assembly-screen{transform:none!important}}

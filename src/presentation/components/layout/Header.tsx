@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useLocale, useTranslations } from "next-intl";
 import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -13,14 +13,18 @@ export function Header() {
   const t = useTranslations("Header");
   const common = useTranslations("Common");
   const locale = useLocale();
+  const reduceMotion = useReducedMotion();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
 
   const navLinks = [
     { name: t("nav.about"), href: `/${locale}#about` },
-    { name: t("nav.skills"), href: `/${locale}#skills` },
     { name: t("nav.projects"), href: `/${locale}/projects` },
+    { name: t("nav.skills"), href: `/${locale}#skills` },
     { name: t("nav.experience"), href: `/${locale}#experience` },
+    { name: t("nav.training"), href: `/${locale}#training` },
     { name: t("nav.contact"), href: `/${locale}#contact` },
   ];
 
@@ -43,6 +47,24 @@ export function Header() {
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
 
+  useEffect(() => {
+    if (!menuOpen) return;
+    const trigger = triggerRef.current;
+    const dialog = dialogRef.current;
+    const focusable = () => Array.from(dialog?.querySelectorAll<HTMLElement>('a[href], button:not([disabled])') || []);
+    focusable()[0]?.focus();
+    const handleKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMenuOpen(false);
+      if (event.key !== "Tab") return;
+      const elements = focusable();
+      const first = elements[0], last = elements[elements.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
+    };
+    document.addEventListener("keydown", handleKey);
+    return () => { document.removeEventListener("keydown", handleKey); trigger?.focus(); };
+  }, [menuOpen]);
+
   return (
     <>
       <header className="pointer-events-none fixed inset-x-0 top-0 z-40">
@@ -62,6 +84,7 @@ export function Header() {
           </a>
           <div className="flex items-center gap-5">
             <button
+              ref={triggerRef}
               type="button"
               onClick={() => setMenuOpen(true)}
               aria-label={common("openMenu")}
@@ -91,7 +114,7 @@ export function Header() {
 
       <AnimatePresence>
         {menuOpen && (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.25 }} className="fixed inset-0 z-50 flex min-h-svh flex-col bg-[var(--text)] text-[var(--bg)]">
+          <motion.div ref={dialogRef} role="dialog" aria-modal="true" aria-label={common("openMenu")} initial={reduceMotion ? false : { clipPath: "inset(0 0 100% 0)" }} animate={{ clipPath: "inset(0 0 0% 0)" }} exit={{ clipPath: "inset(0 0 100% 0)" }} transition={{ duration: reduceMotion ? 0 : 0.25 }} className="fixed inset-0 z-50 flex min-h-svh flex-col overflow-y-auto bg-[var(--text)] text-[var(--bg)]">
             <Container className="flex w-full items-center justify-between py-6 md:py-8">
               <span className="font-display text-xl font-semibold tracking-[-0.06em] md:text-2xl">RK.</span>
               <button type="button" onClick={() => setMenuOpen(false)} aria-label={common("closeMenu")} className="grid size-11 place-items-center rounded-full border border-white/25 transition-colors hover:bg-white hover:text-black md:size-12"><X className="size-5" /></button>
@@ -99,8 +122,8 @@ export function Header() {
             <Container className="grid w-full flex-1 items-center py-10 md:grid-cols-[1fr_auto] md:gap-20">
               <nav className="flex flex-col items-start">
                 {navLinks.map((item, index) => (
-                  <a key={item.name} href={item.href} onClick={() => setMenuOpen(false)} className="group flex w-full items-baseline gap-4 border-b border-white/15 py-3 font-display text-4xl font-semibold tracking-tight transition-colors hover:text-white/55 sm:text-5xl md:text-6xl">
-                    <span className="font-mono text-[10px] font-normal tracking-widest text-white/40">0{index + 1}</span>{item.name}
+                  <a key={item.name} href={item.href} onClick={() => setMenuOpen(false)} className="group flex w-full items-baseline gap-4 border-b border-white/15 py-3 font-display text-4xl font-semibold tracking-tight transition-colors hover:text-white/75 sm:text-4xl md:text-5xl">
+                    <span className="font-mono text-[10px] font-normal tracking-widest text-white/65">0{index + 1}</span>{item.name}
                   </a>
                 ))}
               </nav>

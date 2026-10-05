@@ -1,4 +1,5 @@
 import { PortfolioData } from "../entities/resume";
+import { assets } from "./assets";
 
 export const resumeData: PortfolioData = {
     profile: {
@@ -111,7 +112,7 @@ export const resumeData: PortfolioData = {
             tags: ["Flutter", "Dart", "QR Code", "vCard"],
             github: "https://github.com/Rodrigue-k/s_contact",
             playStore: "https://play.google.com/store/apps/details?id=com.koudatek.s_contact&pcampaignid=web_share",
-            image: "/assets/projects/scontact-main.webp",
+            image: assets.SCONTACT_SCREENSHOT,
             category: "personal"
         },
         {
@@ -119,7 +120,7 @@ export const resumeData: PortfolioData = {
             description: "Un jeu de puzzle arithmétique — combinez des tuiles colorées pour obtenir exactement 10. Simple, addictif, fait maison.",
             tags: ["Unity", "C#", "Game Dev", "Android"],
             playStore: "https://play.google.com/store/apps/details?id=com.latex.make&pcampaignid=web_share",
-            image: "/assets/projects/make10-main.webp",
+            image: assets.MAKE10_SCREENSHOT,
             category: "other"
         },
         {
@@ -127,7 +128,7 @@ export const resumeData: PortfolioData = {
             description: "Plateforme participative de collecte et de validation de données vocales pour préserver les langues africaines et entraîner les technologies vocales de demain.",
             tags: ["Next.js", "IA", "Voix", "Langues africaines", "Open data", "Web app"],
             website: "https://corafric.com/",
-            image: "/assets/projects/corafric-main.webp",
+            image: assets.CORAFRIC_SCREENSHOT,
             category: "professional"
         },
         {
@@ -135,7 +136,7 @@ export const resumeData: PortfolioData = {
             description: "Site officiel d’une plateforme panafricaine qui rapproche les compétences des étudiants des besoins réels des entreprises, avec une présence annoncée dans plusieurs pays.",
             tags: ["Site web", "Hackathon", "Pan-Africain", "Étudiants", "Entreprises", "DTC"],
             website: "https://miabehackathon.com/",
-            image: "/assets/projects/miabe-hackathon-web.webp",
+            image: assets.MIABE_WEBSITE_SCREENSHOT,
             associatedCompany: "Darollo Technologies Corporation (DTC)",
             category: "professional"
         },
@@ -144,7 +145,7 @@ export const resumeData: PortfolioData = {
             description: "Plateforme de private markets qui connecte les entreprises non cotées avec des investisseurs privés qualifiés, dans un cadre clair et vérifiable.",
             tags: ["Next.js", "Fintech", "Marketplace", "Investissement", "SaaS", "Web app"],
             website: "https://tavalo.woez-app.com/",
-            image: "/assets/projects/tavalo-main.webp",
+            image: assets.TAVALO_SCREENSHOT,
             category: "professional"
         },
         {
@@ -152,7 +153,7 @@ export const resumeData: PortfolioData = {
             description: "Site vitrine immersif pour une agence de communication et de production audiovisuelle basée à Lomé, conçu dans le cadre de Darollo Technologies Corporation.",
             tags: ["Next.js", "Site vitrine", "Motion design", "Communication", "Client", "DTC"],
             website: "https://www.ishaagency.com/",
-            image: "/assets/projects/isha-main.webp",
+            image: assets.ISHA_SCREENSHOT,
             associatedCompany: "Darollo Technologies Corporation (DTC)",
             category: "professional"
         }

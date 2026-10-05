@@ -7,7 +7,7 @@ export default function RootPage() {
     const router = useRouter();
 
     useEffect(() => {
-        const preferredLang = navigator.language?.startsWith('fr') ? 'fr' : 'en';
+        const preferredLang = 'en';
         router.replace(`/${preferredLang}`);
     }, [router]);
 

@@ -26,12 +26,12 @@ export function LanguageSwitcher() {
             disabled={isPending}
             className={cn(
                 "flex items-center gap-1.5 px-1 py-1 transition-colors group",
-                "bg-transparent text-[var(--text-muted)] hover:text-[var(--accent)]",
+                "bg-transparent text-inherit hover:underline",
                 isPending && "opacity-50 pointer-events-none"
             )}
             aria-label={t("toggleLanguage")}
         >
-            <Globe className="w-4 h-4 transition-colors group-hover:text-[var(--accent)]" />
+            <Globe className="w-4 h-4" />
             <span className="font-mono text-[11px] uppercase tracking-wider">
                 {locale}
             </span>

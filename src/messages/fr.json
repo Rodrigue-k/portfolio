@@ -1,272 +1,445 @@
 {
-    "Metadata": {
-        "title": "Komi Rodrigue Koudakpo — Développeur Flutter & Mobile · Portfolio",
-        "description": "Portfolio de Komi Rodrigue Koudakpo, Développeur spécialisé Flutter (iOS & Android) et Next.js. Conception d'applications mobiles, études de cas et solutions digitales."
-    },
-    "Header": {
-        "nav": {
-            "about": "À propos",
-            "skills": "Compétences",
-            "projects": "Projets",
-            "experience": "Expérience",
-            "contact": "Contact",
-            "hireMe": "M'engager"
-        }
-    },
-    "Hero": {
-        "headline": {
-            "line1": "Je construis.",
-            "line2": "Je vends."
-        },
-        "description": "Développeur par passion, commercial par expérience. Je construis des produits et je les porte jusqu'au client.",
-        "portraitAlt": "Portrait officiel de Komi Rodrigue Koudakpo — Développeur d'Applications Mobiles Flutter & Web",
-        "location": "Agoe Cacaveli, Lomé, Togo",
-        "actions": {
-            "contact": "Me contacter",
-            "downloadCV": "Télécharger CV",
-            "downloadCV_FR": "Version Française (FR)",
-            "downloadCV_EN": "English Version (EN)",
-            "viewProjects": "Voir Projets"
-        }
-    },
-    "Skills": {
-        "eyebrow": "À mon sujet",
-        "title": "Compétences.",
-        "subtitle": "Une stack technique polyvalente axée sur des solutions mobiles et web performantes.",
-        "categories": {
-            "commercial": {
-                "title": "Commercial",
-                "items": ["Prospection terrain", "Négociation tarifaire", "Gestion des objections", "Vente de solutions récurrentes"]
-            },
-            "digital": {
-                "title": "Digital",
-                "items": ["Publicité payante (Meta Ads)", "Notions SEO", "Tunnels de conversion", "Gestion de projet"]
-            },
-            "technical": {
-                "title": "Technique",
-                "items": ["Flutter", "Dart", "Next.js", "Firebase", "Supabase", "Cloudflare", "Oracle Cloud", "Python", "C#"]
-            }
-        }
-    },
-    "Experience": {
-        "eyebrow": "Expérience & éducation",
-        "title": "Mon parcours",
-        "experienceTitle": "Expérience",
-        "educationTitle": "Éducation",
-        "subtitle": "Mon parcours à travers différents rôles et entreprises.",
-        "present": "Présent",
-        "items": {
-            "item0": {
-                "role": "Développeur d'Applications Mobiles & Web",
-                "company": "Darollo Technologies Corporation (DTC)",
-                "location": "Togo",
-                "type": "Freelance",
-                "period": "Jan. 2025 - Présent",
-                "description": "Développement et maintenance d'applications mobiles Flutter. Prise en charge autonome d'un projet client complexe — architecture Flutter mobile + intégration backend C#. Projets livrés : Application & Site Web Miabé Hackathon."
-            },
-            "item1": {
-                "role": "Développeur d'Applications Mobiles",
-                "company": "Software Box",
-                "location": "Côte d'Ivoire",
-                "type": "Freelance",
-                "period": "Oct. 2025 - Mars 2026",
-                "description": "Reprise et finalisation d'une codebase existante jusqu'à la publication sur App Store & Play Store. Refonte complète d'une application après analyse UX — livrée en une semaine. 2 apps publiées sur les stores."
-            },
-            "item2": {
-                "role": "Opérateur de Traitement de Données",
-                "company": "CAGECFI SA — Cadastre de Lomé",
-                "location": "Lomé, Togo",
-                "type": "On-site",
-                "period": "Mars 2025 - Juin 2025",
-                "description": "Projet étatique de numérisation des titres fonciers du cadastre national de Lomé. Contrôle qualité et analyse des données saisies."
-            }
-        },
-        "resumeItems": [
-            ["B Pilot SARL", "Commercial terrain (Budget Pilot)", "Lomé, Togo · Depuis juin 2026"],
-            ["Darollo Technologies Corporation (DTC)", "Associé & Développeur produit", "Lomé, Togo · Depuis janvier 2025"],
-            ["Software Box", "Développeur mobile freelance", "Côte d’Ivoire · À distance · Octobre 2025 – Mars 2026"],
-            ["CAGECFI SA", "Opérateur de saisie et contrôle qualité", "Lomé, Togo · Mars – Juin 2025"]
-        ],
-        "educationItems": [
-            ["Baccalauréat", "", "2021"],
-            ["Licence Gestion de Projet Digital", "ESCEN", "En cours (L2)"],
-            ["Licence Mathématiques", "", "Reprise en cours"]
-        ]
-    },
-    "Projects": {
-        "title": "Projets Phares",
-        "subtitle": "Une sélection de mes travaux récents en développement mobile et web.",
-        "viewCode": "Code Source",
-        "viewProject": "Voir le site",
-        "playStore": "Play Store",
-        "appStore": "App Store",
-        "associatedWith": "Associé à",
-        "links": "Liens",
-        "imagePlaceholder": "Emplacement image",
-        "screenshotAlt": "Capture d'écran {index} de {title}",
-        "filters": {
-            "professional": "En Entreprise",
-            "personal": "Projets Perso",
-            "other": "Autres"
-        },
-        "tags": {
-            "Flutter": "Flutter",
-            "Dart": "Dart",
-            "Clean Architecture": "Clean Architecture",
-            "REST API": "REST API",
-            "Android": "Android",
-            "iOS": "iOS",
-            "Freelance": "Freelance",
-            "Firebase": "Firebase",
-            "Supabase": "Supabase",
-            "Micro-paiement": "Micro-paiement",
-            "Paiement": "Paiement",
-            "Solo": "Solo",
-            "Géolocalisation": "Géolocalisation",
-            "Cartographie": "Cartographie",
-            "Web": "Web",
-            "Hackathon": "Hackathon",
-            "Équipe": "Équipe",
-            "QR Code": "QR Code",
-            "vCard": "vCard",
-            "Unity": "Unity",
-            "C#": "C#",
-            "Game Dev": "Développement de jeu",
-            "Next_js": "Next.js",
-            "IA": "IA",
-            "Voix": "Voix",
-            "Langues africaines": "Langues africaines",
-            "Open data": "Open Data",
-            "Web app": "Application Web",
-            "Site web": "Site Web",
-            "Pan-Africain": "Pan-Africain",
-            "Étudiants": "Étudiants",
-            "Entreprises": "Entreprises",
-            "DTC": "DTC",
-            "Fintech": "Fintech",
-            "Marketplace": "Marketplace",
-            "Investissement": "Investissement",
-            "SaaS": "SaaS",
-            "Site vitrine": "Site Vitrine",
-            "Motion design": "Motion Design",
-            "Communication": "Communication",
-            "Client": "Client"
-        },
-        "items": {
-            "item0": {
-                "title": "Grand Voyageur",
-                "description": "Application de covoiturage pensée pour l'Afrique de l'Ouest. Trouvez un trajet ou proposez le vôtre, simplement.",
-                "fullDescription": "Grand Voyageur repense la mobilité partagée en Afrique de l'Ouest. Développée pour Software Box (Côte d'Ivoire), l'app permet aux conducteurs de publier leurs trajets et aux passagers de réserver en quelques secondes. J'ai pris en charge l'intégralité de la partie Flutter — architecture Clean, gestion d'état, intégration avec le backend Java, et déploiement sur les deux stores. Un projet de six mois en contexte professionnel réel."
-            },
-            "item1": {
-                "title": "Cherish",
-                "description": "Créez et envoyez des cartes de vœux personnalisées pour chaque occasion. Des templates soignés, un envoi en quelques secondes.",
-                "fullDescription": "Cherish est une application mobile de cartes de vœux numériques disponible sur Android et iOS. Elle propose une collection de templates pour anniversaires, fêtes et occasions spéciales, avec un modèle de micro-paiement intégré. J'ai conçu et développé l'app de A à Z — design, développement Flutter, intégration des paiements et publication sur les deux stores. Un projet solo qui m'a permis de maîtriser tout le cycle de vie d'un produit mobile."
-            },
-            "item2": {
-                "title": "Ticketto",
-                "description": "Découvrez concerts, festivals et matchs près de chez vous. Réservez vos places et recevez vos billets directement sur votre téléphone.",
-                "fullDescription": "Ticketto est une application de billetterie événementielle développée pour Software Box. Elle centralise les événements culturels et sportifs locaux — concerts, spectacles, matchs — et permet de réserver et recevoir ses billets en quelques clics. Interface épurée, expérience fluide, paiement sécurisé. Développée en Flutter et publiée sur le Play Store dans le cadre d'une mission freelance."
-            },
-            "item3": {
-                "title": "EcoMap",
-                "description": "Plateforme cartographique pour visualiser la santé environnementale des villes africaines — signalement de dépotoirs et qualité de l'air en temps réel.",
-                "fullDescription": "EcoMap est une solution mobile et web développée pour le hackathon Make Afrique 2025 au Bénin, où elle a décroché la 3e place. L'application permet aux citoyens de signaler des zones insalubres directement sur une carte interactive, facilitant le travail des organisations de collecte et de nettoyage urbain. Elle intègre également un module de qualité de l'air pour surveiller la santé environnementale de chaque quartier. Un projet d'impact conçu en équipe, en temps limité, pour un vrai problème africain."
-            },
-            "item4": {
-                "title": "MIABE Hackathon",
-                "description": "L'app officielle de la plus grande compétition tech panafricaine pour étudiants. Toutes les infos sur la compétition 2026, sans inscription, dans 15 pays.",
-                "fullDescription": "MIABE Hackathon est l'application officielle de la compétition panafricaine MIABE — la plus grande compétition technologique pour étudiants et jeunes en informatique sur le continent. Sans inscription requise, l'app donne accès à toutes les informations essentielles sur l'édition 2026 : règlement, calendrier, pays participants, actualités. Disponible pour les 15 pays participants, elle a été conçue pour être simple, rapide et accessible même avec une connexion limitée."
-            },
-            "item5": {
-                "title": "Woez",
-                "description": "Réservez des hébergements locaux avec des paiements adaptés à l'Afrique de l'Ouest. Une alternative à Booking.com pensée pour le terrain.",
-                "fullDescription": "Woez est une application de réservation d'hébergements pensée pour le marché local ouest-africain. Là où des plateformes comme Booking.com restent inadaptées aux réalités du terrain — paiements, langue, offres disponibles — Woez propose une expérience calibrée : paiements mobiles locaux (mobile Money), interface en langue locale, et une offre centrée sur les hébergements de proximité. Un projet qui part d'un vrai problème de marché."
-            },
-            "item6": {
-                "title": "S-Contact",
-                "description": "Votre carte de visite numérique instantanée. Créez votre profil, générez un QR code et partagez vos coordonnées en 3 secondes.",
-                "fullDescription": "S-Contact remplace la carte de visite papier par une expérience numérique fluide. L'utilisateur crée son profil en quelques clics, génère un QR code intelligent au format vCard, et le partage avec n'importe qui disposant d'un lecteur QR standard. Plus besoin de saisir manuellement un numéro ou d'échanger des cartes qui se perdent. Simple, rapide, universel."
-            },
-            "item7": {
-                "title": "Make 10!",
-                "description": "Un jeu de puzzle arithmétique — combinez des tuiles colorées pour obtenir exactement 10. Simple, addictif, fait maison.",
-                "fullDescription": "Make 10 est un jeu de puzzle mobile développé avec Unity — mon tout premier jeu publié. Le principe est simple : combiner une, deux, trois ou quatre tuiles numérotées de 1 à 9 pour atteindre exactement 10. Un projet d'apprentissage qui m'a initié au développement de jeux, à la logique de gameplay et au pipeline de publication sur le Play Store."
-            },
-            "item8": {
-                "title": "Corafric",
-                "description": "Plateforme participative de collecte et de validation de données vocales pour préserver les langues africaines et entraîner les technologies vocales de demain.",
-                "fullDescription": "Corafric est une plateforme open-data de collecte vocale visant à constituer des jeux de données pour les langues africaines peu dotées. Développée avec Next.js, elle permet aux utilisateurs d'enregistrer, valider et accéder à des données vocales pour l'IA."
-            },
-            "item9": {
-                "title": "Miabé Hackathon",
-                "description": "Site officiel d’une plateforme panafricaine qui rapproche les compétences des étudiants des besoins réels des entreprises, avec une présence annoncée dans plusieurs pays.",
-                "fullDescription": "Portail officiel de la compétition MIABE Hackathon, présentant le règlement, le calendrier, les universités participantes, le showcase des sponsors et les actualités dans 15 pays africains."
-            },
-            "item10": {
-                "title": "Tavalo",
-                "description": "Plateforme de private markets qui connecte les entreprises non cotées avec des investisseurs privés qualifiés, dans un cadre clair et vérifiable.",
-                "fullDescription": "Tavalo est une marketplace SaaS web développée avec Next.js qui facilite les opportunités d'investissement, le contrôle préalable et l'allocation de capital entre entreprises privées et investisseurs accrédités."
-            },
-            "item11": {
-                "title": "ISHA Agency",
-                "description": "Site vitrine immersif pour une agence de communication et de production audiovisuelle basée à Lomé, conçu dans le cadre de Darollo Technologies Corporation.",
-                "fullDescription": "Conçu et développé pour ISHA Agency sous Darollo Technologies Corporation (DTC). Propose un motion design fluide, des galeries média et la présentation de l'identité de marque."
-            }
-        },
-        "page": {
-            "eyebrow": "Sélection de projets",
-            "title": "Projets",
-            "caseStudiesEyebrow": "Études de cas",
-            "caseStudiesTitle": "Solutions métier pour entreprises",
-            "mobileEyebrow": "Applications mobiles",
-            "mobileTitle": "Apps publiées & produits mobiles",
-            "webEyebrow": "Sites & plateformes web",
-            "webTitle": "Expériences web, plateformes & sites clients",
-            "need": "Besoin",
-            "solution": "Solution",
-            "result": "Résultat",
-            "viewProject": "Voir le projet",
-            "projectScreenshotAlt": "Capture d'écran de {title}",
-            "dashboardScreenshotAlt": "Capture du tableau de bord {title}",
-            "businessProjects": [
-                { "name": "Cahier Boulanger", "client": "Boulangerie", "need": "Suivre l'activité et organiser la gestion quotidienne d'une boulangerie.", "solution": "Un logiciel de gestion conçu pour les besoins métier d'une boulangerie.", "result": "Solution développée pour structurer les opérations de l'établissement." },
-                { "name": "Cahier Opticien", "client": "Eye Fashion Wear", "need": "Disposer d'un outil adapté à la gestion d'une lunetterie.", "solution": "Un logiciel de gestion conçu pour Eye Fashion Wear et son activité d'opticien.", "result": "Solution métier dédiée à la gestion de la lunetterie." },
-                { "name": "ciForms", "client": "Produit terrain", "need": "Centraliser les données collectées par les commerciaux et suivre les prospects, relances et zones de prospection.", "solution": "Une plateforme web avec formulaires mobiles, collecte terrain, suivi commercial et tableaux de bord opérationnels.", "result": "Solution utilisée en contexte réel avec B Pilot comme premier terrain client." }
-            ],
-            "presentationLabels": ["Covoiturage", "Cartes de vœux", "Billetterie", "Cartographie", "Hackathon", "Hébergement", "Contact digital", "Jeu de puzzle"]
-        }
-    },
-    "Contact": {
-        "title": "Restons en Contact",
-        "subtitle": "Vous avez un projet en tête ou voulez simplement discuter ? N'hésitez pas à me contacter.",
-        "headline": "Un projet en tête ? Parlons-en.",
-        "email": "M'envoyer un email",
-        "linkedin": "Me suivre sur LinkedIn",
-        "github": "Me suivre sur GitHub"
-    },
-    "Footer": {
-        "rights": "Tous droits réservés.",
-        "builtBy": "Conçu & développé par moi",
-        "email": "Email",
-        "linkedin": "LinkedIn",
-        "github": "GitHub",
-        "links": {
-            "privacy": "Confidentialité",
-            "terms": "Conditions",
-            "sitemap": "Plan du site"
-        }
-    },
-    "Common": {
-        "home": "Accueil",
-        "openMenu": "Ouvrir le menu",
-        "closeMenu": "Fermer le menu",
-        "toggleLanguage": "Changer de langue",
-        "toggleTheme": "Changer de thème",
-        "redirecting": "Redirection...",
-        "copyLink": "Copier le lien",
-        "copied": "Copié !",
-        "showQrCode": "Afficher le QR code",
-        "open": "Ouvrir"
+  "Metadata": {
+    "title": "Komi Rodrigue Koudakpo — Flutter & Full-Stack Developer · Portfolio",
+    "description": "Développeur Flutter & full-stack basé à Lomé, Togo. Des produits mobiles et web de l’idée au déploiement."
+  },
+  "Header": {
+    "nav": {
+      "about": "À propos",
+      "skills": "Compétences",
+      "projects": "Projets",
+      "experience": "Expérience",
+      "contact": "Contact",
+      "hireMe": "M'engager",
+      "training": "Formation"
     }
+  },
+  "Hero": {
+    "headline": {
+      "line1": "Je construis des produits,",
+      "line2": "de l'idée au déploiement."
+    },
+    "description": "Développeur Flutter & full-stack. Je livre des applications mobiles et web pour des utilisateurs aux contraintes réelles.",
+    "portraitAlt": "Portrait officiel de Komi Rodrigue Koudakpo — Développeur d'Applications Mobiles Flutter & Web",
+    "location": "Agoe Cacaveli, Lomé, Togo",
+    "actions": {
+      "contact": "Me contacter",
+      "downloadCV": "Télécharger CV",
+      "downloadCV_FR": "Version Française (FR)",
+      "downloadCV_EN": "English Version (EN)",
+      "viewProjects": "Voir mes projets"
+    }
+  },
+  "Skills": {
+    "eyebrow": "Technique",
+    "title": "Compétences",
+    "subtitle": "Une stack technique polyvalente axée sur des solutions mobiles et web performantes.",
+    "categories": {
+      "mobile": {
+        "title": "Mobile & web",
+        "items": [
+          "Flutter",
+          "Dart",
+          "Next.js"
+        ]
+      },
+      "backend": {
+        "title": "Backend",
+        "items": [
+          "Firebase",
+          "Supabase",
+          "Python",
+          "C#"
+        ]
+      },
+      "infra": {
+        "title": "Infra",
+        "items": [
+          "Cloudflare",
+          "Oracle Cloud"
+        ]
+      },
+      "business": {
+        "title": "Business",
+        "items": [
+          "Vente terrain",
+          "Négociation",
+          "Publicité payante (Meta Ads)",
+          "Gestion de projet"
+        ]
+      }
+    }
+  },
+  "Experience": {
+    "eyebrow": "Parcours",
+    "title": "Expérience",
+    "experienceTitle": "Expérience",
+    "educationTitle": "Éducation",
+    "subtitle": "Mon parcours à travers différents rôles et entreprises.",
+    "present": "Présent",
+    "resumeItems": [
+      {
+        "company": "Koudatek (marque personnelle)",
+        "role": "Développeur indépendant",
+        "period": "Lomé, Togo · Depuis 2022",
+        "achievements": [
+          "Première application Flutter en 2022 (un jeu) ; publication d’applications sur le Play Store depuis 2023.",
+          "Logiciels métier pour des commerces : la suite Cahier (boulangerie, optique), lancée en 2026."
+        ]
+      },
+      {
+        "company": "B Pilot SARL",
+        "role": "Commercial terrain (Budget Pilot)",
+        "period": "Lomé, Togo · Juin – Septembre 2026",
+        "achievements": [
+          "Prospection terrain de plus de 300 commerçants et artisans.",
+          "Développement d’un outil interne de suivi terrain avec rapports PDF, utilisé au quotidien par 4 commerciaux."
+        ]
+      },
+      {
+        "company": "Darollo Technologies Corporation (DTC)",
+        "role": "Associé & Développeur produit",
+        "period": "Lomé, Togo · Depuis janvier 2025",
+        "achievements": [
+          "Applications Flutter iOS et Android avec intégration d’un backend C#.",
+          "Prise en charge de projets de bout en bout, de l’architecture à la livraison, y compris la relation client.",
+          "Livraison de l’application (Play Store) et du site web du Miabé Hackathon."
+        ]
+      },
+      {
+        "company": "Software Box (anciennement Evee Engineering)",
+        "role": "Développeur mobile freelance",
+        "period": "Côte d’Ivoire · À distance · Octobre 2025 – Mars 2026",
+        "achievements": [
+          "Reprise d’une codebase Flutter existante, correction des bugs critiques, mise en production.",
+          "Refonte complète d’une application après analyse UX approfondie.",
+          "2 applications publiées sur l’App Store et le Play Store : Grand Voyageur, Ticketto."
+        ]
+      },
+      {
+        "company": "CAGECFI SA",
+        "role": "Opérateur de saisie et contrôle qualité",
+        "period": "Lomé, Togo · Mars – Juin 2025",
+        "achievements": [
+          "Numérisation des livres fonciers et contrôle qualité sur un projet national de numérisation."
+        ]
+      }
+    ]
+  },
+  "Projects": {
+    "title": "Projets Phares",
+    "subtitle": "Une sélection de mes travaux récents en développement mobile et web.",
+    "viewCode": "Code Source",
+    "viewProject": "Voir le site",
+    "playStore": "Play Store",
+    "appStore": "App Store",
+    "associatedWith": "Associé à",
+    "links": "Liens",
+    "imagePlaceholder": "Emplacement image",
+    "screenshotAlt": "Capture d'écran {index} de {title}",
+    "filters": {
+      "professional": "En Entreprise",
+      "personal": "Projets Perso",
+      "other": "Autres"
+    },
+    "tags": {
+      "Flutter": "Flutter",
+      "Dart": "Dart",
+      "Clean Architecture": "Clean Architecture",
+      "REST API": "REST API",
+      "Android": "Android",
+      "iOS": "iOS",
+      "Freelance": "Freelance",
+      "Firebase": "Firebase",
+      "Supabase": "Supabase",
+      "Micro-paiement": "Micro-paiement",
+      "Paiement": "Paiement",
+      "Solo": "Solo",
+      "Géolocalisation": "Géolocalisation",
+      "Cartographie": "Cartographie",
+      "Web": "Web",
+      "Hackathon": "Hackathon",
+      "Équipe": "Équipe",
+      "QR Code": "QR Code",
+      "vCard": "vCard",
+      "Unity": "Unity",
+      "C#": "C#",
+      "Game Dev": "Développement de jeu",
+      "Next_js": "Next.js",
+      "IA": "IA",
+      "Voix": "Voix",
+      "Langues africaines": "Langues africaines",
+      "Open data": "Open Data",
+      "Web app": "Application Web",
+      "Site web": "Site Web",
+      "Pan-Africain": "Pan-Africain",
+      "Étudiants": "Étudiants",
+      "Entreprises": "Entreprises",
+      "DTC": "DTC",
+      "Fintech": "Fintech",
+      "Marketplace": "Marketplace",
+      "Investissement": "Investissement",
+      "SaaS": "SaaS",
+      "Site vitrine": "Site Vitrine",
+      "Motion design": "Motion Design",
+      "Communication": "Communication",
+      "Client": "Client"
+    },
+    "items": {
+      "item0": {
+        "title": "Grand Voyageur",
+        "description": "Application de covoiturage pensée pour l'Afrique de l'Ouest. Trouvez un trajet ou proposez le vôtre, simplement.",
+        "fullDescription": "Grand Voyageur repense la mobilité partagée en Afrique de l'Ouest. Développée pour Software Box (Côte d'Ivoire), l'app permet aux conducteurs de publier leurs trajets et aux passagers de réserver en quelques secondes. J'ai pris en charge l'intégralité de la partie Flutter — architecture Clean, gestion d'état, intégration avec le backend Java, et déploiement sur les deux stores. Un projet de six mois en contexte professionnel réel."
+      },
+      "item1": {
+        "title": "Cherish",
+        "description": "Créez et envoyez des cartes de vœux personnalisées pour chaque occasion. Des templates soignés, un envoi en quelques secondes.",
+        "fullDescription": "Cherish est une application mobile de cartes de vœux numériques disponible sur Android et iOS. Elle propose une collection de templates pour anniversaires, fêtes et occasions spéciales, avec un modèle de micro-paiement intégré. J'ai conçu et développé l'app de A à Z — design, développement Flutter, intégration des paiements et publication sur les deux stores. Un projet solo qui m'a permis de maîtriser tout le cycle de vie d'un produit mobile."
+      },
+      "item2": {
+        "title": "Ticketto",
+        "description": "Découvrez concerts, festivals et matchs près de chez vous. Réservez vos places et recevez vos billets directement sur votre téléphone.",
+        "fullDescription": "Ticketto est une application de billetterie événementielle développée pour Software Box. Elle centralise les événements culturels et sportifs locaux — concerts, spectacles, matchs — et permet de réserver et recevoir ses billets en quelques clics. Interface épurée, expérience fluide, paiement sécurisé. Développée en Flutter et publiée sur le Play Store dans le cadre d'une mission freelance."
+      },
+      "item3": {
+        "title": "EcoMap",
+        "description": "Plateforme cartographique pour visualiser la santé environnementale des villes africaines — signalement de dépotoirs et qualité de l'air en temps réel.",
+        "fullDescription": "EcoMap est une solution mobile et web développée pour le hackathon Make Afrique 2025 au Bénin, où elle a décroché la 3e place. L'application permet aux citoyens de signaler des zones insalubres directement sur une carte interactive, facilitant le travail des organisations de collecte et de nettoyage urbain. Elle intègre également un module de qualité de l'air pour surveiller la santé environnementale de chaque quartier. Un projet d'impact conçu en équipe, en temps limité, pour un vrai problème africain."
+      },
+      "item4": {
+        "title": "MIABE Hackathon",
+        "description": "L'app officielle de la plus grande compétition tech panafricaine pour étudiants. Toutes les infos sur la compétition 2026, sans inscription, dans 15 pays.",
+        "fullDescription": "MIABE Hackathon est l'application officielle de la compétition panafricaine MIABE — la plus grande compétition technologique pour étudiants et jeunes en informatique sur le continent. Sans inscription requise, l'app donne accès à toutes les informations essentielles sur l'édition 2026 : règlement, calendrier, pays participants, actualités. Disponible pour les 15 pays participants, elle a été conçue pour être simple, rapide et accessible même avec une connexion limitée."
+      },
+      "item5": {
+        "title": "Woez",
+        "description": "Réservez des hébergements locaux avec des paiements adaptés à l'Afrique de l'Ouest. Une alternative à Booking.com pensée pour le terrain.",
+        "fullDescription": "Woez est une application de réservation d'hébergements pensée pour le marché local ouest-africain. Là où des plateformes comme Booking.com restent inadaptées aux réalités du terrain — paiements, langue, offres disponibles — Woez propose une expérience calibrée : paiements mobiles locaux (mobile Money), interface en langue locale, et une offre centrée sur les hébergements de proximité. Un projet qui part d'un vrai problème de marché."
+      },
+      "item6": {
+        "title": "S-Contact",
+        "description": "Votre carte de visite numérique instantanée. Créez votre profil, générez un QR code et partagez vos coordonnées en 3 secondes.",
+        "fullDescription": "S-Contact remplace la carte de visite papier par une expérience numérique fluide. L'utilisateur crée son profil en quelques clics, génère un QR code intelligent au format vCard, et le partage avec n'importe qui disposant d'un lecteur QR standard. Plus besoin de saisir manuellement un numéro ou d'échanger des cartes qui se perdent. Simple, rapide, universel."
+      },
+      "item7": {
+        "title": "Make 10!",
+        "description": "Un jeu de puzzle arithmétique — combinez des tuiles colorées pour obtenir exactement 10. Simple, addictif, fait maison.",
+        "fullDescription": "Make 10 est un jeu de puzzle mobile développé avec Unity — mon tout premier jeu publié. Le principe est simple : combiner une, deux, trois ou quatre tuiles numérotées de 1 à 9 pour atteindre exactement 10. Un projet d'apprentissage qui m'a initié au développement de jeux, à la logique de gameplay et au pipeline de publication sur le Play Store."
+      },
+      "item8": {
+        "title": "Corafric",
+        "description": "Plateforme participative de collecte et de validation de données vocales pour préserver les langues africaines et entraîner les technologies vocales de demain.",
+        "fullDescription": "Corafric est une plateforme open-data de collecte vocale visant à constituer des jeux de données pour les langues africaines peu dotées. Développée avec Next.js, elle permet aux utilisateurs d'enregistrer, valider et accéder à des données vocales pour l'IA."
+      },
+      "item9": {
+        "title": "Miabé Hackathon",
+        "description": "Site officiel d’une plateforme panafricaine qui rapproche les compétences des étudiants des besoins réels des entreprises, avec une présence annoncée dans plusieurs pays.",
+        "fullDescription": "Portail officiel de la compétition MIABE Hackathon, présentant le règlement, le calendrier, les universités participantes, le showcase des sponsors et les actualités dans 15 pays africains."
+      },
+      "item10": {
+        "title": "Tavalo",
+        "description": "Plateforme de private markets qui connecte les entreprises non cotées avec des investisseurs privés qualifiés, dans un cadre clair et vérifiable.",
+        "fullDescription": "Tavalo est une marketplace SaaS web développée avec Next.js qui facilite les opportunités d'investissement, le contrôle préalable et l'allocation de capital entre entreprises privées et investisseurs accrédités."
+      },
+      "item11": {
+        "title": "ISHA Agency",
+        "description": "Site vitrine immersif pour une agence de communication et de production audiovisuelle basée à Lomé, conçu dans le cadre de Darollo Technologies Corporation.",
+        "fullDescription": "Conçu et développé pour ISHA Agency sous Darollo Technologies Corporation (DTC). Propose un motion design fluide, des galeries média et la présentation de l'identité de marque."
+      }
+    },
+    "page": {
+      "eyebrow": "Sélection de projets",
+      "title": "Projets",
+      "caseStudiesEyebrow": "Études de cas",
+      "caseStudiesTitle": "Solutions métier pour entreprises",
+      "mobileEyebrow": "Applications mobiles",
+      "mobileTitle": "Apps publiées & produits mobiles",
+      "webEyebrow": "Sites & plateformes web",
+      "webTitle": "Expériences web, plateformes & sites clients",
+      "need": "Besoin",
+      "solution": "Solution",
+      "result": "Résultat",
+      "viewProject": "Voir le projet",
+      "projectScreenshotAlt": "Capture d'écran de {title}",
+      "dashboardScreenshotAlt": "Capture du tableau de bord {title}",
+      "businessProjects": [
+        {
+          "name": "ciForms",
+          "client": "Produit terrain",
+          "need": "Les équipes commerciales en Afrique de l'Ouest travaillent avec une connexion instable et suivent leurs prospects sur papier.",
+          "solution": "Application Flutter, offline-first avec synchronisation par lots (Supabase), formulaires terrain, relances et rapports PDF.",
+          "result": "Utilisée activement par 4 commerciaux sur le terrain, en remplacement des fiches papier.",
+          "role": "Conçue et développée de bout en bout.",
+          "status": "En utilisation active",
+          "tags": [
+            "Flutter",
+            "Dart",
+            "Supabase",
+            "Offline-first"
+          ]
+        },
+        {
+          "name": "Cahier Boulanger",
+          "client": "Suite de logiciels métier",
+          "need": "Les boulangeries suivent leurs ventes et le crédit de leurs clients sur des cahiers papier.",
+          "solution": "Cahier Boulanger (boulangerie) : ventes, crédit clients, livre de comptes, factures PDF, Windows et Android, offline-first.",
+          "role": "Développeur unique.",
+          "status": "Lancé en 2026",
+          "tags": [
+            "Flutter",
+            "Dart",
+            "Clean Architecture",
+            "Offline-first"
+          ]
+        },
+        {
+          "name": "Cahier Opticien",
+          "client": "Suite de logiciels métier",
+          "need": "Les boutiques de lunettes gèrent leur stock sur des tableurs ou sur papier.",
+          "solution": "Cahier Opticien (lunetterie) : gestion de stock, d’abord conçu pour une vraie boutique, généralisé en 2026 pour toutes les lunetteries.",
+          "role": "Développeur unique.",
+          "status": "Lancé en 2026",
+          "tags": [
+            "Flutter",
+            "Dart",
+            "Clean Architecture",
+            "Offline-first"
+          ]
+        }
+      ],
+      "presentationLabels": [
+        "Covoiturage",
+        "Cartes de vœux",
+        "Billetterie",
+        "Cartographie",
+        "Hackathon",
+        "Hébergement",
+        "Contact digital",
+        "Jeu de puzzle"
+      ],
+      "role": "Mon rôle",
+      "status": "Statut"
+    },
+    "statuses": {
+      "published": "Publié",
+      "online": "En ligne",
+      "woez": "Lancé en 2024, relance en cours.",
+      "prototype": "Prototype",
+      "hackathon": "Réalisé au Hack4Peace 2026"
+    },
+    "pendingProducts": [
+      {
+        "name": "Awa",
+        "description": "Chatbot WhatsApp qui oriente les victimes de violences basées sur le genre vers des structures d'aide au Togo. Python, Flask, Gemini. Réalisé au Hack4Peace 2026."
+      },
+      {
+        "name": "Klavia Kids",
+        "description": "Logiciel de dactylographie pour enfants francophones (Microsoft Store)."
+      }
+    ]
+  },
+  "Contact": {
+    "title": "Restons en Contact",
+    "subtitle": "Vous avez un projet en tête ou voulez simplement discuter ? N'hésitez pas à me contacter.",
+    "headline": "Un projet en tête ? Parlons-en.",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "cv": "Télécharger le CV"
+  },
+  "Footer": {
+    "rights": "Tous droits réservés.",
+    "builtBy": "Conçu & développé par moi",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "links": {
+      "privacy": "Confidentialité",
+      "terms": "Conditions",
+      "sitemap": "Plan du site"
+    }
+  },
+  "Common": {
+    "home": "Accueil",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu",
+    "toggleLanguage": "Changer de langue",
+    "toggleTheme": "Changer de thème",
+    "redirecting": "Redirection...",
+    "copyLink": "Copier le lien",
+    "copied": "Copié !",
+    "showQrCode": "Afficher le QR code",
+    "open": "Ouvrir"
+  },
+  "About": {
+    "title": "À propos",
+    "text": "Développeur Flutter et full-stack autodidacte, basé à Lomé, au Togo. Je programme depuis 2019 et je construis avec Flutter depuis 2022. Je livre des produits mobiles et web de l'idée jusqu'aux stores, pour des utilisateurs aux contraintes réelles : connexion instable, paiements mobiles, équipes non techniques."
+  },
+  "SelectedWork": {
+    "title": "Projets phares",
+    "viewProject": "Voir le projet",
+    "viewAll": "Voir tous les projets",
+    "items": [
+      {
+        "name": "ciForms",
+        "client": "Produit terrain",
+        "need": "Les équipes commerciales en Afrique de l'Ouest travaillent avec une connexion instable et suivent leurs prospects sur papier.",
+        "solution": "Application Flutter, offline-first avec synchronisation par lots (Supabase), formulaires terrain, relances et rapports PDF.",
+        "result": "Utilisée activement par 4 commerciaux sur le terrain, en remplacement des fiches papier.",
+        "role": "Conçue et développée de bout en bout.",
+        "status": "En utilisation active",
+        "tags": [
+          "Flutter",
+          "Dart",
+          "Supabase",
+          "Offline-first"
+        ]
+      },
+      {
+        "name": "Cahier",
+        "client": "Suite de logiciels métier",
+        "need": "Les petits commerces gèrent encore leur activité sur des registres papier et des tableurs.",
+        "solution": "Une architecture commune, un produit par métier. Cahier Boulanger (boulangerie) : ventes, crédit clients, livre de comptes, factures PDF, Windows et Android, offline-first. Cahier Opticien (lunetterie) : gestion de stock, d’abord conçu pour une vraie boutique, généralisé en 2026 pour toutes les lunetteries.",
+        "role": "Développeur unique.",
+        "status": "Lancé en 2026",
+        "tags": [
+          "Flutter",
+          "Dart",
+          "Clean Architecture",
+          "Offline-first"
+        ]
+      }
+    ]
+  },
+  "Training": {
+    "title": "Formation & partage",
+    "education": "Formation",
+    "sharing": "Je forme",
+    "imageAlt": "Formation avec Rodrigue",
+    "educationItems": [
+      "Licence Gestion de Projet Digital, ESCEN — en cours (L2)",
+      "Licence Mathématiques — reprise en cours",
+      "Baccalauréat, 2021",
+      "CS50P, Introduction to Programming with Python — Harvard / edX, octobre 2024",
+      "Junior Unity Developer — Unity Technologies, 2024"
+    ],
+    "sharingItems": [
+      {
+        "text": "Formation à l’informatique (initiation et maîtrise du PC).",
+        "status": ""
+      },
+      {
+        "text": "Formation en programmation Python.",
+        "status": ""
+      },
+      {
+        "text": "Plateforme de formation gratuite pour mes cours.",
+        "status": "En cours de création"
+      },
+      {
+        "text": "Séances de formation en groupe pour étudiants en visioconférence.",
+        "status": "À venir à la rentrée"
+      }
+    ]
+  }
 }
