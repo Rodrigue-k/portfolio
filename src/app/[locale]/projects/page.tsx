@@ -270,6 +270,13 @@ export default async function ProjectsPage({ params }: { params: Promise<{ local
             </div>
           </section>
 
+          <section className="mt-20 rounded-2xl border border-card-border bg-[#f4efe9] p-6 sm:p-10">
+            <p className="section-label text-xs uppercase tracking-widest text-[#0f766e]">MonToit</p>
+            <h2 className="mt-3 text-3xl font-semibold">{locale === 'fr' ? 'Des logements à louer au Togo' : 'Rental homes in Togo'}</h2>
+            <p className="mt-4 max-w-2xl text-muted">{locale === 'fr' ? 'Recherche par quartier et budget, frais de location, favoris et contact direct avec les annonceurs.' : 'Search by neighbourhood and budget, review rental costs, save favourites and contact advertisers.'}</p>
+            <a className="mt-6 inline-flex rounded-full bg-[#0f766e] px-5 py-3 text-sm font-semibold !text-white" href={`/${locale}/apps/montoit`}>{locale === 'fr' ? 'Découvrir MonToit' : 'Discover MonToit'} →</a>
+          </section>
+
           {/* [AWA_SCREENSHOT] / [KLAVIA_SCREENSHOT]: cards intentionally deferred. */}
         </Container>
       </Section>
