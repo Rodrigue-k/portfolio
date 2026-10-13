@@ -22,14 +22,14 @@ export default async function MonToitPage({ params }: { params: Promise<{ locale
   return <>
     <section className={styles.hero}>
       <div><span className={styles.eyebrow}>{fr ? 'Logements à louer au Togo' : 'Rental homes in Togo'}</span>
-        <h1>{fr ? 'Trouve ton prochain chez-toi.' : 'Find your next place to call home.'}</h1>
+        <h1>{fr ? 'Louer au Togo, simplement.' : 'Rent in Togo, simply.'}</h1>
         <p>{fr ? 'Des logements à louer au Togo. Choisis ton quartier, regarde les frais et contacte directement les annonceurs.' : 'Rental homes in Togo. Choose your neighbourhood, check the costs and contact advertisers directly.'}</p>
         <div className={styles.actions}><a className={styles.button} href="https://play.google.com/store/apps/details?id=com.rodrigue.to_rent">{fr ? 'Voir sur Google Play' : 'View on Google Play'}</a><a className={`${styles.button} ${styles.secondary}`} href="#tablet">{fr ? 'Découvrir l’application' : 'Explore the app'}</a></div>
         <p className={styles.small}>{fr ? 'Vérifie le logement et les conditions avec l’annonceur avant tout paiement.' : 'Verify the property and terms with the advertiser before making any payment.'}</p>
       </div>
       <figure className={styles.heroVisual}>
-        <Image className={styles.heroPhoto} src="/assets/apps/montoit/hero-interior.jpg" alt={fr ? 'Une chambre lumineuse avec un lit et une table de chevet' : 'A bright bedroom with a bed and bedside table'} width={1280} height={1920} sizes="(max-width: 800px) 90vw, 48vw" priority />
-        <figcaption className={styles.heroCaption}>{fr ? 'Un aperçu des intérieurs présentés dans MonToit. Photo d’illustration.' : 'A glimpse of the interiors featured in MonToit. Illustrative photo.'}</figcaption>
+        <Image className={styles.heroPhoto} src="/assets/apps/montoit/hero-mobile-explorer.png" alt={fr ? 'Écran mobile MonToit avec recherche, logements, loyers et navigation flottante' : 'MonToit mobile screen with search, listings, rents and floating navigation'} width={1344} height={2992} sizes="(max-width: 800px) 240px, 260px" priority />
+        <figcaption className={styles.heroCaption}>{fr ? 'L’application mobile. Annonces de démonstration.' : 'The mobile app. Demonstration listings.'}</figcaption>
       </figure>
     </section>
     <section className={styles.section}><h2>{fr ? 'Les informations utiles, au même endroit.' : 'The details you need, in one place.'}</h2><div className={styles.features}>{features.map(([title, text], i) => <div key={title}><span className={styles.number}>0{i + 1}</span><h3>{title}</h3><p>{text}</p></div>)}</div></section>

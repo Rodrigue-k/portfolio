@@ -22,6 +22,7 @@ export function Header() {
   const navLinks = [
     { name: t("nav.about"), href: `/${locale}#about` },
     { name: t("nav.projects"), href: `/${locale}/projects` },
+    { name: t("nav.apps"), href: `/${locale}/apps` },
     { name: t("nav.skills"), href: `/${locale}#skills` },
     { name: t("nav.experience"), href: `/${locale}#experience` },
     { name: t("nav.training"), href: `/${locale}#training` },

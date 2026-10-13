@@ -12,6 +12,7 @@ export default async function MonToitLayout({ children, params }: { children: Re
     <header className={styles.header}>
       <Link className={styles.brand} href={base}><Image src="/assets/apps/montoit/mark.png" width={34} height={34} alt="" />MonToit</Link>
       <nav aria-label={fr ? 'Navigation MonToit' : 'MonToit navigation'}>
+        <Link href={`/${locale}/apps`}>{fr ? 'Applications' : 'Apps'}</Link>
         <Link href={`/${locale}/projects`}>Portfolio</Link>
         <Link href={`${base}/confidentialite`}>{fr ? 'Confidentialité' : 'Privacy'}</Link>
         <Link href={`${base}/suppression-compte`}>{fr ? 'Supprimer mon compte' : 'Delete my account'}</Link>

@@ -2,10 +2,11 @@
 
 import { resumeData } from "@/core/data/resume";
 import { Container } from "../../components/ui/Layout";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 export function Footer() {
     const t = useTranslations('Footer');
+    const locale = useLocale();
     const currentYear = new Date().getFullYear();
 
     return (
@@ -20,6 +21,7 @@ export function Footer() {
                 </div>
 
                 <div className="flex items-center gap-4 order-1 md:order-3 text-xs">
+                    <a href={`/${locale}/apps`} className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">{locale === 'fr' ? 'Applications' : 'Apps'}</a>
                     <a href={`mailto:${resumeData.profile.contact.email}`} className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">
                         Email
                     </a>
