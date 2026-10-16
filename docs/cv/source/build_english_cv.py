@@ -16,9 +16,9 @@ for name, filename in [('Calibri','calibri.ttf'),('Calibri-Bold','calibrib.ttf')
     pdfmetrics.registerFont(TTFont(name, str(Path('C:/Windows/Fonts') / filename)))
 pdfmetrics.registerFontFamily('Calibri',normal='Calibri',bold='Calibri-Bold',italic='Calibri-Italic',boldItalic='Calibri-BoldItalic')
 WIDTH=A4[0]-85
-body=ParagraphStyle('body',fontName='Calibri',fontSize=9,leading=10.8,spaceAfter=.75)
+body=ParagraphStyle('body',fontName='Calibri',fontSize=9,leading=10.4,spaceAfter=.5)
 company=ParagraphStyle('company',parent=body,fontName='Calibri-Italic',fontSize=9.5,leading=11.4,spaceAfter=1)
-role_style=ParagraphStyle('role',parent=body,fontName='Calibri-Bold',fontSize=11.5,leading=13.8)
+role_style=ParagraphStyle('role',parent=body,fontName='Calibri-Bold',fontSize=10.5,leading=12.4)
 date_style=ParagraphStyle('date',parent=body,fontName='Calibri-Bold',textColor=colors.HexColor('#595959'),alignment=2)
 bullet_style=ParagraphStyle('bullet',parent=body,leftIndent=15,firstLineIndent=0,bulletIndent=5,spaceAfter=.75)
 story=[]
@@ -47,11 +47,11 @@ def education(left,right):
     story.append(row)
 
 para('<b>KOUDAKPO</b> <font color="#595959">Komi Rodrigue</font>',ParagraphStyle('name',fontName='Calibri',fontSize=30,leading=34,spaceAfter=1))
-para('<b>MOBILE &amp; WEB APPLICATION DEVELOPER  ·  FLUTTER  ·  NEXT.JS</b>',ParagraphStyle('subtitle',parent=body,fontSize=10.5,leading=12.6,spaceAfter=3.5))
+para('<b>FLUTTER &amp; FULL STACK DEVELOPER · TRAINER</b>',ParagraphStyle('subtitle',parent=body,fontSize=10.5,leading=12.6,spaceAfter=3.5))
 para('Lomé, Togo   ·   +228 97 38 51 73   ·   koudakporodrigue03@gmail.com')
 para('<link href="https://rodriguekoudakpo.com"><u>rodriguekoudakpo.com</u></link>   ·   <link href="https://linkedin.com/in/rodrigue-koudakpo"><u>linkedin.com/in/rodrigue-koudakpo</u></link>   ·   <link href="https://github.com/Rodrigue-k"><u>github.com/Rodrigue-k</u></link>')
 section('PROFILE')
-para('Self-taught developer: I have been programming since 2019 and specializing in Flutter since 2022. I design and deliver mobile and web applications from idea to deployment, addressing real constraints: variable connectivity, mobile payments and non-technical users. Two freelance engagements delivered to production (App Store and Play Store), several published personal products, partner at Darollo Technologies Corporation, and independent developer under the Koudatek personal brand. Digital Project Management student at ESCEN.')
+para('Self-taught developer since 2019, specializing in Flutter since 2022. I design and deliver mobile and web applications from idea to deployment, addressing variable connectivity, mobile payments and non-technical users. Partner at DTC, independent developer and trainer providing individual Python tuition at home and online, including for professional data management needs.')
 section('TECHNICAL SKILLS')
 for text in [
 '<b>Mobile &amp; web:</b> Flutter, Dart, Next.js, TypeScript, JavaScript, HTML/CSS',
@@ -61,6 +61,10 @@ for text in [
 '<b>Other:</b> Java, Unity, digital project management, presenting technical solutions to non-technical audiences'
 ]:para(text)
 section('PROFESSIONAL EXPERIENCE')
+role('Independent Trainer','Since 2025','Individual tuition · At home and online',[
+'Python programming and data management training tailored to learners’ goals and professional needs',
+'Learning materials and practical exercises; preparing group training through a university club'
+])
 role('Partner & Product Developer','Since January 2025','Darollo Technologies Corporation (DTC) · Lomé, Togo',[
 'Developed and maintained iOS and Android mobile applications (Flutter), integrating a C# backend',
 'Independently managed projects end to end, from architecture to delivery, including client relations',
@@ -84,10 +88,9 @@ role('Data Processing Operator','March - June 2025','CAGECFI SA · Lomé Land Re
 ])
 section('SELECTED PROJECTS')
 for text in [
+'<b>KOD8</b> - Learning platform designed and built end to end: 14-module Python course, introduction to AI and automated exercise checking. <link href="https://kod8.rodriguekoudakpo.com/">kod8.rodriguekoudakpo.com</link>',
 '<b>ciForms</b> - Flutter field-data collection application for low-connectivity areas: offline mode, batch synchronization (Supabase), AI-generated forms',
 '<b>Grand Voyageur</b> - ride-sharing application for West Africa (Flutter, Clean Architecture) · App Store and Play Store',
-'<b>Ticketto</b> - event discovery and mobile tickets · App Store and Play Store',
-'<b>Miabé Hackathon</b> - official application of the pan-African technology competition, present in 15 countries · Play Store',
 '<b>Woez</b> - local accommodation booking with adapted payments (Wave, Orange Money) · Play Store and App Store',
 '<b>Awa</b> - WhatsApp chatbot directing victims of gender-based violence to support services in Togo (Python/Flask, Gemini) · Hack4Peace 2026',
 '<b>Other</b> - Cherish (personalized greeting cards), S-Contact (digital business card with QR code), Klavia Kids (typing software for children, Microsoft Store), EcoMap, Make 10!'
