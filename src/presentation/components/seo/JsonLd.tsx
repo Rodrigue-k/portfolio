@@ -11,8 +11,8 @@ export function JsonLd({ locale }: { locale: string }) {
     name: "Komi Rodrigue Koudakpo",
     alternateName: ["Rodrigue Koudakpo", "Komi Koudakpo", "Latex"],
     jobTitle: isFr
-      ? "Développeur d'Applications Mobiles Flutter & Web"
-      : "Flutter & Full-Stack Application Developer",
+      ? "Développeur Flutter & Full Stack · Formateur"
+      : "Flutter & Full Stack Developer · Trainer",
     description: isFr
       ? "Développeur spécialisé Flutter pour le mobile (iOS & Android) et Next.js pour le web. Concepteur de produits numériques de l'architecture à la publication sur les stores."
       : "Software Developer specialized in Flutter mobile development (iOS & Android) and Next.js web applications with end-to-end product delivery.",
@@ -77,8 +77,8 @@ export function JsonLd({ locale }: { locale: string }) {
     url: baseUrl,
     name: "Komi Rodrigue Koudakpo — Portfolio",
     description: isFr
-      ? "Portfolio officiel de Komi Rodrigue Koudakpo, Développeur Flutter et full-stack."
-      : "Official portfolio of Komi Rodrigue Koudakpo, Flutter & Full-Stack Developer.",
+      ? "Portfolio officiel de Komi Rodrigue Koudakpo, développeur Flutter et full stack, formateur et créateur de KOD8."
+      : "Official portfolio of Komi Rodrigue Koudakpo, Flutter & full stack developer, trainer and creator of KOD8.",
     publisher: {
       "@id": `${baseUrl}/#person`
     },
@@ -90,8 +90,8 @@ export function JsonLd({ locale }: { locale: string }) {
     "@id": `${currentUrl}/#webpage`,
     url: currentUrl,
     name: isFr
-      ? "Komi Rodrigue Koudakpo — Développeur Flutter & Full-Stack"
-      : "Komi Rodrigue Koudakpo — Flutter & Full-Stack Developer",
+      ? "Komi Rodrigue Koudakpo — Développeur Flutter & Full Stack · Formateur"
+      : "Komi Rodrigue Koudakpo — Flutter & Full Stack Developer · Trainer",
     isPartOf: {
       "@id": `${baseUrl}/#website`
     },

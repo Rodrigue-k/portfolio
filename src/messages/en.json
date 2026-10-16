@@ -1,7 +1,7 @@
 {
   "Metadata": {
-    "title": "Komi Rodrigue Koudakpo — Flutter & Full-Stack Developer · Portfolio",
-    "description": "Flutter & full-stack developer based in Lomé, Togo. Mobile and web products from idea to deployment."
+    "title": "Komi Rodrigue Koudakpo — Flutter & Full Stack Developer · Trainer · Portfolio",
+    "description": "Flutter & full stack developer and trainer in Lomé, Togo. Mobile and web apps, Python tuition and the KOD8 learning platform."
   },
   "Header": {
     "nav": {
@@ -20,8 +20,8 @@
       "line1": "I build products,",
       "line2": "from idea to deployment."
     },
-    "description": "Flutter & full-stack developer. I ship mobile and web apps for users with real constraints.",
-    "portraitAlt": "Official portrait of Komi Rodrigue Koudakpo — Flutter & Mobile Application Developer",
+    "description": "Flutter & Full Stack Developer · Trainer. I ship mobile and web apps for users with real constraints.",
+    "portraitAlt": "Komi Rodrigue Koudakpo — Flutter & Full Stack Developer · Trainer",
     "location": "Agoe Cacaveli, Lome, Togo",
     "actions": {
       "contact": "Contact me",
@@ -86,6 +86,15 @@
         "achievements": [
           "Built my first Flutter app in 2022 (a game); publishing apps on the Play Store since 2023.",
           "Business software for small shops: the Cahier suite (bakery, eyewear), launched in 2026."
+        ]
+      },
+      {
+        "company": "Independent",
+        "role": "Trainer",
+        "period": "At home and online · Since 2025",
+        "achievements": [
+          "Individual Python tuition tailored to learners’ goals, including professional needs.",
+          "Practical guidance in programming and data management."
         ]
       },
       {
@@ -246,6 +255,10 @@
         "title": "ISHA Agency",
         "description": "Immersive showcase website for a communication and audiovisual production agency based in Lome.",
         "fullDescription": "Designed and built for ISHA Agency under Darollo Technologies Corporation (DTC). Features smooth motion design, media galleries, and brand identity showcase."
+      },
+      "item12": {
+        "title": "KOD8",
+        "description": "My learning platform: a 14-module Python course, introduction to AI and automated exercise checking. Curriculum design and end-to-end development."
       }
     },
     "page": {
@@ -374,7 +387,7 @@
   },
   "About": {
     "title": "About",
-    "text": "I'm a self-taught Flutter and full-stack developer based in Lomé, Togo. I've been programming since 2019 and building with Flutter since 2022. I ship mobile and web products from idea to store, for users with real constraints: patchy connectivity, mobile payments, non-technical teams."
+    "text": "I'm a self-taught Flutter and full-stack developer based in Lomé, Togo. I've been programming since 2019 and building with Flutter since 2022. I ship mobile and web products from idea to store, for users with real constraints: patchy connectivity, mobile payments, non-technical teams. I am also an independent trainer, providing individual Python tuition at home and online, including for professional data management needs. I designed and built KOD8, my learning platform with automated exercise checking."
   },
   "SelectedWork": {
     "title": "Selected work",
@@ -426,20 +439,20 @@
     ],
     "sharingItems": [
       {
-        "text": "Computer literacy training (PC basics and mastery).",
-        "status": ""
+        "text": "Individual Python tuition at home and online, tailored to learners’ goals and professional data management needs.",
+        "status": "Since 2025"
       },
       {
-        "text": "Python programming course.",
-        "status": ""
+        "text": "KOD8: learning platform designed and built end to end, with a 14-module Python course and automated exercise checking.",
+        "status": "Online"
       },
       {
-        "text": "Free learning platform for my courses.",
-        "status": "In progress"
+        "text": "Group Python training through a university club.",
+        "status": "In preparation"
       },
       {
-        "text": "Group video-conference sessions for students.",
-        "status": "Coming soon (new school year)"
+        "text": "Additional courses, including digital transformation and data visualization / Power BI.",
+        "status": "In preparation"
       }
     ]
   }

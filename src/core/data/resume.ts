@@ -4,7 +4,7 @@ import { assets } from "./assets";
 export const resumeData: PortfolioData = {
     profile: {
         name: "Komi Rodrigue Koudakpo",
-        title: "Flutter Developer · Mobile Specialist",
+        title: "Développeur Flutter & Full Stack · Formateur",
         summary: "Développeur autodidacte depuis 2019, spécialisé Flutter mobile. Parti du développement de jeux vidéo avec Java et Unity, je me suis orienté vers les applications mobiles cross-platform. J'ai publié plusieurs applications sur le Play Store et l'App Store, développé des solutions pour des clients au Togo et en Côte d'Ivoire, et conduit des projets de bout en bout — de l'architecture à la publication.",
         location: "Agoe Cacaveli, Lomé, Togo",
         contact: {
@@ -156,6 +156,14 @@ export const resumeData: PortfolioData = {
             image: assets.ISHA_SCREENSHOT,
             associatedCompany: "Darollo Technologies Corporation (DTC)",
             category: "professional"
+        },
+        {
+            title: "KOD8",
+            description: "Plateforme de formation conçue et développée de bout en bout : parcours Python de 14 modules, initiation à l’IA et correction automatique des exercices.",
+            tags: ["Web app", "Python", "Formation", "Pédagogie", "Correction automatique"],
+            website: "https://kod8.rodriguekoudakpo.com/",
+            image: "/assets/projects/kod8-main.jpg",
+            category: "personal"
         }
     ],
     education: [

@@ -1,7 +1,7 @@
 {
   "Metadata": {
-    "title": "Komi Rodrigue Koudakpo — Flutter & Full-Stack Developer · Portfolio",
-    "description": "Développeur Flutter & full-stack basé à Lomé, Togo. Des produits mobiles et web de l’idée au déploiement."
+    "title": "Komi Rodrigue Koudakpo — Développeur Flutter & Full Stack · Formateur · Portfolio",
+    "description": "Développeur Flutter & full stack et formateur à Lomé, Togo. Applications mobiles et web, cours Python et plateforme de formation KOD8."
   },
   "Header": {
     "nav": {
@@ -20,8 +20,8 @@
       "line1": "Je construis des produits,",
       "line2": "de l'idée au déploiement."
     },
-    "description": "Développeur Flutter & full-stack. Je livre des applications mobiles et web pour des utilisateurs aux contraintes réelles.",
-    "portraitAlt": "Portrait officiel de Komi Rodrigue Koudakpo — Développeur d'Applications Mobiles Flutter & Web",
+    "description": "Développeur Flutter & Full Stack · Formateur. Je livre des applications mobiles et web pour des utilisateurs aux contraintes réelles.",
+    "portraitAlt": "Komi Rodrigue Koudakpo — Développeur Flutter & Full Stack · Formateur",
     "location": "Agoe Cacaveli, Lomé, Togo",
     "actions": {
       "contact": "Me contacter",
@@ -86,6 +86,15 @@
         "achievements": [
           "Première application Flutter en 2022 (un jeu) ; publication d’applications sur le Play Store depuis 2023.",
           "Logiciels métier pour des commerces : la suite Cahier (boulangerie, optique), lancée en 2026."
+        ]
+      },
+      {
+        "company": "Indépendant",
+        "role": "Formateur",
+        "period": "À domicile et en ligne · Depuis 2025",
+        "achievements": [
+          "Cours particuliers de Python, avec une progression adaptée aux objectifs des apprenants, notamment professionnels.",
+          "Accompagnement pratique sur la programmation et la gestion de données."
         ]
       },
       {
@@ -246,6 +255,10 @@
         "title": "ISHA Agency",
         "description": "Site vitrine immersif pour une agence de communication et de production audiovisuelle basée à Lomé, conçu dans le cadre de Darollo Technologies Corporation.",
         "fullDescription": "Conçu et développé pour ISHA Agency sous Darollo Technologies Corporation (DTC). Propose un motion design fluide, des galeries média et la présentation de l'identité de marque."
+      },
+      "item12": {
+        "title": "KOD8",
+        "description": "Ma plateforme de formation : parcours Python de 14 modules, initiation à l’IA et correction automatique des exercices. Conception pédagogique et développement de bout en bout."
       }
     },
     "page": {
@@ -374,7 +387,7 @@
   },
   "About": {
     "title": "À propos",
-    "text": "Développeur Flutter et full-stack autodidacte, basé à Lomé, au Togo. Je programme depuis 2019 et je construis avec Flutter depuis 2022. Je livre des produits mobiles et web de l'idée jusqu'aux stores, pour des utilisateurs aux contraintes réelles : connexion instable, paiements mobiles, équipes non techniques."
+    "text": "Développeur Flutter et full-stack autodidacte, basé à Lomé, au Togo. Je programme depuis 2019 et je construis avec Flutter depuis 2022. Je livre des produits mobiles et web de l'idée jusqu'aux stores, pour des utilisateurs aux contraintes réelles : connexion instable, paiements mobiles, équipes non techniques. Je suis également formateur indépendant : j’accompagne des apprenants en Python, à domicile et en ligne, notamment pour des besoins professionnels de gestion de données. J’ai conçu KOD8, ma plateforme de formation avec correction automatique des exercices."
   },
   "SelectedWork": {
     "title": "Projets phares",
@@ -426,20 +439,20 @@
     ],
     "sharingItems": [
       {
-        "text": "Formation à l’informatique (initiation et maîtrise du PC).",
-        "status": ""
+        "text": "Cours particuliers de Python à domicile et en ligne, adaptés aux objectifs des apprenants et aux besoins professionnels de gestion de données.",
+        "status": "Depuis 2025"
       },
       {
-        "text": "Formation en programmation Python.",
-        "status": ""
+        "text": "KOD8 : plateforme conçue et développée de bout en bout, avec un parcours Python de 14 modules et correction automatique des exercices.",
+        "status": "En ligne"
       },
       {
-        "text": "Plateforme de formation gratuite pour mes cours.",
-        "status": "En cours de création"
+        "text": "Formation Python en groupe dans le cadre d’un club universitaire.",
+        "status": "En préparation"
       },
       {
-        "text": "Séances de formation en groupe pour étudiants en visioconférence.",
-        "status": "À venir à la rentrée"
+        "text": "Nouvelles formations, notamment en transformation numérique et en visualisation de données / Power BI.",
+        "status": "En préparation"
       }
     ]
   }
