@@ -157,3 +157,24 @@ section[id]{scroll-margin-top:90px}:focus-visible{outline:3px solid var(--accent
 .work-pin-caption{display:flex;justify-content:space-between;gap:8px;padding:8px 4px 0;font-size:13px}
 .work-pin-caption b{font-weight:600}.work-pin-caption span{color:var(--text-muted);text-align:right}
 @media(max-width:639px){.work-gallery,.work-gallery-col{gap:10px}.work-pin-media{border-radius:12px}.work-pin-caption span{display:none}}
+button.work-pin-media{display:block;width:100%;padding:0;cursor:zoom-in;transition:transform .25s ease,box-shadow .25s ease}
+button.work-pin-media:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,.12)}
+/* Work detail view */
+.work-detail{width:min(1180px,calc(100vw - 32px));max-height:calc(100dvh - 32px);margin:auto;padding:0;border:1px solid var(--border);border-radius:20px;background:var(--bg);color:var(--text);overflow:auto}
+.work-detail::backdrop{background:rgba(10,12,10,.72);backdrop-filter:blur(4px)}
+.work-detail-body{padding:24px}
+.work-detail-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:20px}
+.work-detail-close{display:grid;place-items:center;width:44px;height:44px;flex:none;border:1px solid var(--border);border-radius:999px;background:var(--bg-2);cursor:pointer}
+.work-detail-media{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.29fr);gap:16px;align-items:start}
+.work-detail-media video,.work-detail-media img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--border);background:var(--bg-2)}
+.work-detail-desktop video,.work-detail-desktop img{aspect-ratio:16/10}
+.work-detail-mobile video,.work-detail-mobile img{aspect-ratio:780/1688}
+@media(max-width:767px){.work-detail{width:100vw;max-width:100vw;max-height:100dvh;height:100dvh;border-radius:0;border:0}.work-detail-body{padding:16px}.work-detail-media{grid-template-columns:1fr}.work-detail-mobile{width:min(70%,280px);margin:0 auto}}
+@media(prefers-reduced-motion:reduce){button.work-pin-media,button.work-pin-media:hover{transform:none}}
+/* Featured project: large desktop clip with its mobile clip at the same height */
+.work-feature{margin:0 0 16px}
+.work-feature-media{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.289fr);gap:16px;align-items:start}
+.work-feature .work-pin-media video,.work-feature .work-pin-media img{display:block;width:100%;height:auto}
+.work-feature .is-desktop video,.work-feature .is-desktop img{aspect-ratio:16/10}
+.work-feature .is-mobile video,.work-feature .is-mobile img{aspect-ratio:540/1168}
+@media(max-width:639px){.work-feature{margin-bottom:10px}.work-feature-media{grid-template-columns:1fr}.work-feature .is-mobile{display:none}}

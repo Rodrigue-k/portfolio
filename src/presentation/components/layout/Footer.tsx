@@ -21,6 +21,7 @@ export function Footer() {
                 </div>
 
                 <div className="flex items-center gap-4 order-1 md:order-3 text-xs">
+                    <a href={`/${locale}#work`} className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">{locale === 'fr' ? 'Réalisations' : 'Work'}</a>
                     <a href={`/${locale}/apps`} className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">{locale === 'fr' ? 'Applications' : 'Apps'}</a>
                     <a href={`mailto:${resumeData.profile.contact.email}`} className="text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors">
                         Email
