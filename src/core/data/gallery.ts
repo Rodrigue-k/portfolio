@@ -4,6 +4,7 @@
 export const galleryProjects = [
   "malfakassa",
   "kazilink",
+  "ifw",
   "isha",
   "ambassadrice",
   "corafric",
@@ -17,6 +18,7 @@ export type GallerySlug = (typeof galleryProjects)[number];
 export const galleryMeta: Record<GallerySlug, { name: string; tags: string[]; website?: string }> = {
   malfakassa: { name: "Malfakassa", tags: ["Next.js", "GSAP", "WhatsApp"] },
   kazilink: { name: "KaziLink", tags: ["Next.js", "Flutter", "Prisma", "API"], website: "https://getkazilink.com/" },
+  ifw: { name: "IFW Optik", tags: ["Next.js", "E-commerce", "Framer Motion"] },
   isha: { name: "ISHA Agency", tags: ["Next.js", "Motion design", "DTC"] },
   ambassadrice: { name: "Ambassadrice", tags: ["Next.js", "Site vitrine"] },
   corafric: { name: "Corafric", tags: ["Next.js", "IA", "Voix"], website: "https://corafric.com/" },
