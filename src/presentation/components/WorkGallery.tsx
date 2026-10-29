@@ -15,20 +15,22 @@ export type GalleryLabels = { open: string; close: string; visit: string };
 // Height / width of each recording, used to balance the columns.
 const ratio = { desktop: 600 / 960, mobile: 1168 / 540 };
 
+const GAP = 16;
+const CAPTION = 34;
+
 function columnsFor(width: number) {
-  return width >= 900 ? 3 : 2;
+  return width >= 900 ? 4 : width >= 640 ? 3 : 2;
 }
 
-// Pinterest-style masonry: each tile drops into the currently shortest column.
-function distribute(pins: GalleryPin[], count: number) {
-  const cols: GalleryPin[][] = Array.from({ length: count }, () => []);
-  const heights = new Array(count).fill(0);
-  for (const pin of pins) {
-    const i = heights.indexOf(Math.min(...heights));
-    cols[i].push(pin);
-    heights[i] += ratio[pin.format] + 0.08;
-  }
-  return cols;
+// Pinterest-style masonry on a 1px-row grid: desktop clips span two columns so
+// they stay readable, phone clips one column so they never outgrow the screen.
+// Each tile spans as many rows as its height; dense flow fills the gaps.
+function tileSpan(format: GalleryFormat, width: number) {
+  const n = columnsFor(width);
+  const colWidth = (width - (n - 1) * GAP) / n;
+  const cols = format === "desktop" ? 2 : 1;
+  const tileWidth = cols * colWidth + (cols - 1) * GAP;
+  return { cols, rows: Math.ceil(tileWidth * ratio[format] + CAPTION + GAP) };
 }
 
 function Clip({ base, alt, still, eager }: { base: string; alt: string; still: boolean; eager?: boolean }) {
@@ -50,18 +52,16 @@ export function WorkGallery({ featured, pins, projects, labels }: {
 }) {
   const root = useRef<HTMLDivElement>(null);
   const dialog = useRef<HTMLDialogElement>(null);
-  const [count, setCount] = useState(2);
+  const [width, setWidth] = useState(360);
   const [open, setOpen] = useState<string | null>(null);
-  const [narrow, setNarrow] = useState(true);
   const reduceMotion = useReducedMotion() ?? false;
+  const count = columnsFor(width);
+  const narrow = width < 640;
 
   useEffect(() => {
     const el = root.current;
     if (!el) return;
-    const ro = new ResizeObserver(([entry]) => {
-      setCount(columnsFor(entry.contentRect.width));
-      setNarrow(entry.contentRect.width < 640);
-    });
+    const ro = new ResizeObserver(([entry]) => setWidth(Math.round(entry.contentRect.width)));
     ro.observe(el);
     return () => ro.disconnect();
   }, []);
@@ -126,26 +126,24 @@ export function WorkGallery({ featured, pins, projects, labels }: {
           <span>{hero.kind}</span>
         </figcaption>
       </figure>
-      <div className="work-gallery">
-        {distribute(gridPins, count).map((col, i) => (
-          <div key={i} className="work-gallery-col">
-            {col.map((pin) => {
-              const p = projects[pin.slug];
-              return (
-                <figure key={`${pin.slug}-${pin.format}`} className={`work-pin is-${pin.format}`}>
-                  <button type="button" className="work-pin-media" onClick={() => setOpen(pin.slug)}
-                    aria-label={`${labels.open} ${p.name}`}>
-                    <Clip base={`/assets/gallery/${pin.slug}-${pin.format}`} alt={p.alt[pin.format]} still={reduceMotion} />
-                  </button>
-                  <figcaption className="work-pin-caption">
-                    <b>{p.name}</b>
-                    <span>{p.kind}</span>
-                  </figcaption>
-                </figure>
-              );
-            })}
-          </div>
-        ))}
+      <div className="work-gallery" style={{ gridTemplateColumns: `repeat(${count}, minmax(0, 1fr))` }}>
+        {gridPins.map((pin) => {
+          const p = projects[pin.slug];
+          const span = tileSpan(pin.format, width);
+          return (
+            <figure key={`${pin.slug}-${pin.format}`} className={`work-pin is-${pin.format}`}
+              style={{ gridColumn: `span ${span.cols}`, gridRow: `span ${span.rows}` }}>
+              <button type="button" className="work-pin-media" onClick={() => setOpen(pin.slug)}
+                aria-label={`${labels.open} ${p.name}`}>
+                <Clip base={`/assets/gallery/${pin.slug}-${pin.format}`} alt={p.alt[pin.format]} still={reduceMotion} />
+              </button>
+              <figcaption className="work-pin-caption">
+                <b>{p.name}</b>
+                <span>{p.kind}</span>
+              </figcaption>
+            </figure>
+          );
+        })}
       </div>
 
       <dialog ref={dialog} className="work-detail" aria-labelledby="work-detail-title"

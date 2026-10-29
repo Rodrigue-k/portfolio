@@ -147,16 +147,16 @@ section[id]{scroll-margin-top:90px}:focus-visible{outline:3px solid var(--accent
 @media(min-width:1024px){.selected-project{grid-template-columns:1fr 1fr}.project-assembly{min-height:100%}.is-stacked .screen-0{top:28%}.training-assembly{grid-template-columns:1fr 1fr;gap:40px}.sharing-panel{margin-top:60px;margin-bottom:-20px}}
 @media(prefers-reduced-motion:reduce){.assembly-screen,.selected-project:hover .assembly-screen{transform:none!important}}
 /* Work gallery: Pinterest-style masonry of looping scroll recordings */
-.work-gallery{display:flex;gap:16px;align-items:flex-start}
-.work-gallery-col{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:16px}
+.work-gallery{display:grid;grid-auto-rows:1px;grid-auto-flow:row dense;column-gap:16px;align-items:start}
+.work-gallery .work-pin{min-width:0}
 .work-pin{margin:0}
 .work-pin-media{overflow:hidden;border-radius:16px;background:var(--bg-2);border:1px solid var(--border)}
 .work-pin-media video,.work-pin-media img{display:block;width:100%;height:auto;object-fit:cover}
 .work-pin.is-desktop .work-pin-media video,.work-pin.is-desktop .work-pin-media img{aspect-ratio:16/10}
 .work-pin.is-mobile .work-pin-media video,.work-pin.is-mobile .work-pin-media img{aspect-ratio:540/1168}
 .work-pin-caption{display:flex;justify-content:space-between;gap:8px;padding:8px 4px 0;font-size:13px}
-.work-pin-caption b{font-weight:600}.work-pin-caption span{color:var(--text-muted);text-align:right}
-@media(max-width:639px){.work-gallery,.work-gallery-col{gap:10px}.work-pin-media{border-radius:12px}.work-pin-caption span{display:none}}
+.work-pin-caption b{font-weight:600;white-space:nowrap}.work-pin-caption span{min-width:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;color:var(--text-muted);text-align:right}
+@media(max-width:639px){.work-pin-media{border-radius:12px}.work-pin-caption span{display:none}}
 button.work-pin-media{display:block;width:100%;padding:0;cursor:zoom-in;transition:transform .25s ease,box-shadow .25s ease}
 button.work-pin-media:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,.12)}
 /* Work detail view */
