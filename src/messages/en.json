@@ -31,6 +31,26 @@
       "viewProjects": "View my projects"
     }
   },
+  "Work": {
+    "label": "Work",
+    "title": "Real projects, running live.",
+    "subtitle": "Each project on desktop and mobile, recorded as it actually runs.",
+    "viewAll": "See all my projects",
+    "alt": "{name}, {format} version",
+    "formats": {
+      "desktop": "desktop",
+      "mobile": "mobile"
+    },
+    "kinds": {
+      "malfakassa": "Online shop",
+      "kazilink": "Hiring platform",
+      "isha": "Communication agency",
+      "ambassadrice": "Environmental contest",
+      "corafric": "African voice data",
+      "tavalo": "Investment",
+      "kod8": "Learning platform"
+    }
+  },
   "Skills": {
     "eyebrow": "Technical",
     "title": "Skills",

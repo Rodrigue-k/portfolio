@@ -31,6 +31,26 @@
       "viewProjects": "Voir mes projets"
     }
   },
+  "Work": {
+    "label": "Réalisations",
+    "title": "Des projets qui tournent, en vrai.",
+    "subtitle": "Chaque projet en version ordinateur et mobile, enregistré tel qu’il fonctionne.",
+    "viewAll": "Voir tous mes projets",
+    "alt": "{name}, version {format}",
+    "formats": {
+      "desktop": "ordinateur",
+      "mobile": "mobile"
+    },
+    "kinds": {
+      "malfakassa": "Boutique en ligne",
+      "kazilink": "Plateforme de recrutement",
+      "isha": "Agence de communication",
+      "ambassadrice": "Concours environnement",
+      "corafric": "Données vocales africaines",
+      "tavalo": "Investissement",
+      "kod8": "Plateforme de formation"
+    }
+  },
   "Skills": {
     "eyebrow": "Technique",
     "title": "Compétences",

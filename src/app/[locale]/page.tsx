@@ -3,6 +3,7 @@ import { getAvailableCv } from "@/core/data/cv";
 import { Footer } from "@/presentation/components/layout/Footer";
 import { SelectedWork, About, Training } from "@/presentation/sections/ProductSections";
 import { Hero } from "@/presentation/sections/Hero";
+import { Work } from "@/presentation/sections/Work";
 import { Skills } from "@/presentation/sections/Skills";
 import { Experience } from "@/presentation/sections/Experience";
 import { Contact } from "@/presentation/sections/Contact";
@@ -28,6 +29,7 @@ export default async function Home({
       <div className="relative z-10 w-full h-full">
         <Header />
         <Hero cv={getAvailableCv(locale)} />
+        <Work />
         <SelectedWork />
         <About />
         <Skills />
