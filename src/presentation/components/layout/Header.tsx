@@ -20,6 +20,7 @@ export function Header() {
   const triggerRef = useRef<HTMLButtonElement>(null);
 
   const navLinks = [
+    { name: t("nav.work"), href: `/${locale}#work` },
     { name: t("nav.about"), href: `/${locale}#about` },
     { name: t("nav.projects"), href: `/${locale}/projects` },
     { name: t("nav.apps"), href: `/${locale}/apps` },

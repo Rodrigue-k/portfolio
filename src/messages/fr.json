@@ -5,6 +5,7 @@
   },
   "Header": {
     "nav": {
+      "work": "Réalisations",
       "about": "À propos",
       "skills": "Compétences",
       "projects": "Projets",
@@ -29,6 +30,38 @@
       "downloadCV_FR": "Version Française (FR)",
       "downloadCV_EN": "English Version (EN)",
       "viewProjects": "Voir mes projets"
+    }
+  },
+  "Work": {
+    "label": "Réalisations",
+    "title": "Des projets qui tournent, en vrai.",
+    "subtitle": "Chaque projet en version ordinateur et mobile, enregistré tel qu’il fonctionne.",
+    "viewAll": "Voir tous mes projets",
+    "alt": "{name}, version {format}",
+    "formats": {
+      "desktop": "ordinateur",
+      "mobile": "mobile"
+    },
+    "kinds": {
+      "malfakassa": "Boutique en ligne",
+      "kazilink": "Plateforme de recrutement",
+      "isha": "Agence de communication",
+      "ambassadrice": "Concours environnement",
+      "corafric": "Données vocales africaines",
+      "tavalo": "Investissement",
+      "kod8": "Plateforme de formation"
+    },
+    "open": "Voir le détail de",
+    "close": "Fermer",
+    "visit": "Voir le site",
+    "descriptions": {
+      "malfakassa": "Boutique en une page pour une marque de cafés, thés et infusions. Les produits se dévoilent au fil du défilement, et la commande part directement sur WhatsApp.",
+      "kazilink": "Plateforme de recrutement qui met en relation les entreprises et les talents en Afrique de l’Ouest : site web, application mobile, espace d’administration et API.",
+      "isha": "Site vitrine immersif pour une agence de communication et de production audiovisuelle basée à Lomé, conçu dans le cadre de Darollo Technologies Corporation.",
+      "ambassadrice": "Site officiel du concours Ambassadrice Internationale de l’Environnement Vision Planète Verte : candidates, impact sur le terrain, partenaires et actualités.",
+      "corafric": "Plateforme participative de collecte et de validation de données vocales pour préserver les langues africaines et entraîner les technologies vocales de demain.",
+      "tavalo": "Plateforme de private markets qui connecte les entreprises non cotées avec des investisseurs privés qualifiés, dans un cadre clair et vérifiable.",
+      "kod8": "Plateforme de formation conçue et développée de bout en bout : parcours Python de 14 modules, initiation à l’IA et correction automatique des exercices."
     }
   },
   "Skills": {

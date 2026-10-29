@@ -5,6 +5,7 @@
   },
   "Header": {
     "nav": {
+      "work": "Work",
       "about": "About",
       "skills": "Skills",
       "projects": "Projects",
@@ -29,6 +30,38 @@
       "downloadCV_FR": "French Version (FR)",
       "downloadCV_EN": "English Version (EN)",
       "viewProjects": "View my projects"
+    }
+  },
+  "Work": {
+    "label": "Work",
+    "title": "Real projects, running live.",
+    "subtitle": "Each project on desktop and mobile, recorded as it actually runs.",
+    "viewAll": "See all my projects",
+    "alt": "{name}, {format} version",
+    "formats": {
+      "desktop": "desktop",
+      "mobile": "mobile"
+    },
+    "kinds": {
+      "malfakassa": "Online shop",
+      "kazilink": "Hiring platform",
+      "isha": "Communication agency",
+      "ambassadrice": "Environmental contest",
+      "corafric": "African voice data",
+      "tavalo": "Investment",
+      "kod8": "Learning platform"
+    },
+    "open": "See details of",
+    "close": "Close",
+    "visit": "Visit the site",
+    "descriptions": {
+      "malfakassa": "One-page shop for a coffee, tea and herbal infusion brand. Products reveal themselves as you scroll, and orders go straight to WhatsApp.",
+      "kazilink": "Hiring platform connecting companies with talent across West Africa: website, mobile app, admin dashboard and API.",
+      "isha": "Immersive showcase site for a communication and video production agency based in Lomé, built with Darollo Technologies Corporation.",
+      "ambassadrice": "Official site of the Ambassadrice Internationale de l’Environnement Vision Planète Verte contest: candidates, field impact, partners and news.",
+      "corafric": "Participatory platform for collecting and validating voice data to preserve African languages and train tomorrow’s voice technologies.",
+      "tavalo": "Private markets platform connecting unlisted companies with qualified private investors, in a clear and verifiable setting.",
+      "kod8": "Learning platform designed and built end to end: a 14-module Python course, an introduction to AI and automated exercise checking."
     }
   },
   "Skills": {

@@ -49,7 +49,7 @@ export function Hero({ cv = null }: { cv?: string | null }) {
               {t("description")}
             </motion.p>
             <motion.a
-              href="#projects"
+              href="#work"
               initial={reduceMotion ? false : { opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               whileHover={reduceMotion ? undefined : { y: -3, scale: 1.02 }}
